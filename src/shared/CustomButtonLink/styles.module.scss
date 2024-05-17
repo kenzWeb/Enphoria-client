@@ -1,0 +1,26 @@
+.button {
+	background-color: var(--white-grey-color);
+	color: var(--main-brown-color);
+	padding: 1.2rem;
+	border-radius: 10px;
+	align-items: center;
+	display: flex;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background-color: #6620c1;
+		color: white;
+	}
+
+	@media (max-width: 1100px) {
+	}
+}
+
+.buttonActive {
+	background-color: var(--primary-color);
+	color: white;
+	padding: 1.2rem;
+	border-radius: 10px;
+	align-items: center;
+	display: flex;
+}

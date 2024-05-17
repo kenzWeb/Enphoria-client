@@ -1,0 +1,44 @@
+.burger {
+	@media (max-width: 920px) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	span {
+		display: block;
+		width: 2.5rem;
+		height: 0.4rem;
+		background-color: #3c4242;
+		transition: all 0.3s linear;
+		border-radius: 10px;
+	}
+
+	span:nth-child(2) {
+		margin: 0 auto;
+	}
+
+	span:last-child {
+		margin: 0 auto;
+	}
+
+	&.active {
+		z-index: 100;
+		span {
+			transition: all 0.3s linear;
+		}
+
+		span:nth-child(1) {
+			transform: rotate(45deg) translate(0.5rem, 0.5rem);
+		}
+
+		span:nth-child(2) {
+			height: 0;
+		}
+
+		span:nth-child(3) {
+			transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+
+		}
+	}
+}
