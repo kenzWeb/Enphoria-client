@@ -1,0 +1,12 @@
+.slider {
+	background-image: url('/img/images/galleryImg.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 80vh;
+	width: 100%;
+	align-items: center;
+
+	@media (max-width: 920px) {
+		background-position: center;
+	}
+}

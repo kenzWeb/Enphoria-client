@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/widgets/HomeGallery/HomeGallery.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
