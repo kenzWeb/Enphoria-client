@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import HeaderForm from '../../../entitles/Header/HeaderForm/HeaderForm'
-import CustomLink from '../../../shared/CustomLink/CustomLink'
+import CustomLink from '../../../shared/Buttons/CustomLink/CustomLink'
 import styles from './styles.module.scss'
 import Logo from '/img/Logo.svg'
 

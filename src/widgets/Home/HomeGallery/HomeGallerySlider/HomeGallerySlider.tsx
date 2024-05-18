@@ -3,7 +3,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import {Navigation, Pagination} from 'swiper/modules'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import {pagination} from '../../../shared/Slider/CustomPagination/CustomPagination'
+import {pagination} from '../../../../shared/Slider/CustomPagination/CustomPagination'
 import HomeGallerySlide from '../HomeGallerySlide/HomeGallerySlide'
 import styles from './styles.module.scss'
 
