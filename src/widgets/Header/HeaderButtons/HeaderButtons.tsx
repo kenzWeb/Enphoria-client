@@ -2,7 +2,7 @@ import {IoMdHeartEmpty} from 'react-icons/io'
 import {LuShoppingCart, LuUser2} from 'react-icons/lu'
 import HeaderForm from '../../../entitles/Header/HeaderForm/HeaderForm'
 import HeaderBurger from '../../../features/Header/HeaderBurger/HeaderBurger'
-import CustomButtonLink from '../../../shared/CustomButtonLink/CustomButtonLink'
+import CustomButtonLink from '../../../shared/Buttons/CustomButtonLink/CustomButtonLink'
 import styles from './styles.module.scss'
 
 type Props = {
