@@ -1,8 +1,8 @@
 import {HeaderBurger} from '@/features/header'
 import CustomButtonLink from '@/shared/Buttons/CustomButtonLink/CustomButtonLink'
-import {HeaderForm} from '@/shared/Home/HeaderForm/HeaderForm'
 import {IoMdHeartEmpty} from 'react-icons/io'
 import {LuShoppingCart, LuUser2} from 'react-icons/lu'
+import {HeaderForm} from '../HeaderForm/HeaderForm'
 import styles from './styles.module.scss'
 
 type Props = {
