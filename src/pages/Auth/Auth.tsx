@@ -1,4 +1,4 @@
-import Header from '../../widgets/Header/Header'
+import {Header} from '@/widgets/header'
 
 const Auth = () => {
 	return <Header />
