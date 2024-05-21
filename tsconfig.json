@@ -18,8 +18,11 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
 	},
-	"include": ["src", "src/widgets/Home/HomeGallery/HomeGallery.tsx"],
+	"include": ["src", "shared/interfaces/vite-env.d.ts"],
 	"references": [{"path": "./tsconfig.node.json"}]
 }

@@ -1,5 +1,5 @@
 import {Link, useMatch} from 'react-router-dom'
-import {ILink} from '../../../types/types'
+import {ILink} from '../../interface/types'
 import styles from './styles.module.scss'
 
 const CustomLink = ({to, children}: ILink) => {

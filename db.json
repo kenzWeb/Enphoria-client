@@ -1,0 +1,59 @@
+{
+	"arrival": [
+		{
+			"id": 1,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/1.png?raw=true",
+			"title": "Knitted Joggers"
+		},
+		{
+			"id": 2,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/2.png?raw=true",
+			"title": "Full Sleeve"
+		},
+		{
+			"id": 3,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/3.png?raw=true",
+			"title": "Active T-Shirts"
+		},
+		{
+			"id": 4,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/4.png?raw=true",
+			"title": "Urban Shirts"
+		},
+		{
+			"id": 5,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/5.png?raw=true",
+			"title": "Hoodies & Sweetshirt"
+		},
+		{
+			"id": 6,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/6.png?raw=true",
+			"title": "Jeans"
+		},
+		{
+			"id": 7,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/7.png?raw=true",
+			"title": "Printed T-Shirts"
+		},
+		{
+			"id": 8,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/8.png?raw=true",
+			"title": "Polo T-Shirt"
+		},
+		{
+			"id": 10,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/10.png?raw=true",
+			"title": "Boxers"
+		},
+		{
+			"id": 11,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/11.png?raw=true",
+			"title": "Plain T-Shirt"
+		},
+		{
+			"id": 12,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/12.png?raw=true",
+			"title": "Shirts"
+		}
+	]
+}

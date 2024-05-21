@@ -5,14 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 * {
 	padding: 0px;
 	margin: 0px;
 	border: none;
 	font-size: 10px;
+	// outline: 4px solid green !important
 }
 
 *,
@@ -137,12 +135,12 @@ legend {
 }
 
 .swiper-pagination-bullet {
-  width: 63px;
-  height: 10px;
-  text-align: center;
-  color: #000;
+	width: 63px;
+	height: 10px;
+	text-align: center;
+	color: #000;
 	border-radius: 10px 0 0 10px;
-  background: rgba(255,255,255, 0.5);
+	background: rgba(255, 255, 255, 0.5);
 
 	&:last-child {
 		transform: rotate(180deg);
@@ -150,6 +148,28 @@ legend {
 }
 
 .swiper-pagination-bullet-active {
-  color: #fff;
-  background: rgba(255,255,255);
+	color: #fff;
+	background: rgba(255, 255, 255);
+}
+
+.arrow-next,
+.arrow-prev {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background-image: url('/img/icons/arrow.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 2;
+	top: 50%;
+	transform: translate(100%, 0);
+}
+
+.arrow-next {
+	right: 0;
+}
+
+.arrow-prev {
+	left: 0;
+	transform: rotate(180deg) translate(100%, 0);
 }
