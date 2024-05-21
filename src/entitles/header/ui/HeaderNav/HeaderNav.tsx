@@ -1,6 +1,6 @@
+import {HeaderForm} from '@/entitles/header/ui/HeaderForm/HeaderForm'
 import CustomLink from '@/shared/Buttons/CustomLink/CustomLink'
 import {useEffect, useState} from 'react'
-import {HeaderForm} from '@/shared/Home/HeaderForm/HeaderForm'
 import styles from './styles.module.scss'
 import Logo from '/img/Logo.svg'
 
