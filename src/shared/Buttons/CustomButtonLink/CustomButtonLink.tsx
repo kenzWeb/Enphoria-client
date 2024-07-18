@@ -2,7 +2,7 @@ import {Link, useMatch} from 'react-router-dom'
 import {ILink} from '../../interface/types'
 import styles from './styles.module.scss'
 
-const CustomButtonLink = ({children, to}: ILink) => {
+export const CustomButtonLink = ({children, to}: ILink) => {
 	const match = useMatch(to)
 
 	return (
@@ -13,5 +13,3 @@ const CustomButtonLink = ({children, to}: ILink) => {
 		</Link>
 	)
 }
-
-export default CustomButtonLink

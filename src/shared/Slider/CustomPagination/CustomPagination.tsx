@@ -1,6 +1,6 @@
 export const pagination = {
 	clickable: true,
-	renderBullet: function (className: string) {
+	renderBullet: function (index: number, className: string) {
 		return '<span class="' + className + '">' + '' + '</span>'
 	},
 }
