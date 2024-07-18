@@ -2,7 +2,7 @@ import {Link, useMatch} from 'react-router-dom'
 import {ILink} from '../../interface/types'
 import styles from './styles.module.scss'
 
-const CustomLink = ({to, children}: ILink) => {
+export const CustomLink = ({to, children}: ILink) => {
 	const math = useMatch(to)
 	return (
 		<div>
@@ -12,5 +12,3 @@ const CustomLink = ({to, children}: ILink) => {
 		</div>
 	)
 }
-
-export default CustomLink

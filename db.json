@@ -55,5 +55,42 @@
 			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Arrival/12.png?raw=true",
 			"title": "Shirts"
 		}
+	],
+	"zone": [
+		{
+			"id": 1,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Zone/1.jpg?raw=true",
+			"title": "Hawaiian Shirts",
+			"description": "Dress up in summer vibe",
+			"price": "UPTO 50% OFF"
+		},
+		{
+			"id": 2,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Zone/2.jpg?raw=true",
+			"title": "Printed T-Shirt",
+			"description": "New Designs Every Week",
+			"price": "UPTO 40% OFF"
+		},
+		{
+			"id": 3,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Zone/3.jpg?raw=true",
+			"title": "Cargo Joggers",
+			"description": "Move with style & comfort",
+			"price": "UPTO 50% OFF"
+		},
+		{
+			"id": 4,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Zone/4.jpg?raw=true",
+			"title": "Urban Shirts",
+			"description": "Live In Confort",
+			"price": "UPTO 60% OFF"
+		},
+		{
+			"id": 5,
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Zone/5.jpg?raw=true",
+			"title": "Oversized T-Shirts",
+			"description": "Street Style Icon",
+			"price": "UPTO 60% OFF"
+		}
 	]
 }
