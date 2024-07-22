@@ -92,5 +92,121 @@
 			"description": "Street Style Icon",
 			"price": "UPTO 60% OFF"
 		}
+	],
+	"base": [
+		{
+			"id": 1,
+			"name": "Checks Shirt with white",
+			"gender": "Man",
+			"type": "Shirts",
+			"brand": "H.M’s Brand",
+			"color": ["red, black"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/1.png?raw=true",
+			"price": 100
+		},
+
+		{
+			"id": 2,
+			"name": "Black Shirts",
+			"gender": "Man",
+			"type": "Printed T-Shirts",
+			"brand": "Jhanvi’s  Brand",
+			"color": ["black, white"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/2.png?raw=true",
+			"price": 133
+		},
+
+		{
+			"id": 3,
+			"name": "Black Shirts",
+			"gender": "Man",
+			"type": "Plain T-Shirts",
+			"brand": "MOMO’s Brand",
+			"color": ["grey, navy"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/3.png?raw=true",
+			"price": 170
+		},
+		{
+			"id": 4,
+			"name": "Polo sky-blue",
+			"gender": "Man",
+			"type": "Polo T-Shirt",
+			"brand": "Roboto’s Brand",
+			"color": ["red, blue"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/4.png?raw=true",
+			"price": 200
+		},
+		{
+			"id": 5,
+			"name": "Dark Green Sweatshirt",
+			"gender": "Man",
+			"type": "Hoodies & Sweetshirt",
+			"brand": "Roboto’s Brand",
+			"color": ["green, grey, yellow"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/5.png?raw=true",
+			"price": 120
+		},
+		{
+			"id": 6,
+			"name": "Blue Jeans",
+			"gender": "Man",
+			"type": "Jeans",
+			"brand": "H.M’s Brand",
+			"color": ["blue, navy, white, brown"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/6.png?raw=true",
+			"price": 80
+		},
+		{
+			"id": 7,
+			"name": "Blue Jeans",
+			"gender": "Man",
+			"type": "Activewear",
+			"brand": "Jhanvi’s Brand",
+			"color": ["black, red, pink"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/7.png?raw=true",
+			"price": 230
+		},
+
+		{
+			"id": 8,
+			"name": "White Boxers",
+			"gender": "Man",
+			"type": "Boxers",
+			"brand": "Nike’s Brand",
+			"color": ["white, black, yellow, brown"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/8.png?raw=true",
+			"price": 170
+		},
+
+		{
+			"id": 9,
+			"name": "Urban jacket with white",
+			"gender": "Man",
+			"type": "Jacket",
+			"brand": "Sagar’s Brand",
+			"color": ["white, grey, yellow, orange"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/9.png?raw=true",
+			"price": 200
+		},
+		{
+			"id": 10,
+			"name": "Plain White T-Shirt",
+			"gender": "Man",
+			"type": "T-Shirt",
+			"brand": "Jhanvi’s  Brand",
+			"color": ["white, grey, red, orange"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/10.png?raw=true",
+			"price": 110
+		},
+		{
+			"id": 11,
+			"name": "Denim Blue Shirt",
+			"gender": "Man",
+			"type": "Urban Shirts",
+			"brand": "Jhanvi’s  Brand",
+			"color": ["white, grey, red, orange"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/11.png?raw=true",
+			"price": 110
+		}
 	]
 }
