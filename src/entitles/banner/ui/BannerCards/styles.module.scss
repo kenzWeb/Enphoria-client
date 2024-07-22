@@ -1,0 +1,104 @@
+.left {
+	position: relative;
+	flex: 1;
+	background-image: url('img/images/banner1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 12px 0 0 12px;
+}
+
+.content {
+	padding: 18rem 0 0 7.5rem;
+}
+
+.title {
+	font-family: 'Core Sans';
+	font-weight: 900;
+	font-size: 3.4rem;
+	line-height: 5rem;
+	margin-bottom: 3rem;
+	color: white;
+}
+
+.subtitle {
+	font-size: 2rem;
+	color: white;
+	font-family: 'Causten';
+	font-weight: 200;
+	max-width: 450px;
+	margin-bottom: 5rem;
+}
+
+.button {
+	font-size: 1.8rem;
+	padding: 1.2rem 4.4rem;
+	border-radius: 8px;
+	background-color: #fff;
+	color: #3c4242;
+	font-family: 'Causten';
+	font-weight: 600;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: #6620c1;
+		color: white;
+	}
+}
+
+.right {
+	flex: 1;
+	border-radius: 12px;
+}
+
+.img {
+	border-radius: 0 12px 12px 0;
+}
+
+@media (max-width: 1160px) {
+	.title {
+		font-size: 2.4rem;
+		line-height: 30px;
+		margin-bottom: 1rem;
+	}
+
+	.subtitle {
+		font-size: 1.6rem;
+		max-width: 300px;
+		margin-bottom: 3rem;
+	}
+}
+
+@media (max-width: 960px) {
+	.content {
+		padding: 9rem 0 0 3.5rem;
+	}
+}
+
+@media (max-width: 769px) {
+	.left {
+		flex: none;
+		border-radius: 12px;
+	}
+
+	.content {
+		padding: 9rem 0 9rem 3.5rem;
+	}
+
+	.right {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 1.5rem;
+		line-height: 30px;
+		margin-bottom: 1rem;
+	}
+
+	.subtitle {
+		font-size: 1.2rem;
+		max-width: 300px;
+		margin-bottom: 3rem;
+	}
+}
