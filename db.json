@@ -196,7 +196,7 @@
 			"brand": "Jhanvi’s  Brand",
 			"color": ["white, grey, red, orange"],
 			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/10.png?raw=true",
-			"price": 110
+			"price": 160
 		},
 		{
 			"id": 11,
@@ -206,7 +206,47 @@
 			"brand": "Jhanvi’s  Brand",
 			"color": ["white, grey, red, orange"],
 			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/11.png?raw=true",
-			"price": 110
+			"price": 180
+		},
+		{
+			"id": 12,
+			"name": "Hoodie Nike",
+			"gender": "Woman",
+			"type": "Hoodies & Sweetshirt",
+			"brand": "Nike’s Brand",
+			"color": ["black, pink, blue, orange"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/12.png?raw=true",
+			"price": 170
+		},
+		{
+			"id": 13,
+			"name": "MOMO Coats",
+			"gender": "Woman",
+			"type": "Coats & Parkas",
+			"brand": "AS’s  Brand",
+			"color": ["white, blue, navy, red"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/13.png?raw=true",
+			"price": 270
+		},
+		{
+			"id": 14,
+			"name": "Blue Flower Print Crop",
+			"gender": "Woman",
+			"type": "Tees & T-Shirt",
+			"brand": "Mellon’s  Brand",
+			"color": ["red, yellow, green, pink"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/14.png?raw=true",
+			"price": 150
+		},
+		{
+			"id": 15,
+			"name": "White T-shirt",
+			"gender": "Woman",
+			"type": "Boxers",
+			"brand": "MHelen’s  Brand",
+			"color": ["red, yellow, green, pink"],
+			"img": "https://github.com/kenzWeb/Enphoria-img/blob/main/Base/15.png?raw=true",
+			"price": 130
 		}
 	]
 }

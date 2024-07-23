@@ -1,7 +1,7 @@
-import {Header} from '@/widgets/header'
+import {Layout} from '@/widgets/layouts'
 
 const Auth = () => {
-	return <Header />
+	return <Layout>Auth</Layout>
 }
 
 export default Auth
