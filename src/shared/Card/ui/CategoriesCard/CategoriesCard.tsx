@@ -3,12 +3,20 @@ import {IoIosArrowRoundForward} from 'react-icons/io'
 import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
 
-export const ManCard = ({...props}: IBase) => {
-	console.log(props)
+interface Props extends IBase {
+	borderRadius?: string
+}
+
+export const CategoriesCard = ({borderRadius, ...props}: Props) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
-				<img className={styles.img} src={props.img} alt={props.name} />
+				<img
+					className={styles.img}
+					style={{borderRadius: borderRadius}}
+					src={props.img}
+					alt={props.name}
+				/>
 			</div>
 
 			<div className={styles.content}>
