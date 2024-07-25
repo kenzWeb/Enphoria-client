@@ -9,12 +9,12 @@ import './styles/base.scss'
 
 const router = createBrowserRouter([
 	{
-		path: '/auth',
-		element: <Auth />,
-	},
-	{
 		path: '/',
 		element: <Home />,
+	},
+	{
+		path: '/auth',
+		element: <Auth />,
 	},
 	{
 		path: '*',
