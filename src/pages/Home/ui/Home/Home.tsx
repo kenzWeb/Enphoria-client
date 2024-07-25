@@ -1,5 +1,6 @@
 import {Arrival} from '@/widgets/arrival'
 import {Banner} from '@/widgets/banner'
+import { Brands } from '@/widgets/brands'
 import {HomeGallery} from '@/widgets/home'
 import {HomePresents} from '@/widgets/home/ui/HomePresents/HomePresents'
 import {Layout} from '@/widgets/layouts'
@@ -19,6 +20,7 @@ export const Home = () => {
 					<Banner />
 					<Man />
 					<Woman />
+					<Brands />
 				</div>
 			</Layout>
 		</>
