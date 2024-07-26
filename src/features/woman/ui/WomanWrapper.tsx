@@ -1,5 +1,5 @@
 import {CategoriesCard} from '@/shared/Card'
-import {useGetWomanCategoryQuery} from '@/shared/store/api/category'
+import {useGetWomanCategoryQuery} from '@/shared/store/api/categoryApi'
 import styles from './styles.module.scss'
 
 export const WomanWrapper = () => {
