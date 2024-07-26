@@ -18,7 +18,7 @@ export const HeaderButtons = ({isOpen, setIsOpen}: Props) => {
 			</div>
 
 			<div className={styles.link}>
-				<CustomButtonLink to='/auth'>
+				<CustomButtonLink to='/favorites'>
 					<IoMdHeartEmpty size={20} />
 				</CustomButtonLink>
 				<CustomButtonLink to='/like'>

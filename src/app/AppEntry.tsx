@@ -1,4 +1,5 @@
-import {Home} from '@/pages/Home/ui/Home/Home'
+import {Favorites} from '@/pages/Favorites'
+import {Home} from '@/pages/Home'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {Provider} from 'react-redux'
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
 	{
 		path: '/auth',
 		element: <Auth />,
+	},
+	{
+		path: '/favorites',
+		element: <Favorites />,
 	},
 	{
 		path: '*',

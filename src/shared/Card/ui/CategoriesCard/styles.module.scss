@@ -2,6 +2,22 @@
 	margin-bottom: 1.5rem;
 }
 
+.wrapper {
+	position: relative;
+}
+
+.favorite {
+	position: absolute;
+	top: 1.2rem;
+	right: 1.2rem;
+	width: 3.2rem;
+	height: 3.2rem;
+	background-color: white;
+	padding: 1rem;
+	border-radius: 100%;
+	align-items: center;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
