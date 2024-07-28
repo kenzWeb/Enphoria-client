@@ -8,6 +8,7 @@ export interface IBase {
 	color?: string
 	img?: string
 	price?: number
+	quantity?: number
 }
 
 export interface IFavorite {

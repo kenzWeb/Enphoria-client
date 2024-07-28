@@ -19,7 +19,7 @@ export const favoriteSlice = createSlice({
 					(item) => item?.id !== action.payload.id,
 				)
 			} else {
-				state.favorite.push(action.payload)
+				state.favorite.push({...action.payload, quantity: 1})
 			}
 			localStorage.setItem('favorite', JSON.stringify(state.favorite))
 		},

@@ -44,13 +44,23 @@ export const CategoriesCard = ({borderRadius, favorite, ...props}: Props) => {
 
 			<div className={styles.content}>
 				<div className={styles.info}>
-					<h2 className={styles.title}>{props.type}</h2>
-					<h3 className={styles.subtitle}>Explore Now!</h3>
+					<h2 className={favorite ? styles.name : styles.type}>
+						{favorite ? props.name : props.type}
+					</h2>
+					<h3 className={styles.subtitle}>
+						{favorite ? props.brand : `Explore Now!`}
+					</h3>
 				</div>
 				<div className={styles.arrow}>
-					<Link to={'/'}>
-						<IoIosArrowRoundForward className={styles.icon} size={30} />
-					</Link>
+					{favorite ? (
+						<div className={styles.price}>
+							<h2>${props.price}.00</h2>
+						</div>
+					) : (
+						<Link to={'/'}>
+							<IoIosArrowRoundForward className={styles.icon} size={30} />
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>

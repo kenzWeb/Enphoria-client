@@ -1,4 +1,4 @@
-import PointerRectangle from '../../Other/PointerRectangle/PointerRectangle'
+import {PointerRectangle} from '@/shared/Other'
 import styles from './styles.module.scss'
 
 export const Title = ({children}: {children: React.ReactNode}) => {

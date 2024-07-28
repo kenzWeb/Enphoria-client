@@ -31,12 +31,36 @@
 	justify-content: space-between;
 }
 
-.title {
+.name {
+	color: #3c4242;
 	font-family: 'Causten';
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 1.8rem;
 	margin-bottom: 0.5rem;
-	color: #2a2f2f;
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f6f6f6;
+	padding: 1rem 1.6rem;
+	font-size: 1.4rem;
+	font-family: 'Causten';
+	font-weight: bold;
+	border-radius: 8px;
+}
+
+.type {
+	font-family: 'Poppins';
+	font-weight: 500;
+	font-size: 1.8rem;
+	margin-bottom: 0.5rem;
+	color: #191919;
 }
 
 .subtitle {
@@ -44,6 +68,11 @@
 	font-weight: 500;
 	font-size: 1.4rem;
 	color: #7f7f7f;
+}
+
+.arrow {
+	display: flex;
+	align-items: center;
 }
 
 .icon {

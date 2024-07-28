@@ -10,7 +10,6 @@
 	margin: 0px;
 	border: none;
 	font-size: 10px;
-	// outline: 4px solid green !important
 }
 
 *,
@@ -122,6 +121,18 @@ label {
 
 legend {
 	display: block;
+}
+
+.headerWrapper {
+	width: 100%;
+	border-bottom: 1px solid #dee2e6;
+}
+
+.headerUnderline {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
 }
 
 .container {

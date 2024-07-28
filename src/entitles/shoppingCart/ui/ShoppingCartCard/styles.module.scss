@@ -1,0 +1,67 @@
+.container {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.1fr;
+	align-items: center;
+	padding-bottom: 5rem;
+	&:not(:last-child) {
+		margin-bottom: 5rem;
+		border-bottom: 1px solid #bebcbd;
+	}
+}
+
+.base {
+	display: flex;
+	align-items: start;
+	gap: 1rem;
+}
+
+.img {
+	width: 8.5rem;
+	height: 10rem;
+}
+
+.title {
+	font-family: 'Causten';
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #3c4242;
+}
+
+.price {
+	font-family: 'Causten';
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #3c4242;
+}
+
+.quantity {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background: #f6f6f6;
+	width: 45%;
+	border-radius: 12px;
+	padding: 1.1rem 2.2rem;
+}
+
+.count {
+	font-family: 'Causten';
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #3c4242;
+}
+
+.shipping {
+	font-family: 'Causten';
+	font-size: 1.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #bebcbd;
+}
+
+.total {
+	font-family: 'Causten';
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #3c4242;
+}
