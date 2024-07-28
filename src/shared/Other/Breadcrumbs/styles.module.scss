@@ -1,0 +1,35 @@
+.breadcrumb {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+	list-style: none;
+	margin-top: 6rem;
+	padding: 0;
+}
+
+.breadcrumbItem + .breadcrumbItem::before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-image: url('/img/icons/breadcrumbs.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 0.6rem;
+	margin-left: 0.6rem;
+}
+
+.breadcrumbItem a {
+	text-decoration: none;
+	font-family: 'Causten';
+	font-weight: 500;
+	font-size: 1.8rem;
+	color: #6c757d;
+}
+
+.active {
+	color: #3c4242;
+	font-family: 'Causten';
+	font-weight: 500;
+	font-size: 1.8rem;
+}

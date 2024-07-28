@@ -1,0 +1,23 @@
+.wrapper {
+	margin-bottom: 7rem;
+	background-color: #3c4242;
+	padding: 2.8rem 0;
+}
+
+.container {
+	max-width: 1235px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.1fr;
+	align-items: center;
+
+	& > li {
+		list-style: none;
+		font-family: 'Causten';
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: white;
+	}
+}
