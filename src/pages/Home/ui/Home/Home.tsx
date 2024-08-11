@@ -1,6 +1,7 @@
 import {Arrival} from '@/widgets/arrival'
 import {Banner} from '@/widgets/banner'
 import {Brands} from '@/widgets/brands'
+import {Feedback} from '@/widgets/feedback'
 import {HomeGallery, HomePresents} from '@/widgets/home'
 import {Layout} from '@/widgets/layouts'
 import {Limelight} from '@/widgets/limelight'
@@ -22,6 +23,7 @@ export const Home = () => {
 					<Woman />
 					<Brands />
 					<Limelight />
+					<Feedback />
 				</div>
 			</Layout>
 		</>
