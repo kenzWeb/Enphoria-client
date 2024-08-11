@@ -1,3 +1,4 @@
+import {Rating} from '@mui/material'
 import styles from './styles.module.scss'
 
 export const BrandsContent = () => {
@@ -11,6 +12,7 @@ export const BrandsContent = () => {
 					alt=''
 				/>
 			))}
+			<Rating name='read-only' value={3} readOnly />
 		</div>
 	)
 }

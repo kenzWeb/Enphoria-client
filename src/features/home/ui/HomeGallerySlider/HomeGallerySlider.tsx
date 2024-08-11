@@ -1,10 +1,10 @@
+import {HomeGallerySlide} from '@/entitles/home'
+import {pagination} from '@/shared/Slider/CustomPagination/CustomPagination'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import {Navigation, Pagination} from 'swiper/modules'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import {HomeGallerySlide} from '@/entitles/home'
-import {pagination} from '@/shared/Slider/CustomPagination/CustomPagination'
 import styles from './styles.module.scss'
 
 export const HomeGallerySlider = () => {
