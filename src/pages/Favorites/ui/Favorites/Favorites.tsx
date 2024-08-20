@@ -1,6 +1,6 @@
+import {Layout} from '@/providers'
 import {Breadcrumbs} from '@/shared/Other'
 import {FavoriteWarning} from '@/shared/Text'
-import {Layout} from '@/widgets/layouts'
 import {ShoppingCart} from '@/widgets/shoppingCart'
 
 export const Favorites = () => {
