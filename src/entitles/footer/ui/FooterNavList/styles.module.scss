@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.title {
+	font-family: 'Causten';
+	color: #f6f6f6;
+	font-weight: bold;
+	line-height: 215%;
+	font-size: 2.8rem;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.item {
+	font-family: 'Causten';
+	font-weight: 500;
+	font-size: 1.6rem;
+	color: #f6f6f6;
+	line-height: 215%;
+}

@@ -1,4 +1,4 @@
-import {CategoriesCard} from '@/shared/Card'
+import {CategoriesCard} from '@/features/card'
 import {useGetManCategoryQuery} from '@/shared/store/api/categoryApi'
 import styles from './styles.module.scss'
 

@@ -1,4 +1,4 @@
-import {LimelightWrapper} from '@/features/limelight'
+import {LimelightWrapper} from '@/entitles/limelight'
 import {Title} from '@/shared/Text'
 import styles from './styles.module.scss'
 
