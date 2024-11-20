@@ -1,4 +1,4 @@
-import {TransparentButtonLink} from '@/shared/Buttons'
+import {TransparentButtonLink} from '@/shared/ui/Buttons'
 import {MdArrowDownward} from 'react-icons/md'
 import styles from './styles.module.scss'
 

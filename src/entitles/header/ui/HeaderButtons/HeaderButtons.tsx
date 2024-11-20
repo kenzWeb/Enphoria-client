@@ -1,5 +1,5 @@
 import {HeaderBurger} from '@/features/header'
-import {CustomButtonLink} from '@/shared/Buttons'
+import {CustomButtonLink} from '@/shared/ui/Buttons'
 import {IoMdHeartEmpty} from 'react-icons/io'
 import {LuShoppingCart, LuUser2} from 'react-icons/lu'
 import {HeaderForm} from '../HeaderForm/HeaderForm'

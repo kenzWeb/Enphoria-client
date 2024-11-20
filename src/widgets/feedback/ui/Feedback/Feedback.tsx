@@ -1,5 +1,5 @@
 import {FeedbackWrapper} from '@/entitles/feedback'
-import {Title} from '@/shared/Text'
+import {Title} from '@/shared/ui/Text'
 import styles from './styles.module.scss'
 
 export const Feedback = () => {

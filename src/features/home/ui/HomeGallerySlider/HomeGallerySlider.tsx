@@ -1,5 +1,5 @@
 import {HomeGallerySlide} from '@/entitles/home'
-import {pagination} from '@/shared/Slider/CustomPagination/CustomPagination'
+import {pagination} from '@/shared/ui/Slider/CustomPagination/CustomPagination'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'

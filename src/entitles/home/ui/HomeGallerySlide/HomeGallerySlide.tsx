@@ -1,5 +1,5 @@
+import HomeGalleryButton from '@/shared/ui/Home/HomeGalleryButton/HomeGalleryButton'
 import 'swiper/css'
-import HomeGalleryButton from '@/shared/Home/HomeGalleryButton/HomeGalleryButton'
 import styles from './styles.module.scss'
 
 export const HomeGallerySlide = () => {

@@ -1,5 +1,5 @@
 import {HeaderForm} from '@/entitles/header/ui/HeaderForm/HeaderForm'
-import {CustomLink} from '@/shared/Buttons'
+import {CustomLink} from '@/shared/ui/Buttons'
 import {useEffect, useState} from 'react'
 import styles from './styles.module.scss'
 import Logo from '/img/Logo.svg'

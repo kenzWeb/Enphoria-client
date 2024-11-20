@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-import {UnderLineButton} from '@/shared/Buttons'
+import {UnderLineButton} from '@/shared/ui/Buttons'
 import styles from './styles.module.scss'
 
 type Props = {
