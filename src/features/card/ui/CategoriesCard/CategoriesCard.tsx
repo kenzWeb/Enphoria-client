@@ -2,7 +2,7 @@ import {useAppDispatch, useAppSelector} from '@/app/store/store'
 import {addToFavorite} from '@/shared/store/slices/favoriteSlice'
 import {IBase} from '@/shared/types/types'
 import {useCallback, useMemo} from 'react'
-import toast, {Toaster} from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import {FaHeart} from 'react-icons/fa'
 import {FiHeart} from 'react-icons/fi'
 import {IoIosArrowRoundForward} from 'react-icons/io'
@@ -35,7 +35,6 @@ export const CategoriesCard = ({borderRadius, favorite, ...props}: Props) => {
 
 	return (
 		<div className={styles.container}>
-			<Toaster />
 			<div className={styles.wrapper}>
 				<img
 					className={styles.img}
