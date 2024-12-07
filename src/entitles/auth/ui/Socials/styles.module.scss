@@ -1,0 +1,16 @@
+.container {
+	@apply flex flex-col gap-[20px] w-full mb-[50px];
+}
+
+.button {
+	@apply w-full flex items-center justify-center gap-2 py-4 text-[22px] rounded-[8px] border-solid border-[#3C4242] text-[#8A33FD] hover:bg-accent hover:text-accent-foreground font-normal transition-all duration-200 ease-in-out;
+	font-family: Causten;
+}
+
+.img {
+	@apply w-[20px] h-[20px];
+}
+
+.tooltip {
+	@apply opacity-25 hidden;
+}

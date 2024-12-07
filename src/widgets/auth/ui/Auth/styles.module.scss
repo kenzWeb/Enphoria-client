@@ -1,0 +1,69 @@
+.wrapper {
+	@apply min-h-screen grid grid-cols-2;
+
+	> .left {
+		@apply h-full w-full lg:flex items-center justify-center;
+		background-image: url('img/images/auth/sign-in.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	> .right {
+		@apply h-full w-full flex flex-col items-center justify-center;
+
+		> .card {
+			@apply border-none p-6 flex flex-col w-[520px];
+
+			> .header {
+				@apply pb-5 w-full;
+
+				> .title {
+					@apply pb-1 text-[32px] font-bold text-[#333333];
+					font-family: Core Sans;
+				}
+
+				> .description {
+					@apply text-[1.6rem] text-[#666666] opacity-80 font-medium mb-12;
+					font-family: Causten;
+				}
+			}
+
+			> .content {
+				@apply p-0 w-full;
+
+				form {
+					@apply space-y-5;
+
+					button {
+						@apply text-[18px] py-[36px] px-[50px] text-[#ffffff] !mt-[30px];
+						font-family: Causten;
+					}
+				}
+			}
+
+			> .footer {
+				@apply p-0 mt-4 text-[16px] text-muted-foreground text-[#3C4242] font-normal;
+
+				> h2 {
+					@apply text-[16px] mr-[5px];
+				}
+
+				> button {
+					@apply underline;
+				}
+			}
+		}
+	}
+}
+
+.label {
+	@apply text-[#3C4242] text-[1.4rem];
+}
+
+.input {
+	@apply border-solid border-[#fff] outline-none focus:outline-none focus:ring-0;
+}
+
+.message {
+	@apply text-red-500 text-[31px];
+}
