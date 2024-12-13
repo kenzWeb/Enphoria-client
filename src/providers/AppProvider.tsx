@@ -1,5 +1,5 @@
 import {store} from '@/app/store/store'
-import {AuthPage} from '@/pages/Auth/AuthPage'
+import {AuthPage} from '@/pages/Auth'
 import {Favorites} from '@/pages/Favorites'
 import {Home} from '@/pages/Home'
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'

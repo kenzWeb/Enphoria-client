@@ -3,7 +3,9 @@ export const API_URL = {
 
 	auth: (url = '') => API_URL.root(`/auth/${url}`),
 	users: (url = '') => API_URL.root(`/users/${url}`),
-	produts: (url = '') => API_URL.root(`/produts/${url}`),
+	products: (url = '') => API_URL.root(`/produts/${url}`),
+	arrival: (url = '') => API_URL.root(`/arrivals/${url}`),
+	zone: (url = '') => API_URL.root(`/zones/${url}`),
 	categories: (url = '') => API_URL.root(`/categories/${url}`),
 	colors: (url = '') => API_URL.root(`/colors/${url}`),
 	files: (url = '') => API_URL.root(`/files/${url}`),
