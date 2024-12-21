@@ -1,0 +1,36 @@
+.favoriteButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s ease;
+	color: #666;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+
+	&.active {
+		color: #ff4141;
+		animation: heartPop 0.3s ease forwards;
+	}
+
+	svg {
+		transition: all 0.2s ease;
+	}
+}
+
+@keyframes heartPop {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

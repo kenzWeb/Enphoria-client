@@ -1,4 +1,4 @@
-import {CategoriesCard} from '@/features/card'
+
 import {useGetLimelightCategoryQuery} from '@/shared/store/api/categoryApi'
 import styles from './styles.module.scss'
 
@@ -7,12 +7,7 @@ export const LimelightWrapper = () => {
 	return (
 		<div className={styles.container}>
 			{data?.slice(0, 4).map((item) => (
-				<CategoriesCard
-					borderRadius='10px'
-					key={item.id}
-					favorite={true}
-					{...item}
-				/>
+				<h2>asdasd</h2>
 			))}
 		</div>
 	)

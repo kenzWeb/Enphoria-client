@@ -1,8 +1,9 @@
 import {ArrivalSlide} from '@/entitles/arrival'
 import {SERVER_URL} from '@/shared/config/private.config'
 import {breakpoints} from '@/shared/constants/breakpoints'
-import {useGetAllArrival} from '@/shared/queries/arrival/useGetArrival'
-import {Skeleton} from '@/shared/shad-cn/ui/skeleton'
+import {useGetAllArrival} from '@/shared/hooks/queries/arrival/useGetArrival'
+
+import {Skeleton} from '@mui/material'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import {Navigation} from 'swiper/modules'

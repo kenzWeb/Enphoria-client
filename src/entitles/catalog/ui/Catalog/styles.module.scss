@@ -1,0 +1,7 @@
+.catalog {
+	@apply flex w-full;
+
+	> .products {
+		@apply flex flex-wrap sm:justify-between xl:justify-between md:justify-around gap-9;
+	}
+}

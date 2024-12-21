@@ -8,7 +8,7 @@ import {IAuthForm} from '@/shared/types/auth.interface'
 import {useNavigate} from 'react-router-dom'
 
 export function useAuthForm(isReg: boolean) {
-	const navigate = useNavigate() // Исправление: useNavigate
+	const navigate = useNavigate()
 
 	const form = useForm<IAuthForm>({
 		mode: 'onChange',

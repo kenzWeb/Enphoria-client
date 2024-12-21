@@ -1,4 +1,6 @@
-import { IShippingAddress } from './shipping-address.interface'
+import {IOrder} from './order.interface'
+import {IProduct} from './product.interface'
+import {IShippingAddress} from './shipping-address.interface'
 
 export interface IUser {
 	id: number

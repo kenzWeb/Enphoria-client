@@ -16,13 +16,14 @@
 }
 
 .img {
-	width: 8.5rem;
-	height: 10rem;
+	width: 10.5rem;
+	height: 12rem;
+	border-radius: 12px;
 }
 
 .title {
 	font-family: 'Causten';
-	font-size: 1.4rem;
+	font-size: 1.8rem;
 	font-weight: 700;
 	color: #3c4242;
 }
@@ -64,4 +65,8 @@
 	font-size: 1.8rem;
 	font-weight: 700;
 	color: #3c4242;
+}
+
+.delete {
+	cursor: pointer;
 }

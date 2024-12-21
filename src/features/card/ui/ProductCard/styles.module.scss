@@ -1,0 +1,31 @@
+.card {
+	@apply flex flex-col items-start;
+
+	.top {
+		@apply mb-5 relative;
+
+		> img {
+			@apply h-[37rem] sm:h-[32rem] sm:w-[22rem] md:w-[25rem] lg:w-[27rem] lg:h-[39rem] rounded-2xl;
+		}
+
+		> .favorite {
+			@apply absolute top-5 right-5;
+		}
+	}
+
+	> .buttom {
+		@apply flex justify-between w-full;
+
+		> .info {
+			@apply flex flex-col gap-1;
+
+			> h3 {
+				@apply text-[18px] font-bold;
+			}
+
+			> p {
+				@apply text-[14px] text-[#7F7F7F];
+			}
+		}
+	}
+}
