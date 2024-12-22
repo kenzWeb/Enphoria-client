@@ -1,3 +1,9 @@
+import {Sidebar} from '@/widgets/filters'
+
 export const ShopPage = () => {
-	return <div>ShopPage</div>
+	return (
+		<div className='container'>
+			<Sidebar />
+		</div>
+	)
 }

@@ -4,7 +4,7 @@ import {API_URL} from '../config/api.config'
 
 class ColorService {
 	async getAll() {
-		const {data: allColors} = await axiosClassic<IColor>({
+		const {data: allColors} = await axiosClassic<IColor[]>({
 			url: API_URL.colors(),
 			method: 'GET',
 		})

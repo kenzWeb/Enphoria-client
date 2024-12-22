@@ -4,6 +4,21 @@ import {useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 
 export const useGetCategories = () => {
+	const {data: categories, isLoading} = useQuery({
+		queryKey: ['get categories for dashboard'],
+		queryFn: () => categoryService.getAll(),
+	})
+
+	return useMemo(
+		() => ({
+			categories,
+			isLoading,
+		}),
+		[categories, isLoading],
+	)
+}
+
+export const useGetCategoriesById = () => {
 	const params = useParams<{storeId: string}>()
 
 	const {data: categories, isLoading} = useQuery({

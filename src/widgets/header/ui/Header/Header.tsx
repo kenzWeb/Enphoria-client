@@ -4,7 +4,7 @@ import {useLocation} from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const Header = () => {
-	const [isOPpen, setIsOpen] = useState<boolean>(false)
+	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const location = useLocation()
 
 	return (
@@ -15,8 +15,8 @@ export const Header = () => {
 						location.pathname === '/' ? styles.header : styles.headerUnderline
 					}
 				>
-					<HeaderNav isOpen={isOPpen} />
-					<HeaderButtons isOpen={isOPpen} setIsOpen={setIsOpen} />
+					<HeaderNav isOpen={isOpen} />
+					<HeaderButtons isOpen={isOpen} setIsOpen={setIsOpen} />
 				</header>
 			</div>
 		</div>

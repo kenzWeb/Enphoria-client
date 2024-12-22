@@ -6,7 +6,7 @@ class ColorService {
 	async getAll() {
 		const {data: allSizes} = await axiosClassic<IColor>({
 			url: API_URL.sizes(),
-			method: 'ET',
+			method: 'GET',
 		})
 
 		return allSizes

@@ -3,10 +3,14 @@ import {ILink} from '../../../interface/types'
 import styles from './styles.module.scss'
 
 export const CustomLink = ({to, children}: ILink) => {
-	const math = useMatch(to)
+	const match = useMatch({
+		path: to.split('?')[0],
+		end: true,
+	})
+
 	return (
 		<div>
-			<Link className={math ? styles.linkActive : styles.link} to={to}>
+			<Link className={match ? styles.linkActive : styles.link} to={to}>
 				{children}
 			</Link>
 		</div>

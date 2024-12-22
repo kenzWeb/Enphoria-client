@@ -1,15 +1,14 @@
-import {useEffect, useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useEffect} from 'react'
+import {useLocation, useNavigate} from 'react-router-dom'
 import {useFilterStore} from '../store/filter.store'
 import {IProductFilters} from '../types/product.interface'
 
 export function useFilters() {
-	const [searchParams, setSearchParams] = useState<URLSearchParams>(
-		new URLSearchParams(window.location.search),
-	)
+	const location = useLocation()
 	const navigate = useNavigate()
-
 	const {queryParams, isFilterUpdated, updateQueryParam} = useFilterStore()
+
+	const searchParams = new URLSearchParams(location.search)
 
 	useEffect(() => {
 		searchParams.forEach((value, key) => {
@@ -29,10 +28,7 @@ export function useFilters() {
 			newParams.delete(key)
 		}
 
-		const newUrl = `${window.location.pathname}?${newParams.toString()}`
-		navigate(newUrl, {replace: true})
-
-		setSearchParams(newParams)
+		navigate(`${location.pathname}?${newParams.toString()}`, {replace: true})
 		updateQueryParam({key, value})
 	}
 

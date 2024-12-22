@@ -8,8 +8,8 @@ export interface IProductFilters {
 	gender?: EnumGender
 	minPrice?: number
 	maxPrice?: number
-	colors?: string[]
-	sizes?: string[]
+	colors?: string[] | string
+	sizes?: string[] | string
 	sort?: EnumProductSort
 }
 
