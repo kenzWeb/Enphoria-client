@@ -1,4 +1,4 @@
-import {ProductCard} from '@/features/card/ui/ProductCard/ProductCard'
+import {ProductCard} from '@/features/card'
 import {ICatalog} from '../../models/catalog.interface'
 import styles from './styles.module.scss'
 

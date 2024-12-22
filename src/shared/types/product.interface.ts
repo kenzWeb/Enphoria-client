@@ -1,8 +1,10 @@
 export interface IProductFilters {
 	categoryId?: string
-	categoryName?: string
+	category?: string
 	styleId?: string
-	styleName?: string
+	page?: number | string
+	perPage?: number | string
+	style?: string
 	gender?: EnumGender
 	minPrice?: number
 	maxPrice?: number
@@ -54,7 +56,7 @@ export interface IProductInput
 	sizes?: {id: string}[]
 }
 
-enum EnumGender {
+export enum EnumGender {
 	MALE,
 	FEMALE,
 }

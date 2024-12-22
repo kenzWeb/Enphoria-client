@@ -1,18 +1,22 @@
 import {productService} from '@/shared/services/products.service'
+import {IProductFilters} from '@/shared/types/product.interface'
 import {useQuery} from '@tanstack/react-query'
 import {useMemo} from 'react'
 
-export const useGetAllProducts = () => {
-	const {data: products, isLoading} = useQuery({
-		queryKey: ['get all products'],
-		queryFn: () => productService.getAll(),
+export const useGetAllProducts = (filters: IProductFilters) => {
+	const queryData = useQuery({
+		queryKey: ['products', filters],
+		queryFn: () => productService.getByFilters(filters),
+		enabled: !!filters,
+		select: (data) => data,
 	})
 
 	return useMemo(
 		() => ({
-			products,
-			isLoading,
+			products: queryData.data || [],
+			isLoading: queryData.isLoading,
+			refetch: queryData.refetch,
 		}),
-		[products, isLoading],
+		[queryData.data, queryData.isLoading, queryData.refetch],
 	)
 }

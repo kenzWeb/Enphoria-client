@@ -39,7 +39,7 @@ export const HeaderNav = ({isOpen}: Props) => {
 					<CustomLink to='/'>
 						<h2 className={styles.link}>Shop</h2>
 					</CustomLink>
-					<CustomLink to='/auth'>
+					<CustomLink to='/shop/?gender=male'>
 						<h2 className={styles.link}>Men</h2>
 					</CustomLink>
 					<CustomLink to='/auth'>

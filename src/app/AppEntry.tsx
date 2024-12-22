@@ -1,4 +1,4 @@
-import {AppProvider} from '@/providers'
+import {AppProvider} from '@/app/providers'
 import ReactDOM from 'react-dom/client'
 import './styles/base.scss'
 
