@@ -1,5 +1,5 @@
 .wrapper {
-	@apply grid grid-cols-4 pt-[4rem] gap-2;
+	@apply grid grid-cols-4 py-[4rem] gap-2;
 
 	.item {
 		@apply flex flex-col items-center cursor-pointer select-none;

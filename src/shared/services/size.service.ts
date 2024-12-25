@@ -1,10 +1,10 @@
-import {IColor, IColorInput} from '@/shared/types/color.interface'
+import {ISize, ISizeInput} from '@/shared/types/size.interface'
 import {axiosClassic, axiosWithAuth} from '../api/api.interceptors'
 import {API_URL} from '../config/api.config'
 
-class ColorService {
+class SizeService {
 	async getAll() {
-		const {data: allSizes} = await axiosClassic<IColor>({
+		const {data: allSizes} = await axiosClassic<ISize>({
 			url: API_URL.sizes(),
 			method: 'GET',
 		})
@@ -13,7 +13,7 @@ class ColorService {
 	}
 
 	async getById(id: string) {
-		const {data} = await axiosWithAuth<IColor>({
+		const {data} = await axiosWithAuth<ISize>({
 			url: API_URL.sizes(`/by-id/${id}`),
 			method: 'GET',
 		})
@@ -21,34 +21,34 @@ class ColorService {
 		return data
 	}
 
-	async create(data: IColorInput) {
-		const {data: createdColor} = await axiosWithAuth<IColor>({
+	async create(data: ISizeInput) {
+		const {data: createdSize} = await axiosWithAuth<ISize>({
 			url: API_URL.sizes(),
 			method: 'POST',
 			data,
 		})
 
-		return createdColor
+		return createdSize
 	}
 
-	async update(id: string, data: IColorInput) {
-		const {data: updatedColor} = await axiosWithAuth<IColor>({
+	async update(id: string, data: ISizeInput) {
+		const {data: updatedSize} = await axiosWithAuth<ISize>({
 			url: API_URL.sizes(`/${id}`),
 			method: 'PUT',
 			data,
 		})
 
-		return updatedColor
+		return updatedSize
 	}
 
 	async delete(id: string) {
-		const {data: deletedColor} = await axiosWithAuth<IColor>({
+		const {data: deletedSize} = await axiosWithAuth<ISize>({
 			url: API_URL.sizes(`/${id}`),
 			method: 'DELETE',
 		})
 
-		return deletedColor
+		return deletedSize
 	}
 }
 
-export const colorService = new ColorService()
+export const sizeService = new SizeService()

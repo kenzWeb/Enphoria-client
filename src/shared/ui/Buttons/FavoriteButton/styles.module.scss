@@ -8,6 +8,7 @@
 	justify-content: center;
 	transition: transform 0.2s ease;
 	color: #666;
+	z-index: 50;
 
 	&:hover {
 		transform: scale(1.1);

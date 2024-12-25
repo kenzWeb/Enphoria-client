@@ -3,20 +3,19 @@ import {IProductFilters} from '@/shared/types/product.interface'
 import {useQuery} from '@tanstack/react-query'
 import {useMemo} from 'react'
 
-export const useGetAllProducts = (filters: IProductFilters) => {
+export const useGetAllProducts = (filters?: IProductFilters) => {
 	const queryData = useQuery({
 		queryKey: ['products', filters],
-		queryFn: () => productService.getByFilters(filters),
-		enabled: !!filters,
-		select: (data) => data,
+		queryFn: () => productService.getAll(filters || { perPage: 9 }),
+		enabled: true,
+		staleTime: 5 * 60 * 1000,
 	})
 
 	return useMemo(
 		() => ({
-			products: queryData.data || [],
+			products: queryData.data?.data || [],
 			isLoading: queryData.isLoading,
-			refetch: queryData.refetch,
 		}),
-		[queryData.data, queryData.isLoading, queryData.refetch],
+		[queryData.data, queryData.isLoading],
 	)
 }

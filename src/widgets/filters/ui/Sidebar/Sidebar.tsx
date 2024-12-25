@@ -1,4 +1,10 @@
-import {CategoryGroup, ColorsGroup, PriceGroup} from '@/entitles/filters'
+import {
+	CategoryGroup,
+	ColorsGroup,
+	PriceGroup,
+	SizesGroup,
+	StylesGroup,
+} from '@/entitles/filters'
 import styles from './Sidebar.module.scss'
 
 export const Sidebar = () => {
@@ -7,6 +13,8 @@ export const Sidebar = () => {
 			<CategoryGroup />
 			<PriceGroup />
 			<ColorsGroup />
+			<SizesGroup />
+			<StylesGroup />
 		</aside>
 	)
 }

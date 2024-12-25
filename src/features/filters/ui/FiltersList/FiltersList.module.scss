@@ -1,5 +1,5 @@
 .wrapper {
-	@apply flex flex-col items-start gap-[12px] my-[4rem];
+	@apply flex flex-col items-start gap-[12px] mb-[4rem];
 
 	.checkbox {
 		@apply w-8 h-8 data-[state=checked]:bg-[#8A33FD] border-solid border-[#8A33FD] rounded-[6px];

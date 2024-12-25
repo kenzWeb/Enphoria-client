@@ -24,10 +24,7 @@ export const useFilterStore = create<IFilters>((set) => ({
 	isFilterUpdated: false,
 	updateQueryParam: ({key, value}) =>
 		set((state) => ({
-			queryParams: {
-				...state.queryParams,
-				[key]: value,
-			},
+			queryParams: {...state.queryParams, [key]: value},
 			isFilterUpdated: true,
 		})),
 

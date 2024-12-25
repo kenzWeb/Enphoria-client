@@ -6,7 +6,9 @@ import {useGetAllArrival} from '@/shared/hooks/queries/arrival/useGetArrival'
 import {Skeleton} from '@mui/material'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import {Navigation} from 'swiper/modules'
+import 'swiper/css/effect-fade'
+import 'swiper/css/autoplay'
+import {Navigation, Autoplay, EffectFade} from 'swiper/modules'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import styles from './styles.module.scss'
 
@@ -35,16 +37,25 @@ export const ArrivalSlider = () => {
 			<Swiper
 				slidesPerView={4}
 				spaceBetween={40}
+				speed={800}
 				breakpoints={breakpoints}
 				navigation={{
 					nextEl: '.arrow-next',
 					prevEl: '.arrow-prev',
 				}}
-				modules={[Navigation]}
+				autoplay={{
+					delay: 3000,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true
+				}}
+				modules={[Navigation, Autoplay, EffectFade]}
 				className={`mySwiper ${styles.slider}`}
 			>
 				{arrival?.map((item) => (
-					<SwiperSlide key={item.id}>
+					<SwiperSlide 
+						key={item.id}
+						className={styles.slide}
+					>
 						<ArrivalSlide title={item.title} img={`${SERVER_URL}${item.img}`} />
 					</SwiperSlide>
 				))}

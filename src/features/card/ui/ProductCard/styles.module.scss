@@ -4,8 +4,12 @@
 	.top {
 		@apply mb-5 relative;
 
-		> img {
-			@apply h-[37rem] sm:h-[32rem] sm:w-[22rem] md:w-[25rem] lg:w-[27rem] lg:h-[39rem] rounded-2xl;
+		> .img_base {
+			@apply sm:w-[22rem] md:w-[25rem] lg:w-[27rem] rounded-2xl xl:h-[39rem];
+		}
+
+		> .img_shop {
+			@apply sm:w-[22rem] md:w-[25rem] lg:w-[27rem] h-[300px] rounded-2xl lg:h-[35rem] xl:h-[37rem];
 		}
 
 		> .favorite {

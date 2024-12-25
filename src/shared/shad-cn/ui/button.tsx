@@ -5,7 +5,7 @@ import * as React from 'react'
 import {cn} from '@/shared/lib/utils'
 
 const buttonVariants = cva(
-	'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+	'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
 	{
 		variants: {
 			variant: {
@@ -20,6 +20,10 @@ const buttonVariants = cva(
 				sign: 'bg-[#8A33FD] !py-[16px] text-primary-foreground hover:bg-primary/90 !rounded-[8px]',
 				favorite:
 					'border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full',
+				pagination:
+					'bg-[#807D7E] text-white text-[22px] text-center w-[40px] h-[40px] hover:bg-[#807D7E] rounded-[12px] hover:bg-[#3d008e]',
+				paginationSelect:
+					'bg-[#3d008e] text-white text-[22px] text-center w-[40px] h-[40px]',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',

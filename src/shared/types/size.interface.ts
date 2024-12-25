@@ -1,11 +1,9 @@
-import { IProduct } from './product.interface'
+import {IProduct} from './product.interface'
 
 export interface ISize {
 	id: number
 	name: string
 	value: string
-	createdAt: Date
-	updatedAt: Date
 	products: IProduct[]
 }
 

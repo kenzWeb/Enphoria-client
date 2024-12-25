@@ -11,6 +11,7 @@ export interface IProductFilters {
 	colors?: string[] | string
 	sizes?: string[] | string
 	sort?: EnumProductSort
+	searchTerm?: string
 }
 
 export interface IProduct {
@@ -54,6 +55,11 @@ export interface IProductInput
 	styleId: string
 	colors?: {id: string}[]
 	sizes?: {id: string}[]
+}
+
+export interface IPaginationResponse<T> {
+  products: T[]
+  length: number
 }
 
 export enum EnumGender {

@@ -18,7 +18,7 @@ class AuthService {
 
 	async getNewTokens() {
 		const response = await axiosClassic<IAuthResponse>({
-			url: API_URL.auth('login/acces-token'),
+			url: API_URL.auth('login/access-token'),
 			method: 'POST',
 		})
 
