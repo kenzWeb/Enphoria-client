@@ -19,10 +19,9 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 	const ref = useRef(null)
 	const isInView = useInView(ref, {once: true})
 
-	function navigate() {
-		window.location.href = category
-			? `/shop/?category=${product.category?.name}`
-			: `/shop/${product.id}`
+	const handleFavoriteClick = (e: React.MouseEvent) => {
+		e.stopPropagation()
+		e.preventDefault()
 	}
 
 	return (
@@ -32,7 +31,6 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 					? `/shop/?category=${product.category?.name}`
 					: `/shop/${product.id}`
 			}
-			onClick={navigate}
 		>
 			<motion.div
 				ref={ref}
@@ -51,7 +49,7 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 			>
 				<div className={styles.top}>
 					{!category && (
-						<div className={styles.favorite} style={{zIndex: 10}}>
+						<div className={styles.favorite} style={{zIndex: 10}} onClick={handleFavoriteClick}>
 							<FavoriteButton product={product} />
 						</div>
 					)}

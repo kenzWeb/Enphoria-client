@@ -5,4 +5,5 @@ export interface ICatalog {
 	size?: number
 	category?: boolean
 	variant?: 'shop' | 'home'
+	isLoading?: boolean
 }

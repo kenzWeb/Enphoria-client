@@ -1,4 +1,4 @@
-import {FavoriteWarning} from './FavoriteWarning/FavoriteWarning'
+import {CartWarning} from './FavoriteWarning/FavoriteWarning'
 import {Title} from './Title/Title'
 
-export {FavoriteWarning, Title}
+export {CartWarning, Title}

@@ -1,8 +1,8 @@
 import {productService} from '@/shared/services/products.service'
 import {useFilterStore} from '@/shared/store/filter.store'
 import {IPaginationProducts} from '@/shared/types/filter.interface'
-import {Sidebar} from '@/widgets/filters'
 import {Shop} from '@/widgets/shop'
+import {Sidebar} from '@/widgets/sidebar'
 import {useEffect, useState} from 'react'
 import {useSearchParams} from 'react-router-dom'
 

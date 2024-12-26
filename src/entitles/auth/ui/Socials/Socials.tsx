@@ -5,7 +5,7 @@ import {
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from '@/shared/shad-cn/ui/tooltip'
+} from '@/shared/shad-cn/ui/Tooltip'
 import styles from './styles.module.scss'
 
 export const Socials = () => {
@@ -23,7 +23,7 @@ export const Socials = () => {
 					>
 						<img
 							className={styles.img}
-							src='img/icons/socials/google.svg'
+							src='/img/icons/socials/google.svg'
 							alt='google'
 						/>
 						<h2>Continue With Google</h2>
@@ -42,7 +42,7 @@ export const Socials = () => {
 					>
 						<img
 							className={styles.img}
-							src='img/icons/socials/yandex.svg'
+							src='/img/icons/socials/yandex.svg'
 							alt='yandex'
 						/>
 						<h2>Continue With Yandex</h2>

@@ -14,7 +14,7 @@ interface IProductExplorer {
 export const Shop = ({initialProducts}: IProductExplorer) => {
 	const {queryParams, isFilterUpdated, updateQueryParams} = useFilters()
 
-	const {data, isLoading, isPending} = useQuery({
+	const {data, isLoading, isPending, isRefetching, isFetching} = useQuery({
 		queryKey: [
 			'products',
 			{...queryParams, perPage: 6, page: queryParams.page || 2},
@@ -40,7 +40,12 @@ export const Shop = ({initialProducts}: IProductExplorer) => {
 	return (
 		<div className='flex flex-col w-full pt-[5rem] pb-[10rem]'>
 			<ShopHeader />
-			<Catalog products={data.data} category={false} variant='shop' />
+			<Catalog
+				products={data.data}
+				category={false}
+				isLoading={isPending || isFetching || isRefetching || isLoading}
+				variant='shop'
+			/>
 			<Pagination
 				product={data.data}
 				changePage={(page) => updateQueryParams('page', page.toString())}

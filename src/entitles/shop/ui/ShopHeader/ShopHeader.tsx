@@ -1,3 +1,4 @@
+import {Sort} from '@/entitles/sort'
 import {useFilters} from '@/shared/hooks/useFilters'
 
 export const ShopHeader = () => {
@@ -11,8 +12,7 @@ export const ShopHeader = () => {
 			</h2>
 
 			<div>
-				<button>Filters</button>
-				<button>Sort</button>
+				<Sort />
 			</div>
 		</div>
 	)

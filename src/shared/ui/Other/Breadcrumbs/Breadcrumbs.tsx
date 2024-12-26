@@ -6,7 +6,7 @@ export const Breadcrumbs = () => {
 	const pathnames = location.pathname.split('/').filter((x) => x)
 
 	return (
-		<nav aria-label='breadcrumb'>
+		<nav aria-label='breadcrumb' className='mb-[20px]'>
 			<ol className={styles.breadcrumb}>
 				<li className={styles.breadcrumbItem}>
 					<Link to='/'>Home</Link>

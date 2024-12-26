@@ -1,4 +1,6 @@
 import {ProductCard} from '@/features/card'
+
+import {Loader} from '@/shared/ui/Other'
 import {ICatalog} from '../../models/catalog.interface'
 import styles from './styles.module.scss'
 
@@ -7,7 +9,13 @@ export const Catalog = ({
 	size,
 	category = true,
 	variant = 'home',
+	isLoading,
 }: ICatalog) => {
+	
+	if (isLoading) {
+		return <Loader />
+	}
+
 	return (
 		<section className={styles.catalog}>
 			<div

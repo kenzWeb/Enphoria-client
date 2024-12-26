@@ -1,0 +1,29 @@
+.wrapper {
+	@apply bg-white p-4 rounded-lg text-[18px];
+
+	:global {
+		.select-trigger {
+			@apply bg-[#F6F6F6] text-[#3C4242] border border-[#BEBCBD] transition-colors duration-200 text-base py-3 px-4;
+
+			&:hover {
+				@apply bg-[#EDEEF2];
+			}
+		}
+
+		.select-content {
+			@apply bg-white border-[#807D7E] rounded-md shadow-md min-w-[220px];
+		}
+
+		.select-item {
+			@apply text-[#3C4242] cursor-pointer px-4 py-3 text-base;
+
+			&[data-highlighted] {
+				@apply bg-[#8A33FD] text-white;
+			}
+
+			&:hover {
+				@apply bg-[#F6F6F6];
+			}
+		}
+	}
+}

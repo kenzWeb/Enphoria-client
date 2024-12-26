@@ -4,6 +4,7 @@ import {Button} from '@/shared/shad-cn/ui/Button'
 import {IProduct} from '@/shared/types/product.interface'
 import {AnimatePresence, motion} from 'framer-motion'
 import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai'
+import {useNavigate} from 'react-router-dom'
 import styles from './styles.module.scss'
 
 interface FavoriteButtonProps {
@@ -12,18 +13,25 @@ interface FavoriteButtonProps {
 
 export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 	const {user} = useProfile()
+	const navigate = useNavigate()
 	const {mutate, isPending} = useFavorite(product)
 
-	if (!user) return null
+	const handleFavoriteClick = () => {
+		if (!user) navigate('/auth/')
 
-	const isExists = user.favorites.some((favorite) => favorite.id === product.id)
+		mutate()
+	}
+
+
+
+	const isExists = user?.favorites.some((favorite) => favorite.id === product.id)
 
 	return (
 		<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
 			<Button
 				variant='favorite'
 				size='favorite'
-				onClick={() => mutate()}
+				onClick={handleFavoriteClick}
 				className={styles.favoriteButton}
 				disabled={isPending}
 			>

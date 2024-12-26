@@ -1,10 +1,11 @@
+import {LoaderCircle} from 'lucide-react'
 import React from 'react'
-import BeatLoader from 'react-spinners/BeatLoader'
+import styles from './Loader.module.scss'
 
 const Loader: React.FC = () => {
 	return (
-		<div className='flex items-center justify-center h-screen bg-gray-100'>
-			<BeatLoader color='#d24ece' size={15} margin={2} />
+		<div className={styles.wrapper}>
+			<LoaderCircle color='#d24ece' size={15} />
 		</div>
 	)
 }

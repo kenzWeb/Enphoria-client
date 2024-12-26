@@ -1,6 +1,7 @@
+import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
 
-export const FavoriteWarning = () => {
+export const CartWarning = () => {
 	return (
 		<>
 			<h2 className={styles.title}>
@@ -8,7 +9,7 @@ export const FavoriteWarning = () => {
 				purchase!
 			</h2>
 			<h3 className={styles.login}>
-				Already registered? <span>Please login here</span>
+				Already registered? <Link to={'/auth'}>Please login here</Link>
 			</h3>
 		</>
 	)

@@ -6,7 +6,7 @@ import {useMemo} from 'react'
 export const useGetAllProducts = (filters?: IProductFilters) => {
 	const queryData = useQuery({
 		queryKey: ['products', filters],
-		queryFn: () => productService.getAll(filters || { perPage: 9 }),
+		queryFn: () => productService.getAll(filters || {perPage: 9}),
 		enabled: true,
 		staleTime: 5 * 60 * 1000,
 	})
@@ -15,7 +15,16 @@ export const useGetAllProducts = (filters?: IProductFilters) => {
 		() => ({
 			products: queryData.data?.data || [],
 			isLoading: queryData.isLoading,
+			isFetching: queryData.isFetching,
+			isRefetching: queryData.isRefetching,
+			isPending: queryData.isPending,
 		}),
-		[queryData.data, queryData.isLoading],
+		[
+			queryData.data,
+			queryData.isLoading,
+			queryData.isFetching,
+			queryData.isRefetching,
+			queryData.isPending,
+		],
 	)
 }
