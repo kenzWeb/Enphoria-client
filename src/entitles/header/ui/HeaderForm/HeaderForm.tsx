@@ -7,9 +7,9 @@ import {
 	CommandList,
 } from '@/shared/shad-cn/ui/Command'
 import {IProduct} from '@/shared/types/product.interface'
-import {Loader} from '@/shared/ui/Other'
 import {DialogTitle} from '@radix-ui/react-dialog'
 import {AnimatePresence, motion} from 'framer-motion'
+import {LoaderCircle} from 'lucide-react'
 import {useEffect, useState} from 'react'
 import {IoSearchOutline} from 'react-icons/io5'
 import styles from './styles.module.scss'
@@ -64,7 +64,7 @@ export const HeaderForm = () => {
 				<CommandList className='p-2'>
 					<AnimatePresence>
 						{isLoading || isFetching || isRefetching || isPending ? (
-							<Loader />
+							<LoaderCircle color='#d24ece' size={25}  className='animate-spin absolute top-1/2 right-1/2'/>
 						) : (
 							<motion.div
 								initial={{opacity: 0}}

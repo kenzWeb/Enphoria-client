@@ -10,6 +10,8 @@ export function useProfile() {
 	} = useQuery({
 		queryKey: ['profile'],
 		queryFn: () => userService.getProfile(),
+		staleTime: 10 * 60 * 1000,
+		enabled: true,
 	})
 
 	return {user, isLoading, isFetching, isPending}

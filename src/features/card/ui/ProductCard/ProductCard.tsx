@@ -49,7 +49,11 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 			>
 				<div className={styles.top}>
 					{!category && (
-						<div className={styles.favorite} style={{zIndex: 10}} onClick={handleFavoriteClick}>
+						<div
+							className={styles.favorite}
+							style={{zIndex: 10}}
+							onClick={handleFavoriteClick}
+						>
 							<FavoriteButton product={product} />
 						</div>
 					)}

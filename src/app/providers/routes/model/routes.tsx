@@ -1,6 +1,6 @@
 import {MainLayout} from '@/app/providers/layouts'
 import {AuthRoute} from '@/app/providers/routes'
-import {AuthPage, FavoritesPage, HomePage, ShopPage} from '@/pages'
+import {AuthPage, FavoritesPage, HomePage, ProductPage, ShopPage} from '@/pages'
 
 import {createBrowserRouter} from 'react-router-dom'
 
@@ -20,6 +20,10 @@ export const router = createBrowserRouter([
 			{
 				path: '/shop',
 				element: <ShopPage />,
+			},
+			{
+				path: '/shop/:id',
+				element: <ProductPage />,
 			},
 		],
 	},

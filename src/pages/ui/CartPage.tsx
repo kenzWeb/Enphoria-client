@@ -1,15 +1,14 @@
-import {useProfile} from '@/shared/hooks/api/useProfile'
+import {getAccessToken} from '@/shared/services/auth/auth-token.service'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {CartWarning} from '@/shared/ui/Text'
 import {ShoppingCart} from '@/widgets/shoppingCart'
 
 export const FavoritesPage = () => {
-	const {user} = useProfile()
 	return (
 		<>
 			<div className='container'>
 				<Breadcrumbs />
-				{user ? null : <CartWarning />}
+				{getAccessToken() ? null : <CartWarning />}
 			</div>
 			<ShoppingCart />
 		</>

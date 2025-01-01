@@ -2,10 +2,19 @@
 	@apply flex w-full justify-center;
 
 	> .products_base {
-		@apply grid sm:grid-cols-2 gap-[5rem] md:grid-cols-3 lg:grid-cols-4;
+		@apply grid sm:grid-cols-2 gap-[5rem] md:grid-cols-3 lg:grid-cols-4 w-full max-w-[1200px] p-4;
 	}
 
 	> .products_shop {
-		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3;
+		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3 w-full max-w-[1200px] p-4;
 	}
+}
+
+.skeleton_wrapper {
+	@apply w-full;
+	background: white;
+}
+
+.title {
+	@apply absolute top-[50%] left-[45%] font-semibold text-[50px];
 }

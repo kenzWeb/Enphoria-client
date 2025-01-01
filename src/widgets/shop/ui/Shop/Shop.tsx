@@ -27,6 +27,7 @@ export const Shop = ({initialProducts}: IProductExplorer) => {
 			}),
 		enabled: isFilterUpdated,
 		initialData: initialProducts,
+		gcTime: 10 * 60 * 1000,
 	})
 
 	if (isLoading || isPending) {
