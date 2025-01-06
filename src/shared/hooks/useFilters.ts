@@ -3,7 +3,7 @@ import {useLocation, useNavigate} from 'react-router-dom'
 import {useFilterStore} from '../store/filter.store'
 import {IProductFilters} from '../types/product.interface'
 
-export function useFilters() {
+export const useFilters = () => {
 	const location = useLocation()
 	const navigate = useNavigate()
 	const {queryParams, isFilterUpdated, updateQueryParam} = useFilterStore()

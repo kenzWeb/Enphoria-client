@@ -1,3 +1,3 @@
-import {Brands} from './ui/Brands/Brands'
+import { Brands } from './ui/Brands/Brands'
 
-export {Brands}
+export { Brands }

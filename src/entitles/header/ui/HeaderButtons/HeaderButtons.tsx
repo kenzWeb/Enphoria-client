@@ -1,9 +1,10 @@
 import {HeaderBurger} from '@/features/header'
 import {CustomButtonLink} from '@/shared/ui/Buttons'
 import {IoMdHeartEmpty} from 'react-icons/io'
-import {LuShoppingCart, LuUser2} from 'react-icons/lu'
+import {LuShoppingCart} from 'react-icons/lu'
 import {HeaderForm} from '../HeaderForm/HeaderForm'
 import styles from './styles.module.scss'
+import { LucideUser2 } from 'lucide-react'
 
 type Props = {
 	isOpen: boolean
@@ -22,7 +23,7 @@ export const HeaderButtons = ({isOpen, setIsOpen}: Props) => {
 					<IoMdHeartEmpty size={20} />
 				</CustomButtonLink>
 				<CustomButtonLink to='/like'>
-					<LuUser2 size={20} />
+					<LucideUser2 size={20} />
 				</CustomButtonLink>
 				<CustomButtonLink to='/like'>
 					<LuShoppingCart size={20} />

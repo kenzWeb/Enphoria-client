@@ -32,5 +32,3 @@ export const HomeGallerySlider = () => {
 		</Swiper>
 	)
 }
-
-export default HomeGallerySlider

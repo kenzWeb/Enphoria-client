@@ -1,3 +1,3 @@
-import {ProductInfo} from './ui/ProductInfo/ProductInfo'
+import {ProductSlideWrapper} from './ui/ProductSlideWrapper/ProductSlideWrapper'
 
-export {ProductInfo}
+export {ProductSlideWrapper}
