@@ -1,4 +1,4 @@
-import {ProductSizes} from './ui/ProductSizes/ProductSizes'
+import {ProductToggle} from './ui/ProductToggle/ProductToggle'
 import {ProductSlider} from './ui/ProductSlider/ProductSlider'
 
-export {ProductSizes, ProductSlider}
+export {ProductToggle, ProductSlider}

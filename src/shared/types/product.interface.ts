@@ -58,8 +58,8 @@ export interface IProductInput
 }
 
 export interface IPaginationResponse<T> {
-  products: T[]
-  length: number
+	products: T[]
+	length: number
 }
 
 export enum EnumGender {

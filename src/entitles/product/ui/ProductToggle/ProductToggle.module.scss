@@ -1,0 +1,15 @@
+.container {
+	@apply flex flex-col items-start;
+
+	> .header {
+		@apply flex items-center justify-between w-full;
+
+		> h2 {
+			@apply text-[1.8rem] font-semibold;
+		}
+	}
+
+	.group {
+		@apply flex gap-[2rem] mt-[2.5rem];
+	}
+}
