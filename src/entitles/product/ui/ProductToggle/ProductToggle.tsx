@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import {ToggleGroup, ToggleGroupItem} from '@/shared/shad-cn/ui/ToggleGroup'
 import {Link} from 'react-router-dom'
 import {IProductToggleProps} from '../../model/types'
@@ -26,8 +27,15 @@ export const ProductToggle = ({
 						variant={variant}
 						key={item.id}
 						value={item.name || ''}
+						className={variant === 'color' ? styles.colorItem : ''}
 						style={
-							variant === 'color' ? {backgroundColor: item.value, outlineColor: item.value} : undefined
+							variant === 'color'
+								? {
+										backgroundColor: item.value,
+										outlineColor: item.value,
+										color: item.value,
+								  }
+								: undefined
 						}
 					>
 						{variant === 'size' ? item.name : null}
