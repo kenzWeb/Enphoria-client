@@ -9,4 +9,10 @@ export interface IProductToggleProps {
 	items?: IToggleItem[]
 	isLink: boolean
 	variant: 'size' | 'color'
+	onSelect?: (value: string) => void
+}
+
+export interface IProductActions {
+	price: number | undefined
+	onAddToCart?: () => void
 }

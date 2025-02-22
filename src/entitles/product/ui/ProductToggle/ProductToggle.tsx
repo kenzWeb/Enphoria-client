@@ -9,6 +9,7 @@ export const ProductToggle = ({
 	items = [],
 	isLink = false,
 	variant = 'size',
+	onSelect, // новый проп для обработки выбора
 }: IProductToggleProps) => {
 	return (
 		<div className={styles.container}>
@@ -37,6 +38,7 @@ export const ProductToggle = ({
 								  }
 								: undefined
 						}
+						onClick={() => onSelect && onSelect(item.name || '')}
 					>
 						{variant === 'size' ? item.name : null}
 					</ToggleGroupItem>

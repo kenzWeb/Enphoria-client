@@ -1,8 +1,18 @@
-import { IProduct } from './product.interface'
-
 export interface ICartItem {
-	id: number
-	product: IProduct
-	quantity: number
+	id: string
+	name: string
+	size: string
+	color: string
 	price: number
+	img: string
+	quantity: number
+	variantKey?: string
+}
+
+export interface CartStore {
+	cart: ICartItem[]
+	addToCart: (product: ICartItem) => void
+	removeFromCart: (id: string) => void
+	plus: (id: string) => void
+	minus: (id: string) => void
 }

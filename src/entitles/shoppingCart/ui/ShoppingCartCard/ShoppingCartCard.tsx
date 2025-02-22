@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import {SERVER_URL} from '@/shared/config/private.config'
-import {useFavorite} from '@/shared/hooks/api/useFavorite'
-import {IProduct} from '@/shared/types/product.interface'
+import {useCartStore} from '@/shared/store/cart.store'
+import {ICartItem} from '@/shared/types/cart.interface'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useState} from 'react'
 import {BiMinus} from 'react-icons/bi'
@@ -10,18 +10,17 @@ import {HiOutlineTrash} from 'react-icons/hi2'
 import styles from './styles.module.scss'
 
 type Props = {
-	data: IProduct
+	data: ICartItem
 }
 
 export const ShoppingCartCard = ({data}: Props) => {
 	const [isDeleting, setIsDeleting] = useState(false)
-	const {mutate, isPending} = useFavorite(data)
+	const {removeFromCart, minus, plus} = useCartStore()
 
 	const handleDelete = async () => {
 		setIsDeleting(true)
-		setTimeout(() => {
-			mutate()
-		}, 500)
+		removeFromCart(data.variantKey || data.id)
+		setTimeout(() => {}, 500)
 	}
 
 	return (
@@ -48,7 +47,7 @@ export const ShoppingCartCard = ({data}: Props) => {
 					<div className={styles.base} key={data.id}>
 						<motion.img
 							className={styles.img}
-							src={`${SERVER_URL}${data.images[0]}`}
+							src={`${SERVER_URL}${data.img}`}
 							alt={data.name}
 							animate={{
 								scale: isDeleting ? 0.8 : 1,
@@ -61,21 +60,17 @@ export const ShoppingCartCard = ({data}: Props) => {
 								<div className={styles.colors}>
 									<span className={styles.label}>Colors:</span>
 									<div className={styles.colorList}>
-										{data.productColors?.map((productColor, index) => (
-											<span key={index} className={styles.colorItem}>
-												{productColor.color?.name}
-											</span>
-										))}
+										<span key={data.id} className={styles.colorItem}>
+											{data.color}
+										</span>
 									</div>
 								</div>
 								<div className={styles.sizes}>
-									<span className={styles.label}>Sizes:</span>
+									<span className={styles.label}>Size:</span>
 									<div className={styles.sizeList}>
-										{data.productSizes?.map((productSize, index) => (
-											<span key={index} className={styles.sizeItem}>
-												{productSize.size?.name}
-											</span>
-										))}
+										<span key={data.id} className={styles.sizeItem}>
+											{data.size}
+										</span>
 									</div>
 								</div>
 							</div>
@@ -90,12 +85,12 @@ export const ShoppingCartCard = ({data}: Props) => {
 						${data.price}.00
 					</motion.h2>
 					<div className={styles.quantity}>
-						<button disabled className={styles.minus}>
-							<BsPlus size={15} />
-						</button>
-						<span className={styles.count}>1</span>
-						<button disabled className={styles.plus}>
+						<button onClick={() => minus(data.variantKey || data.id)} className={styles.minus}>
 							<BiMinus size={15} />
+						</button>
+						<span className={styles.count}>{data.quantity}</span>
+						<button onClick={() => plus(data.variantKey || data.id)} className={styles.plus}>
+							<BsPlus size={15} />
 						</button>
 					</div>
 					<motion.h2
@@ -112,13 +107,13 @@ export const ShoppingCartCard = ({data}: Props) => {
 							opacity: isDeleting ? 0 : 1,
 						}}
 					>
-						{data.price}.00
+						{data.price * data.quantity}.00
 					</motion.h2>
 
 					<motion.button
 						className={styles.delete}
 						onClick={handleDelete}
-						disabled={isPending || isDeleting}
+						disabled={isDeleting}
 						whileHover={{
 							scale: 1.2,
 							rotate: [0, -10, 10, -10, 0],
@@ -150,7 +145,7 @@ export const ShoppingCartCard = ({data}: Props) => {
 						</motion.div>
 					</motion.button>
 
-					{(isPending || isDeleting) && (
+					{isDeleting && (
 						<motion.div
 							initial={{opacity: 0}}
 							animate={{opacity: 0.5}}

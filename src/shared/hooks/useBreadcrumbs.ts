@@ -1,12 +1,4 @@
-interface BreadcrumbItem {
-	name: string
-	href: string
-}
-
-interface UseBreadcrumbsProps {
-	items: BreadcrumbItem[]
-	endPage: string
-}
+import {UseBreadcrumbsProps} from '../types/breadcrumbs.interface'
 
 export const useBreadcrumbs = ({items, endPage}: UseBreadcrumbsProps) => {
 	return {

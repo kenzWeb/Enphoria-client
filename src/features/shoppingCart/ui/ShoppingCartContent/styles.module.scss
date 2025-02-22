@@ -6,6 +6,21 @@
 	color: #3c4242;
 }
 
+.navigate {
+	text-align: center;
+	font-size: 1.6rem;
+	margin-top: 12px;
+	font-family: 'Core Sans';
+	font-weight: 400;
+	color: #8A33FD;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: #3c4242;
+		text-decoration: underline;
+	}
+}
+
 .container {
 	margin-bottom: 6rem;
 }
