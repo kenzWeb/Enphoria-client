@@ -1,4 +1,4 @@
-import { useFilters } from '@/shared/hooks/useFilters'
+// import { useFilters } from '@/shared/hooks/useFilters'
 import { Checkbox } from '@/shared/shad-cn/ui/Checkbox'
 import { Label } from '@/shared/shad-cn/ui/Label'
 import styles from './FiltersList.module.scss'
@@ -14,7 +14,7 @@ interface Props<T extends BaseItem> {
 }
 
 export const FiltersList = <T extends BaseItem>({data}: Props<T>) => {
-	const {queryParams, updateQueryParams} = useFilters()
+	// const {queryParams, updateQueryParams} = useFilters()
 
 	return (
 		<div className={styles.wrapper}>
