@@ -1,6 +1,6 @@
 import {axiosClassic} from '@/shared/api/api.interceptors'
 import {API_URL} from '@/shared/config/api.config'
-import {IAuthForm, IAuthResponse} from '@/shared/types/auth.interface'
+import {IAuthForm, IAuthResponse, ICheckAuth} from '@/shared/types/auth.interface'
 import {removeFromStorage, saveTokenStorage} from './auth-token.service'
 
 class AuthService {
@@ -39,7 +39,7 @@ class AuthService {
 
 	async checkRefreshToken() {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const response = await axiosClassic<any>({
+		const response = await axiosClassic<ICheckAuth>({
 			url: API_URL.auth('check'),
 			method: 'GET',
 		})

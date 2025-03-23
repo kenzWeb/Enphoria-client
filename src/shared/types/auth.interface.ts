@@ -10,3 +10,7 @@ export interface IAuthResponse {
 	user: IUser
 	accessToken: string
 }
+
+export interface ICheckAuth {
+	authenticated: boolean
+}

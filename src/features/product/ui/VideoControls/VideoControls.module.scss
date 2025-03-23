@@ -1,0 +1,135 @@
+.controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 16px;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.8) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.topControls,
+.bottomControls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.topControls {
+	margin-bottom: 8px;
+}
+
+.playButton,
+.muteButton,
+.fullscreenButton {
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+
+	svg {
+		font-size: 22px;
+	}
+}
+
+.timeDisplay {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.progressContainer {
+	width: 100%;
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 2px;
+	cursor: pointer;
+	position: relative;
+}
+
+.progressBar {
+	height: 100%;
+	background-color: #ff6f61;
+	border-radius: 2px;
+	position: relative;
+	transition: width 0.1s linear;
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: -5px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 10px;
+		height: 10px;
+		background-color: #fff;
+		border-radius: 50%;
+		display: none;
+	}
+}
+
+.progressContainer:hover .progressBar::after {
+	display: block;
+}
+
+/* Адаптивность для небольших экранов */
+@media (max-width: 768px) {
+	.controls {
+		padding: 10px;
+	}
+
+	.timeDisplay {
+		font-size: 12px;
+	}
+
+	.playButton,
+	.muteButton,
+	.fullscreenButton {
+		width: 30px;
+		height: 30px;
+
+		svg {
+			font-size: 18px;
+		}
+	}
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+	.bottomControls {
+		justify-content: flex-end;
+	}
+
+	.playButton {
+		width: 40px;
+		height: 40px;
+
+		svg {
+			font-size: 24px;
+		}
+	}
+}

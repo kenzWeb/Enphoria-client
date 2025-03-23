@@ -1,0 +1,17 @@
+.features {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.feature {
+	@apply flex items-center xl:gap-[2rem] lg:gap-[1.5rem] md:gap-[1rem] gap-[0.5rem];
+
+	& img {
+		@apply xl:w-[4.4rem] lg:w-[3rem] md:w-[2rem] w-[1.5rem];
+	}
+
+	& > span {
+		@apply xl:text-[1.8rem] lg:text-[1.6rem] md:text-[1.4rem]  text-[#3C4242];
+	}
+}

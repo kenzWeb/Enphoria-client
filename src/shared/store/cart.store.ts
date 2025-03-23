@@ -1,17 +1,8 @@
-import { create } from 'zustand'
-import { createJSONStorage, persist } from 'zustand/middleware'
-import { CartStore, ICartItem } from '../types/cart.interface'
+import {create} from 'zustand'
+import {createJSONStorage, persist} from 'zustand/middleware'
+import {CartStore, ICartItem} from '../types/cart.interface'
 
 const initialCartState = {
-	items: {
-		id: '',
-		name: '',
-		size: '',
-		color: '',
-		price: 0,
-		img: '',
-		quantity: 0,
-	},
 	cart: [],
 }
 
@@ -20,49 +11,46 @@ export const useCartStore = create<CartStore>()(
 		(set, get) => ({
 			...initialCartState,
 			addToCart: (product: ICartItem) => {
-				const variantKey = `${product.id}-${product.size}-${product.color}`
-				const existing = get().cart.find(
-					(item) => `${item.id}-${item.size}-${item.color}` === variantKey,
-				)
+				const key = `${product.id}-${product.size}-${product.color}`
+				const existing = get().cart.find((item) => item.variantKey === key)
 				if (existing) {
 					set((state: CartStore) => ({
 						cart: state.cart.map((item) =>
-							`${item.id}-${item.size}-${item.color}` === variantKey
+							item.variantKey === key
 								? {...item, quantity: item.quantity + product.quantity}
 								: item,
 						),
 					}))
 				} else {
 					set((state: CartStore) => ({
-						cart: [...state.cart, {...product, variantKey}],
+						cart: [...state.cart, {...product, variantKey: key}],
 					}))
 				}
 			},
-			removeFromCart: (variantKey: string) => {
+			removeFromCart: (key: string) => {
 				set((state: CartStore) => ({
-					cart: state.cart.filter((item) => item.variantKey !== variantKey),
+					cart: state.cart.filter((item) => item.variantKey !== key),
 				}))
 			},
-			plus: (variantKey: string) => {
+			plus: (key: string) => {
 				set((state: CartStore) => ({
 					cart: state.cart.map((item) =>
-						item.variantKey === variantKey
+						item.variantKey === key
 							? {...item, quantity: item.quantity + 1}
 							: item,
 					),
 				}))
 			},
-			minus: (variantKey: string) => {
+			minus: (key: string) => {
 				set((state: CartStore) => ({
 					cart: state.cart.map((item) =>
-						item.variantKey === variantKey
-							? {...item, quantity: item.quantity <= 1 ? 1 : item.quantity - 1}
+						item.variantKey === key
+							? {...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1}
 							: item,
 					),
 				}))
 			},
 		}),
-
 		{
 			name: 'cart-storage',
 			storage: createJSONStorage(() => localStorage),

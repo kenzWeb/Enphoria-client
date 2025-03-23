@@ -1,9 +1,14 @@
-import {ProductToggle} from '@/entitles/product'
-import {ProductActions} from '@/entitles/product/ui/ProductActions/ProductActions'
+import {
+	ProductActions,
+	ProductFeatures,
+	ProductToggle,
+} from '@/entitles/product'
+
 import {useGetProductById} from '@/shared/hooks/queries/products/useGetProductById'
 import {useBreadcrumbs} from '@/shared/hooks/useBreadcrumbs'
 import {useCartStore} from '@/shared/store/cart.store'
 import {Breadcrumbs} from '@/shared/ui/Other'
+import {Line} from '@/shared/ui/Other/Line/Line'
 import {useState} from 'react'
 import toast from 'react-hot-toast'
 import {useParams} from 'react-router-dom'
@@ -78,6 +83,10 @@ export const ProductInfo = () => {
 			/>
 
 			<ProductActions price={product?.price} onAddToCart={handleAddToCart} />
+
+			<Line className='my-10' />
+
+			<ProductFeatures />
 		</div>
 	)
 }

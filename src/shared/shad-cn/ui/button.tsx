@@ -5,7 +5,7 @@ import * as React from 'react'
 import {cn} from '@/shared/lib/utils'
 
 const buttonVariants = cva(
-	'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium disabled:pointer-events-none disabled:opacity-50',
+	'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50',
 	{
 		variants: {
 			variant: {
@@ -18,21 +18,23 @@ const buttonVariants = cva(
 				secondary: 'bg-black text-secondary-foreground hover:bg-secondary/80',
 				ghost: 'hover:bg-accent hover:text-accent-foreground',
 				link: 'text-primary underline-offset-4 hover:underline',
-				sign: 'bg-[#8A33FD] !py-[16px] text-primary-foreground hover:bg-primary/90 !rounded-[8px]',
+				sign: 'bg-[#8A33FD] !py-[12px] md:!py-[14px] lg:!py-[16px] xl:!py-[18px] text-primary-foreground hover:bg-primary/90 !rounded-[6px] md:!rounded-[7px] lg:!rounded-[8px] xl:!rounded-[9px]',
 				favorite:
 					'border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full',
 				pagination:
-					'bg-[#807D7E] text-white text-[22px] text-center w-[40px] h-[40px] hover:bg-[#807D7E] rounded-[12px] hover:bg-[#3d008e]',
+					'bg-[#807D7E] text-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[40px] lg:h-[40px] hover:bg-[#807D7E] rounded-[8px] md:rounded-[10px] lg:rounded-[12px] hover:bg-[#3d008e]',
 				paginationSelect:
-					'bg-[#3d008e] text-white text-[22px] text-center w-[40px] h-[40px]',
+					'bg-[#3d008e] text-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[40px] lg:h-[40px] rounded-[8px] md:rounded-[10px] lg:rounded-[12px]',
 			},
 			size: {
-				default: 'h-10 px-4 py-2',
-				sm: 'rounded-md',
-				lg: 'h-11 px-8',
-				md: 'text-[1.8rem] rounded-[0.8rem] py-3 px-[4rem]',
-				favorite: 'h-[30px] w-[30px]',
-				icon: 'h-10 w-10',
+				default:
+					'h-6 px-2 text-xs md:h-8 md:px-3 md:text-xs lg:h-10 lg:px-4 lg:text-sm xl:h-12 xl:px-6 xl:text-base',
+				sm: 'h-4 px-1 text-xs rounded-md md:h-6 md:px-2 md:text-xs lg:h-8 lg:px-3 lg:text-xs xl:h-10 xl:px-4 xl:text-sm',
+				lg: 'h-8 px-4 text-xs md:h-10 md:px-6 md:text-sm lg:h-12 lg:px-8 lg:text-base xl:h-14 xl:px-10 xl:text-lg',
+				md: 'py-1 px-[2rem] text-[1.2rem] rounded-[0.8rem] md:py-2 md:px-[3rem] md:text-[1.4rem] lg:py-3 lg:px-[4rem] lg:text-[1.6rem] xl:py-4 xl:px-[5rem] xl:text-[1.8rem]',
+				favorite:
+					'h-[25px] w-[25px] md:h-[30px] md:w-[30px] lg:h-[35px] lg:w-[35px] xl:h-[40px] xl:w-[40px]',
+				icon: 'h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12',
 			},
 		},
 		defaultVariants: {

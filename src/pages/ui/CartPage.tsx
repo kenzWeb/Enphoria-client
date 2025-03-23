@@ -1,10 +1,11 @@
+import {useProfile} from '@/shared/hooks/api/useProfile'
 import {useBreadcrumbs} from '@/shared/hooks/useBreadcrumbs'
-import {getAccessToken} from '@/shared/services/auth/auth-token.service'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {CartWarning} from '@/shared/ui/Text'
 import {ShoppingCart} from '@/widgets/shoppingCart'
 
 export const CartPage = () => {
+	const {user} = useProfile()
 	const breadcrumbs = useBreadcrumbs({
 		items: [
 			{
@@ -19,7 +20,7 @@ export const CartPage = () => {
 		<>
 			<div className='container !my-[2.5rem]'>
 				<Breadcrumbs {...breadcrumbs} />
-				{getAccessToken() ? null : <CartWarning />}
+				{user ? null : <CartWarning />}
 			</div>
 			<ShoppingCart />
 		</>
