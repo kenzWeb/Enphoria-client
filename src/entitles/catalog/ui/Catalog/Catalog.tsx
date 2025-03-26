@@ -15,7 +15,9 @@ export const Catalog = ({
 			<section className={styles.catalog}>
 				<div
 					className={
-						variant === 'home' ? styles.products_base : styles.products_shop
+						variant === 'home' || variant === 'similar'
+							? styles.products_base
+							: styles.products_shop
 					}
 				>
 					{[...Array(size || 8)].map((_, i) => (
@@ -36,7 +38,11 @@ export const Catalog = ({
 		<section className={styles.catalog}>
 			<div
 				className={
-					variant === 'home' ? styles.products_base : styles.products_shop
+					variant === 'home'
+						? styles.products_base
+						: variant === 'similar'
+						? styles.products_similar
+						: styles.products_shop
 				}
 			>
 				{products?.length ? (
@@ -50,7 +56,9 @@ export const Catalog = ({
 							/>
 						))
 				) : (
-					<div className={styles.title}>Products Not Found</div>
+					<h2 className={variant === 'similar' ? styles.error : styles.title}>
+						Products Not Found
+					</h2>
 				)}
 			</div>
 		</section>

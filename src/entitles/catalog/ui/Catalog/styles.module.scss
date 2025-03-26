@@ -8,13 +8,21 @@
 	> .products_shop {
 		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3 max-w-[1200px] p-4;
 	}
+
+	> .products_similar {
+		@apply flex gap-4 justify-start items-start;
+	}
 }
 
 .skeleton_wrapper {
 	@apply w-full;
-	background: white;
+	background: rgb(75, 58, 58);
 }
 
 .title {
 	@apply absolute top-[50%] left-[45%] font-semibold text-[50px];
+}
+
+.error {
+	@apply w-full font-semibold text-[50px];
 }

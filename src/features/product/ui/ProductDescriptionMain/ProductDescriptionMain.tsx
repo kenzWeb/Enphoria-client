@@ -5,7 +5,7 @@ export const ProductDescriptionMain = ({
 	text,
 }: IProductDescriptionMainProps) => {
 	return (
-		<div>
+		<div className={styles.container}>
 			<p className={styles.text}>{text}</p>
 		</div>
 	)

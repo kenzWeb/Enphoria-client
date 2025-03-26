@@ -1,6 +1,6 @@
 .videoContainer {
 	width: 100%;
-	max-width: 650px;
+	max-width: 100%; /* Изменено с 650px на 100% */
 	border-radius: 12px;
 	overflow: hidden;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -129,6 +129,43 @@
 	display: block;
 }
 
+.centerPlayButton {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: none;
+	border: none;
+	z-index: 3;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	opacity: 0.9;
+
+	svg {
+		font-size: 70px;
+		color: #fff;
+		filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+		transition: all 0.2s ease;
+	}
+
+	&:hover {
+		opacity: 1;
+
+		svg {
+			transform: scale(1.1);
+			color: #ff6f61;
+		}
+	}
+
+	&.playing {
+		opacity: 0;
+	}
+}
+
+.videoWrapper:hover .centerPlayButton.playing {
+	opacity: 0.7;
+}
+
 /* Адаптивность для небольших экранов */
 @media (max-width: 768px) {
 	.videoContainer {
@@ -153,6 +190,10 @@
 			font-size: 18px;
 		}
 	}
+
+	.centerPlayButton svg {
+		font-size: 60px;
+	}
 }
 
 /* Для очень маленьких экранов */
@@ -168,5 +209,9 @@
 		svg {
 			font-size: 24px;
 		}
+	}
+
+	.centerPlayButton svg {
+		font-size: 50px;
 	}
 }

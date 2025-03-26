@@ -4,6 +4,6 @@ export interface ICatalog {
 	products: IProduct[]
 	size?: number
 	category?: boolean
-	variant?: 'shop' | 'home'
+	variant?: 'shop' | 'home' | 'similar'
 	isLoading?: boolean
 }

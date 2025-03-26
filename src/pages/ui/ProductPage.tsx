@@ -1,5 +1,6 @@
 import {ProductInfo} from '@/features/product'
 import {ProductDescription, ProductSlideWrapper} from '@/widgets/product'
+import {SimilarProducts} from '@/widgets/similar'
 
 export const ProductPage = () => {
 	return (
@@ -9,6 +10,7 @@ export const ProductPage = () => {
 				<ProductInfo />
 			</div>
 			<ProductDescription />
+			<SimilarProducts />
 		</div>
 	)
 }
