@@ -11,7 +11,12 @@ export const SimilarProducts = () => {
 	return (
 		<section className={styles.container}>
 			<Title>Similar Products</Title>
-			<Catalog size={8} products={data ?? []} variant='similar' category={false} />
+			<Catalog
+				size={8}
+				products={data ?? []}
+				variant='similar'
+				category={false}
+			/>
 		</section>
 	)
 }

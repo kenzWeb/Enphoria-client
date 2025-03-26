@@ -1,17 +1,23 @@
-import { Footer } from '@/widgets/footer'
-import { Header } from '@/widgets/header'
-import { Outlet, useNavigation } from 'react-router-dom'
-import { Loader } from '@/shared/ui/Other'
+import {Loader} from '@/shared/ui/Other'
+import {Footer} from '@/widgets/footer'
+import {Header} from '@/widgets/header'
+import {useEffect} from 'react'
+import {Outlet, useLocation, useNavigation} from 'react-router-dom'
 
 export const MainLayout = () => {
-  const navigation = useNavigation()
+	const navigation = useNavigation()
+	const location = useLocation()
 
-  return (
-    <>
-      <Header />
-      {navigation.state === "loading" && <Loader />}
-      <Outlet />
-      <Footer />
-    </>
-  )
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [location])
+
+	return (
+		<>
+			<Header />
+			{navigation.state === 'loading' && <Loader />}
+			<Outlet />
+			<Footer />
+		</>
+	)
 }

@@ -9,7 +9,7 @@ export const Man = () => {
 	return (
 		<div className={styles.section}>
 			<Title>Categories For Men</Title>
-			<Catalog products={products ?? []} size={8}/>
+			<Catalog products={products ?? []} size={8} />
 		</div>
 	)
 }
