@@ -4,13 +4,14 @@ import {
 	ProductToggle,
 } from '@/entitles/product'
 
+import {handleAddToCart} from '@/shared/handles/handleAddToCart'
+import {useProfile} from '@/shared/hooks/api/useProfile'
 import {useGetProductById} from '@/shared/hooks/queries/products/useGetProductById'
 import {useBreadcrumbs} from '@/shared/hooks/useBreadcrumbs'
 import {useCartStore} from '@/shared/store/cart.store'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {Line} from '@/shared/ui/Other/Line/Line'
 import {useState} from 'react'
-import toast from 'react-hot-toast'
 import {useParams} from 'react-router-dom'
 import styles from './ProductInfo.module.scss'
 
@@ -18,6 +19,7 @@ export const ProductInfo = () => {
 	const {id} = useParams<{id: string}>()
 	const {product} = useGetProductById(id!)
 	const {addToCart} = useCartStore()
+	const {user} = useProfile()
 
 	const [selectedSize, setSelectedSize] = useState<string>('')
 	const [selectedColor, setSelectedColor] = useState<string>('')
@@ -35,26 +37,6 @@ export const ProductInfo = () => {
 		],
 		endPage: product?.category?.name || '',
 	})
-
-	const handleAddToCart = () => {
-		if (!selectedSize || !selectedColor) {
-			toast.error('Please select size and color')
-			return
-		} else {
-			toast.success('Product added to cart')
-		}
-		if (!product) return
-		addToCart({
-			id: product.id || '',
-			name: product.name,
-			size: selectedSize,
-			color: selectedColor,
-			price: product.price,
-			img: product.images[0],
-			quantity: 1,
-		})
-		console.log(useCartStore.getState().cart)
-	}
 
 	return (
 		<div className='mt-6 flex flex-col gap-[1rem]'>
@@ -82,7 +64,18 @@ export const ProductInfo = () => {
 				onSelect={setSelectedColor}
 			/>
 
-			<ProductActions price={product?.price} onAddToCart={handleAddToCart} />
+			<ProductActions
+				price={product?.price}
+				onAddToCart={() =>
+					handleAddToCart({
+						selectedSize,
+						selectedColor,
+						product,
+						user,
+						addToCart
+					})
+				}
+			/>
 
 			<Line className='my-10' />
 

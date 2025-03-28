@@ -4,7 +4,7 @@ import {useMemo} from 'react'
 
 export const useGetProductById = (id: string) => {
 	const {data: product, isLoading} = useQuery({
-		queryKey: ['get product by id'],
+		queryKey: ['get product by id', id],
 		queryFn: () => productService.getById(id),
 	})
 
@@ -13,6 +13,6 @@ export const useGetProductById = (id: string) => {
 			product,
 			isLoading,
 		}),
-		[product,isLoading],
+		[product, isLoading],
 	)
 }

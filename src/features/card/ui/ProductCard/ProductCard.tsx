@@ -21,6 +21,7 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 
 	const handleFavoriteClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
+		e.preventDefault()
 	}
 
 	return (
