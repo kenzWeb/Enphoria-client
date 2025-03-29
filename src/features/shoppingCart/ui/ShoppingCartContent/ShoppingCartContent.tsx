@@ -1,17 +1,16 @@
 import {ShoppingCartCard} from '@/entitles/shoppingCart'
 import {useProfile} from '@/shared/hooks/api/useProfile'
-import {getAccessToken} from '@/shared/services/auth/auth-token.service'
 import {useCartStore} from '@/shared/store/cart.store'
 import {Loader2} from 'lucide-react'
 import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const ShoppingCartContent = () => {
-	const {isLoading, isFetching, isPending} = useProfile()
+	const {isLoading, isFetching, isPending, user} = useProfile()
 
 	const item = useCartStore((state) => state.cart)
 
-	if (!getAccessToken()) {
+	if (!user) {
 		return (
 			<h2 className={styles.empty}>Please login to see your shopping cart</h2>
 		)
@@ -39,7 +38,7 @@ export const ShoppingCartContent = () => {
 	return (
 		<div className={styles.container}>
 			{item.map((item) => (
-				<ShoppingCartCard data={item} key={item.id} />
+				<ShoppingCartCard data={item} key={item.id + item.name} />
 			))}
 		</div>
 	)

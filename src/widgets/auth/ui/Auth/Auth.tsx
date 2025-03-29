@@ -71,7 +71,7 @@ export function Auth() {
 					<CardFooter className={styles.footer}>
 						<h2>Already have an account?</h2>
 						<button onClick={() => setIsReg(!isReg)}>
-							{isReg ? 'Sign In' : 'Log in'}
+							{isReg ? 'Sign Up' : 'Sign In'}
 						</button>
 					</CardFooter>
 				</Card>

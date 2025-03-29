@@ -12,4 +12,5 @@ export const API_URL = {
 	dressStyles: (url = '') => API_URL.root(`/dressStyles/${url}`),
 	sizes: (url = '') => API_URL.root(`/sizes/${url}`),
 	orders: (url = '') => API_URL.root(`/orders/${url}`),
+	codes: (url = '') => API_URL.root(`/codes/${url}`),
 }

@@ -2,7 +2,7 @@ import {useProfile} from '@/shared/hooks/api/useProfile'
 import {useBreadcrumbs} from '@/shared/hooks/useBreadcrumbs'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {CartWarning} from '@/shared/ui/Text'
-import {ShoppingCart} from '@/widgets/shoppingCart'
+import {ShoppingCart, ShoppingCartSummary} from '@/widgets/shoppingCart'
 
 export const CartPage = () => {
 	const {user} = useProfile()
@@ -23,6 +23,7 @@ export const CartPage = () => {
 				{user ? null : <CartWarning />}
 			</div>
 			<ShoppingCart />
+			<ShoppingCartSummary />
 		</>
 	)
 }
