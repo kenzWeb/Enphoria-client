@@ -1,3 +1,7 @@
+.container {
+	@apply flex flex-col gap-[40px];
+}
+
 .title {
 	@apply text-[#3C4242] text-[24px] font-semibold;
 }

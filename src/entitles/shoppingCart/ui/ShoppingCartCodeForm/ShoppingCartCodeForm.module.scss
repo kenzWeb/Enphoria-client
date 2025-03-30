@@ -1,0 +1,42 @@
+.form {
+	@apply flex items-center relative;
+}
+
+.label {
+	@apply text-[18px] text-[#3C4242] font-normal;
+	text-decoration: none;
+}
+
+.input {
+	@apply h-full border-solid !border-[#BEBCBD] !text-[14px] !rounded-s-[16px] !rounded-e-none px-[10px];
+	flex: 1;
+	min-width: 0;
+}
+
+.inputButtonContainer {
+	@apply flex items-center w-full;
+	height: 40px;
+}
+
+.message {
+	@apply text-[14px] absolute -bottom-[20px] left-0;
+}
+
+.checkbox {
+	@apply font-medium !text-[#807D7E] !text-[16px];
+}
+
+.formItem {
+	@apply relative w-full;
+}
+
+.button {
+	@apply h-full bg-[#8A33FD] border-solid border-[#BEBCBD] border-l-0 rounded-e-[16px] text-[#FFFFFF] text-[14px] font-normal disabled:bg-[#807D7E] hover:bg-[#BEBCBD];
+
+	transition: all 0.2s ease;
+
+	flex-shrink: 0;
+	padding: 0 15px;
+	height: 100%;
+	white-space: nowrap;
+}

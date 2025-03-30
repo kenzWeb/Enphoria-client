@@ -1,10 +1,10 @@
-import {ICategory} from '@/shared/types/category.interface'
 import {axiosWithAuth} from '../api/api.interceptors'
 import {API_URL} from '../config/api.config'
+import {ICodeForm} from '../types/code.interface'
 
 class CodeService {
 	async checkout(code: string) {
-		const {data} = await axiosWithAuth<ICategory>({
+		const {data} = await axiosWithAuth<ICodeForm>({
 			url: API_URL.codes(`by-code/${code}`),
 			method: 'GET',
 		})

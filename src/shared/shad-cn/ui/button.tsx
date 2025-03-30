@@ -13,7 +13,7 @@ const buttonVariants = cva(
 				destructive:
 					'bg-destructive text-destructive-foreground hover:bg-destructive/90',
 				outline:
-					'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+					'border-solid border-[#BEBCBD] bg-background hover:bg-accent hover:text-accent-foreground',
 				violet: 'bg-[#8A33FD] text-white hover:bg-primary/90',
 				secondary: 'bg-black text-secondary-foreground hover:bg-secondary/80',
 				ghost: 'hover:bg-accent hover:text-accent-foreground',
@@ -29,12 +29,14 @@ const buttonVariants = cva(
 			size: {
 				default:
 					'h-6 px-2 text-xs md:h-8 md:px-3 md:text-xs lg:h-10 lg:px-4 lg:text-sm xl:h-12 xl:px-6 xl:text-base',
-				sm: 'h-4 px-1 text-xs rounded-md md:h-6 md:px-2 md:text-xs lg:h-8 lg:px-3 lg:text-xs xl:h-10 xl:px-4 xl:text-sm',
+				sm: 'h-4 px-[4rem] text-[1.4rem] rounded-[16px] md:h-6 md:px-[1rem] md:text-[1.2rem] lg:h-[6.4rem] lg:px-[1.2rem] lg:text-[1.2rem] xl:h-[4rem] xl:px-[1.6rem] xl:text-[1.4rem]',
 				lg: 'h-8 px-4 text-xs md:h-10 md:px-6 md:text-sm lg:h-12 lg:px-8 lg:text-base xl:h-14 xl:px-10 xl:text-lg',
 				md: 'py-1 px-[2rem] text-[1.2rem] rounded-[0.8rem] md:py-2 md:px-[3rem] md:text-[1.4rem] lg:py-3 lg:px-[4rem] lg:text-[1.6rem] xl:py-4 xl:px-[5rem] xl:text-[1.8rem]',
 				favorite:
 					'h-[25px] w-[25px] md:h-[30px] md:w-[30px] lg:h-[35px] lg:w-[35px] xl:h-[40px] xl:w-[40px]',
 				icon: 'h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12',
+				coupon:
+					'h-4 px-[4rem] text-[1.4rem] rounded-r-[16px] rounded-s-[0] md:h-6 md:px-[1rem] md:text-[1.2rem] lg:h-[6.4rem] lg:px-[1.2rem] lg:text-[1.2rem] xl:h-[4rem] xl:px-[1.6rem] xl:text-[1.4rem]',
 			},
 		},
 		defaultVariants: {

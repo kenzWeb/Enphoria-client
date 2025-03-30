@@ -1,13 +1,22 @@
-import {useCodeForm} from '@/shared/hooks/api/useCodeForm'
-import {Form, FormField, FormItem, FormMessage} from '@/shared/shad-cn/ui/Form'
-import {FormControl, FormLabel, Input} from '@mui/material'
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormMessage,
+} from '@/shared/shad-cn/ui/Form'
+
+import {Input} from '@/shared/shad-cn/ui/Input'
+import {IShoppingCartCodeForm} from '../../types'
 import styles from './ShoppingCartCodeForm.module.scss'
 
-export const ShoppingCartCodeForm = () => {
-	const {form, onSubmit, isPending} = useCodeForm()
-
+export const ShoppingCartCodeForm = ({
+	form,
+	onSubmit,
+	isPending,
+}: IShoppingCartCodeForm) => {
 	return (
-		<form onSubmit={form.handleSubmit(onSubmit)}>
+		<form onSubmit={form.handleSubmit(onSubmit)} className={styles.form}>
 			<Form {...form}>
 				<FormField
 					control={form.control}
@@ -16,24 +25,28 @@ export const ShoppingCartCodeForm = () => {
 						required: 'Code Required',
 					}}
 					render={({field}) => (
-						<FormItem>
-							<FormLabel className={styles.label}>User Name</FormLabel>
-							<FormControl>
-								<Input
-									className={styles.input}
-									placeholder='Andrey'
-									{...field}
-								/>
-							</FormControl>
+						<FormItem className={styles.formItem}>
+							<div className={styles.inputButtonContainer}>
+								<FormControl>
+									<Input
+										className={styles.input}
+										{...field}
+										disabled={isPending}
+									/>
+								</FormControl>
+								<button
+									className={styles.button}
+									type='submit'
+									disabled={isPending}
+								>
+									Apply Coupon
+								</button>
+							</div>
 							<FormMessage className={styles.message} />
 						</FormItem>
 					)}
 				/>
 			</Form>
-
-			<button disabled={isPending} className={styles.button} type='submit'>
-				Apply
-			</button>
 		</form>
 	)
 }
