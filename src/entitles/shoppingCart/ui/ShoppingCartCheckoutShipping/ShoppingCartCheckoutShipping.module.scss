@@ -1,0 +1,11 @@
+.container {
+	@apply flex items-center justify-between sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[70px];
+}
+
+.title {
+	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-medium text-[#3C4242];
+}
+
+.element {
+	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-medium text-[#3C4242];
+}

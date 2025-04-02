@@ -4,11 +4,16 @@ import {useQuery} from '@tanstack/react-query'
 import {useMemo} from 'react'
 
 export const useCheckAuth = () => {
-	const {data: auth, isLoading} = useQuery<ICheckAuth>({
+	const {
+		data: auth,
+		isLoading,
+		isPending,
+		isFetching,
+	} = useQuery<ICheckAuth>({
 		queryKey: ['check auth'],
 		queryFn: async () => {
-			const response = await authService.checkRefreshToken();
-			return response.data;
+			const response = await authService.checkRefreshToken()
+			return response.data
 		},
 	})
 
@@ -16,7 +21,9 @@ export const useCheckAuth = () => {
 		() => ({
 			auth: auth || false,
 			isLoading,
+			isPending,
+			isFetching,
 		}),
-		[auth, isLoading],
+		[auth, isLoading, isPending, isFetching],
 	)
 }

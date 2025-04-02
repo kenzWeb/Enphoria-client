@@ -11,6 +11,8 @@ import {useForm} from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 export const useCodeForm = (): UseCodeFormReturn => {
+	const {isUsed} = useCodeStore()
+
 	const form = useForm<ICodeForm>({
 		mode: 'onChange',
 		defaultValues: {
@@ -29,6 +31,10 @@ export const useCodeForm = (): UseCodeFormReturn => {
 		},
 		onSuccess(data) {
 			form.reset()
+			if (isUsed) {
+				toast.error('Code already used')
+				return
+			}
 			useCodeStore.getState().setCode(data)
 			toast.success('Code applied successfully')
 		},

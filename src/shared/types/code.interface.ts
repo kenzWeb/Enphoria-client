@@ -10,6 +10,7 @@ export interface ICodeResponse extends ICodeForm {
 	value: number
 	createdAt: string
 	updatedAt: string
+	isUsed?: boolean
 }
 
 export interface UseCodeFormReturn {

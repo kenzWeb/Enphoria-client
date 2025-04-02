@@ -4,12 +4,12 @@ import styles from './styles.module.scss'
 import { useGetProductByType } from '@/shared/hooks/queries/products/useGetProductByType'
 
 export const Limelight = () => {
-	const {data} = useGetProductByType('LIMELIGHT')
+	const {data, isLoading} = useGetProductByType('LIMELIGHT')
 
 	return (
 		<section className={styles.section}>
 			<Title>In The Limelight</Title>
-			<Catalog products={data ?? []} category={false} size={4}/>
+			<Catalog products={data ?? []} isLoading={isLoading} category={false} size={4}/>
 		</section>
 	)
 }

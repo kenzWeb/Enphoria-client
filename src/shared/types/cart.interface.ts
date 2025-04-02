@@ -16,8 +16,10 @@ export interface CartStore {
 	cart: ICartItem[]
 	addToCart: (product: ICartItem) => void
 	removeFromCart: (id: string) => void
+	getCartSummary: () => {totalItems: number; totalPrice: number}
 	plus: (id: string) => void
 	minus: (id: string) => void
+	reset: () => void
 }
 
 export interface IHandleAddToCart {

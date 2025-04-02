@@ -1,5 +1,5 @@
 import {ProductCard} from '@/features/card'
-import {Skeleton} from '@/shared/shad-cn/ui/Skeleton'
+import {SkeletonCard} from '@/shared/ui/SkeletonCard'
 import {ICatalog} from '../../models/catalog.interface'
 import styles from './styles.module.scss'
 
@@ -11,23 +11,18 @@ export const Catalog = ({
 	isLoading,
 }: ICatalog) => {
 	if (isLoading) {
+		const containerClass =
+			variant === 'home'
+				? styles.products_base
+				: variant === 'similar'
+				? styles.products_similar
+				: styles.products_shop
+
 		return (
 			<section className={styles.catalog}>
-				<div
-					className={
-						variant === 'home' || variant === 'similar'
-							? styles.products_base
-							: styles.products_shop
-					}
-				>
-					{[...Array(size || 8)].map((_, i) => (
-						<div key={i} className={styles.skeleton_wrapper}>
-							<Skeleton className='h-[370px] w-full bg-gray-200 rounded-[14px]' />
-							<div className='space-y-3 mt-4'>
-								<Skeleton className='h-6 w-[90%] bg-gray-200' />
-								<Skeleton className='h-6 w-[70%] bg-gray-200' />
-							</div>
-						</div>
+				<div className={containerClass}>
+					{Array.from({length: size || 6}).map((_, i) => (
+						<SkeletonCard key={i} />
 					))}
 				</div>
 			</section>

@@ -32,6 +32,15 @@ export const useCartStore = create<CartStore>()(
 					cart: state.cart.filter((item) => item.variantKey !== key),
 				}))
 			},
+			getCartSummary: () => {
+				const cart = get().cart
+				const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+				const totalPrice = cart.reduce(
+					(sum, item) => sum + item.price * item.quantity,
+					0,
+				)
+				return {totalItems, totalPrice}
+			},
 			plus: (key: string) => {
 				set((state: CartStore) => ({
 					cart: state.cart.map((item) =>
@@ -48,6 +57,11 @@ export const useCartStore = create<CartStore>()(
 							? {...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1}
 							: item,
 					),
+				}))
+			},
+			reset: () => {
+				set(() => ({
+					cart: [],
 				}))
 			},
 		}),

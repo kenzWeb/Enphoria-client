@@ -1,5 +1,4 @@
 import {create} from 'zustand'
-import {persist} from 'zustand/middleware'
 import {CodeStore, ICodeResponse} from '../types/code.interface'
 
 const initialCodeState: ICodeResponse = {
@@ -8,17 +7,11 @@ const initialCodeState: ICodeResponse = {
 	value: 0,
 	createdAt: '',
 	updatedAt: '',
+	isUsed: false,
 }
 
-export const useCodeStore = create<CodeStore>()(
-	persist(
-		(set) => ({
-			...initialCodeState,
-			setCode: (codeData: ICodeResponse) => set({...codeData}),
-			reset: () => set({...initialCodeState}),
-		}),
-		{
-			name: 'code-storage',
-		},
-	),
-)
+export const useCodeStore = create<CodeStore>()((set) => ({
+	...initialCodeState,
+	setCode: (codeData: ICodeResponse) => set({...codeData, isUsed: true}),
+	reset: () => set({...initialCodeState, isUsed: false}),
+}))

@@ -4,12 +4,12 @@ import {Title} from '@/shared/ui/Text'
 import styles from './styles.module.scss'
 
 export const Woman = () => {
-	const {products} = useGetByGender('FEMALE')
+	const {products, isLoading} = useGetByGender('FEMALE')
 
 	return (
 		<section className={styles.section}>
 			<Title>Categories For Women</Title>
-			<Catalog products={products ?? []} size={4}/>
+			<Catalog products={products ?? []} isLoading={isLoading} size={4} />
 		</section>
 	)
 }

@@ -2,21 +2,20 @@
 	@apply flex w-full justify-center;
 
 	> .products_base {
-		@apply grid sm:grid-cols-2 gap-[5rem] md:grid-cols-3 lg:grid-cols-4 max-w-[1200px] p-4;
+		@apply grid sm:grid-cols-2 gap-[5rem] md:grid-cols-3 lg:grid-cols-4 max-w-[1200px] p-4 w-full;
 	}
 
 	> .products_shop {
-		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3 max-w-[1200px] p-4;
+		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3 max-w-[1200px] p-4 w-full;
 	}
 
 	> .products_similar {
-		@apply flex gap-4 justify-start items-start;
+		@apply flex gap-4 justify-start items-start w-full;
 	}
 }
 
 .skeleton_wrapper {
-	@apply w-full;
-	background: rgb(75, 58, 58);
+	@apply w-full bg-white;
 }
 
 .title {
