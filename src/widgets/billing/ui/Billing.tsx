@@ -1,3 +1,4 @@
+import {BillingForm} from '@/features/billing'
 import {Subtitle, Title} from '@/shared/ui/Text'
 import styles from './Billing.module.scss'
 
@@ -8,6 +9,7 @@ export const Billing = () => {
 				Check Out
 			</Title>
 			<Subtitle>Billing Details</Subtitle>
+			<BillingForm />
 		</section>
 	)
 }

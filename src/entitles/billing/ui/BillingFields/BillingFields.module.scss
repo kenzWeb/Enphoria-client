@@ -1,0 +1,87 @@
+.fieldsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+	max-width: 100%;
+}
+
+.formRow {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.formItem {
+	width: 100%;
+}
+
+.label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #3c4242;
+}
+
+.input,
+.select {
+	width: 100%;
+	padding: 1.6rem 1.6rem;
+	background-color: #f6f6f6;
+	border: 1px solid #e5e5e5;
+	border-radius: 0.25rem;
+	font-size: 1.125rem;
+	color: #3c4242;
+
+	&::placeholder {
+		color: #807d7e;
+		font-size: 1.4rem;
+		font-weight: 400;
+	}
+
+	&:focus {
+		outline: none;
+		border-color: #8a33fd;
+	}
+}
+
+.message {
+	color: #ff3333;
+	font-size: 1.4rem !important;
+	margin-top: 0.25rem;
+}
+
+.checkboxItem {
+	margin-top: 0.75rem;
+}
+
+.checkboxWrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.checkbox {
+	width: 2rem !important;
+	height: 2rem !important;
+	border: 2px solid #8a33fd !important;
+	border-radius: 6px !important;
+
+	&[data-state='checked'] {
+		background-color: #8a33fd !important;
+		border-color: #8a33fd !important;
+	}
+}
+
+.checkboxLabel {
+	font-size: 1.4rem;
+	color: #3c4242;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.formRow {
+		grid-template-columns: 1fr;
+	}
+}

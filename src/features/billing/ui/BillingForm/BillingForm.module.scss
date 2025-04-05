@@ -1,0 +1,39 @@
+.form {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.submitButton {
+	padding: 1.6rem 2rem;
+	background-color: #8a33fd;
+	color: #ffffff;
+	border: none;
+	border-radius: 0.25rem;
+	font-size: 1.8rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	align-self: flex-start;
+
+	&:hover {
+		background-color: #7026d9;
+	}
+
+	&:disabled {
+		background-color: #cccccc;
+		cursor: not-allowed;
+	}
+}
+
+@media (max-width: 768px) {
+	.form {
+		padding: 1rem;
+	}
+
+	.submitButton {
+		width: 100%;
+		align-self: flex-start;
+	}
+}
