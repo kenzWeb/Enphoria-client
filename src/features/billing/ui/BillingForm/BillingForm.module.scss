@@ -5,6 +5,22 @@
 	gap: 2rem;
 }
 
+.checkboxContainer {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: -0.5rem;
+	cursor: pointer;
+}
+
+.checkbox {
+	font-size: 1.4rem;
+	color: #1d1d1d;
+	cursor: pointer;
+	padding-top: 2px;
+	user-select: none;
+}
+
 .submitButton {
 	padding: 1.6rem 2rem;
 	background-color: #8a33fd;

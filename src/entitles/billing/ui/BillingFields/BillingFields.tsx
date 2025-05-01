@@ -1,4 +1,3 @@
-import {Checkbox} from '@/shared/shad-cn/ui/Checkbox'
 import {
 	FormControl,
 	FormField,
@@ -214,27 +213,6 @@ export const BillingFields = ({
 							/>
 						</FormControl>
 						<FormMessage className={styles.message} />
-					</FormItem>
-				)}
-			/>
-
-			<FormField
-				control={form.control}
-				name='saveInfo'
-				render={({field}) => (
-					<FormItem className={styles.checkboxItem}>
-						<div className={styles.checkboxWrapper}>
-							<FormControl>
-								<Checkbox
-									checked={field.value}
-									onCheckedChange={field.onChange}
-									className={styles.checkbox}
-								/>
-							</FormControl>
-							<FormLabel className={styles.checkboxLabel}>
-								Save my information for a faster checkout
-							</FormLabel>
-						</div>
 					</FormItem>
 				)}
 			/>
