@@ -1,3 +1,17 @@
+import {OrdeSummaryItems} from '@/features/order'
+import {Title} from '@/shared/ui/Text'
+import styles from './OrderSummary.module.scss'
+
 export const OrderSummary = () => {
-	return <div>OrderSummary</div>
+	return (
+		<div className={styles.wrapper}>
+			<Title className={styles.title} marginBottom='15' favorite={false}>
+				Order Summary
+			</Title>
+
+			<div>
+				<OrdeSummaryItems />
+			</div>
+		</div>
+	)
 }

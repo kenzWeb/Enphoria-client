@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 export const ShoppingCartContent = () => {
 	const {isLoading, isFetching, isPending, user} = useProfile()
 
-	const item = useCartStore((state) => state.cart)
+	const items = useCartStore((state) => state.cart)
 
 	if (!user) {
 		return (
@@ -24,7 +24,7 @@ export const ShoppingCartContent = () => {
 		)
 	}
 
-	if (!item.length) {
+	if (!items.length) {
 		return (
 			<div className='flex justify-center flex-col'>
 				<h2 className={styles.empty}>Your shopping cart is empty</h2>
@@ -37,7 +37,7 @@ export const ShoppingCartContent = () => {
 
 	return (
 		<div className={styles.container}>
-			{item.map((item) => (
+			{items.map((item) => (
 				<ShoppingCartCard data={item} key={item.id + item.name} />
 			))}
 		</div>
