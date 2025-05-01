@@ -1,0 +1,45 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	h2 {
+		margin-right: auto;
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+
+	span {
+		font-size: 1.8rem;
+		font-weight: 400;
+		color: #807d7e;
+	}
+
+	h3 {
+		color: #3c4242;
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+}
+
+.container:not(:last-child) {
+	padding-top: 15px;
+}
+
+.container:not(:nth-child(1)) {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.container:not(:nth-child(3)) {
+	padding-bottom: 15px;
+}
+
+.container:not(:nth-child(4)) {
+	padding-bottom: 15px;
+}

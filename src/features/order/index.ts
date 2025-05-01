@@ -1,3 +1,3 @@
-import {OrdeSummaryItems} from './ui/OrdeSummaryItems/OrdeSummaryItems'
+import {OrderSummaryItems} from './ui/OrdeSummaryItems/OrdeSummaryItems'
 
-export {OrdeSummaryItems}
+export {OrderSummaryItems}

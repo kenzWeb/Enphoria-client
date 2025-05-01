@@ -1,4 +1,5 @@
-import {OrdeSummaryItems} from '@/features/order'
+import {OrderSummaryItems} from '@/features/order'
+import {OrderSummaryShip} from '@/features/order/ui/OrderSummaryShip/OrderSummaryShip'
 import {Title} from '@/shared/ui/Text'
 import styles from './OrderSummary.module.scss'
 
@@ -9,9 +10,8 @@ export const OrderSummary = () => {
 				Order Summary
 			</Title>
 
-			<div>
-				<OrdeSummaryItems />
-			</div>
+			<OrderSummaryItems />
+			<OrderSummaryShip />
 		</div>
 	)
 }

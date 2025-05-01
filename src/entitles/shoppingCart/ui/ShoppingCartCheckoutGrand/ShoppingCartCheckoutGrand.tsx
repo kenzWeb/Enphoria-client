@@ -1,22 +1,8 @@
-import {useEffect} from 'react'
-import {IShoppingCartCheckout} from '../../types'
+import {useOrderCalculation} from '@/shared/hooks/useOrderCalculation'
 import styles from './ShoppingCartCheckoutGrand.module.scss'
 
-export const ShoppingCartCheckoutGrand = ({
-	totalPrice,
-	codeData,
-}: IShoppingCartCheckout) => {
-	useEffect(() => {
-		if (codeData) {
-			console.log('Code data:', codeData)
-		}
-	}, [codeData])
-
-	const discountAmount =
-		codeData && codeData.value ? (totalPrice * codeData.value) / 100 : 0
-	const priceAfterDiscount = totalPrice - discountAmount
-
-	const grandTotal = priceAfterDiscount + 5
+export const ShoppingCartCheckoutGrand = () => {
+	const {grandTotal} = useOrderCalculation()
 
 	return (
 		<div className={styles.container}>

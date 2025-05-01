@@ -11,3 +11,8 @@ export interface IShoppingCartCheckout {
 	totalPrice: number
 	codeData?: ICodeResponse
 }
+
+
+export interface IShoppingCartCheckoutTopProps {
+	totalPrice: number
+}

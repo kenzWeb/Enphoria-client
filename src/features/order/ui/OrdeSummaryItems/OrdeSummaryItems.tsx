@@ -4,7 +4,7 @@ import {useCartStore} from '@/shared/store/cart.store'
 import {Loader} from '@/shared/ui/Other'
 import styles from './OrdeSummaryItems.module.scss'
 
-export const OrdeSummaryItems = () => {
+export const OrderSummaryItems = () => {
 	const {isLoading, isFetching, isPending, user} = useProfile()
 
 	const items = useCartStore((state) => state.cart)
