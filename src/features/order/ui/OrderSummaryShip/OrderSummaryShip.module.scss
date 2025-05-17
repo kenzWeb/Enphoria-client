@@ -43,3 +43,7 @@
 .container:not(:nth-child(4)) {
 	padding-bottom: 15px;
 }
+
+.container:last-child {
+	border-bottom: none;
+}

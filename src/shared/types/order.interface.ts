@@ -46,3 +46,12 @@ export interface IOrder {
 	user: IUser
 	total: number
 }
+
+export type TypePaymentData = {
+	status?: EnumOrderStatus
+	items: {
+		quantity: number
+		price: number
+		productId: string
+	}[]
+}

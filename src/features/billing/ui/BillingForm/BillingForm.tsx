@@ -1,16 +1,27 @@
 import {BillingFields} from '@/entitles/billing'
 import {useBillingForm} from '@/shared/hooks/api/useBillingForm'
+import {useCreatePayment} from '@/shared/hooks/api/useCreatePayment'
 import {Button} from '@/shared/shad-cn/ui/Button'
 import {Checkbox} from '@/shared/shad-cn/ui/Checkbox'
 import {Form, FormControl, FormField, FormItem} from '@/shared/shad-cn/ui/Form'
+import {IBillingForm} from '@/shared/types/billing.interface'
 import styles from './BillingForm.module.scss'
 
 export const BillingForm = () => {
 	const {form, onSubmit, isPending} = useBillingForm()
+	const {mutate, isPending: isPaymentPending} = useCreatePayment()
+
+	const onSubmitHandler = (data: IBillingForm) => {
+		onSubmit(data)
+		mutate()
+	}
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className={styles.form}>
+			<form
+				onSubmit={form.handleSubmit(onSubmitHandler)}
+				className={styles.form}
+			>
 				<BillingFields form={form} isPending={isPending} />
 				<FormField
 					control={form.control}
@@ -32,7 +43,8 @@ export const BillingForm = () => {
 				/>
 				<Button
 					type='submit'
-					disabled={isPending}
+					disabled={isPending || isPaymentPending}
+					onClick={() => mutate}
 					variant='sign'
 					className={styles.submitButton}
 				>
