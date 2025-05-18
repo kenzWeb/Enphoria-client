@@ -9,11 +9,12 @@ import styles from './BillingForm.module.scss'
 
 export const BillingForm = () => {
 	const {form, onSubmit, isPending} = useBillingForm()
-	const {mutate, isPending: isPaymentPending} = useCreatePayment()
+	const {mutate: createPayment, isPending: isPaymentPending} =
+		useCreatePayment()
 
 	const onSubmitHandler = (data: IBillingForm) => {
 		onSubmit(data)
-		mutate()
+		createPayment()
 	}
 
 	return (
@@ -44,7 +45,6 @@ export const BillingForm = () => {
 				<Button
 					type='submit'
 					disabled={isPending || isPaymentPending}
-					onClick={() => mutate}
 					variant='sign'
 					className={styles.submitButton}
 				>

@@ -2,9 +2,11 @@ import {orderService} from '@/shared/services/order.service'
 import {useCartStore} from '@/shared/store/cart.store'
 import {useMutation} from '@tanstack/react-query'
 import toast from 'react-hot-toast'
+import {useOrderCalculation} from '../useOrderCalculation'
 
 export const useCreatePayment = () => {
 	const {cart} = useCartStore()
+	const {grandTotal} = useOrderCalculation()
 
 	const {mutate, isPending} = useMutation({
 		mutationKey: ['create payment'],
@@ -12,7 +14,7 @@ export const useCreatePayment = () => {
 			orderService.create({
 				items: cart.map((item) => ({
 					productId: item.id,
-					price: item.price,
+					price: grandTotal,
 					quantity: item.quantity,
 				})),
 			}),

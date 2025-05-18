@@ -4,22 +4,14 @@ import {
 	ShoppingCartCheckoutTop,
 } from '@/entitles/shoppingCart'
 
-import {useCreatePayment} from '@/shared/hooks/api/useCreatePayment'
 import {useOrderCalculation} from '@/shared/hooks/useOrderCalculation'
 import {Button} from '@/shared/shad-cn/ui/Button'
+import {useNavigate} from 'react-router-dom'
 import styles from './ShoppingCartCheckout.module.scss'
-import { useProfile } from '@/shared/hooks/api/useProfile'
-import { useNavigate } from 'react-router-dom'
-import { PUBLIC_URL } from '@/shared/config/url.config'
 
 export const ShoppingCartCheckout = () => {
 	const {totalPrice} = useOrderCalculation()
-	const {mutate, isPending} = useCreatePayment()
 	const navigate = useNavigate()
-	const {user} = useProfile()
-	const handleClick = () => {
-		user ? mutate() : navigate(PUBLIC_URL.auth())
-	}
 
 	return (
 		<section className={styles.container}>
@@ -30,8 +22,7 @@ export const ShoppingCartCheckout = () => {
 			</div>
 			<div>
 				<Button
-					onClick={handleClick}
-					disabled={isPending}
+					onClick={() => navigate('/account/checkout', {replace: true})}
 					className='mt-[50px] text-center'
 					variant='violet'
 					size='md'
