@@ -1,3 +1,4 @@
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {useFavorite} from '@/shared/hooks/api/useFavorite'
 import {useProfile} from '@/shared/hooks/api/useProfile'
 import {Button} from '@/shared/shad-cn/ui/Button'
@@ -18,7 +19,7 @@ export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 	const {mutate, isPending} = useFavorite(product)
 
 	const handleFavoriteClick = () => {
-		if (!user) navigate('/auth/')
+		if (!user) navigate(PUBLIC_URL.auth())
 
 		mutate()
 	}

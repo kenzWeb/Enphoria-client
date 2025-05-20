@@ -2,12 +2,16 @@ export const PUBLIC_URL = {
 	root: (url = '') => `${url ? url : ''}`,
 
 	home: () => PUBLIC_URL.root('/'),
-	auth: () => PUBLIC_URL.root('/auth'),
+	thanks: () => PUBLIC_URL.root('/thanks'),
+	auth: (url = '') => PUBLIC_URL.root(`/auth/${url}`),
+	favorites: (url = '') => PUBLIC_URL.root(`/favorites/${url}`),
 
-	explorer: (query = '') => PUBLIC_URL.root(`/explorer ${query}`),
-
+	shop: (id = '') => PUBLIC_URL.root(`/shop/${id}`),
 	product: (id = '') => PUBLIC_URL.root(`product/${id}`),
 	category: (id = '') => PUBLIC_URL.root(`category/${id}`),
+
+	cart: (url = '') => PUBLIC_URL.root(`/cart/${url}`),
+	account: (url = '') => PUBLIC_URL.root(`/account/${url}`),
 }
 
 export const DASHBOARD_URL = {

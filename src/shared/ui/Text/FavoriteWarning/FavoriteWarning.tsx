@@ -1,3 +1,4 @@
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
 
@@ -9,7 +10,8 @@ export const CartWarning = () => {
 				purchase!
 			</h2>
 			<h3 className={styles.login}>
-				Already registered? <Link to={'/auth'}>Please login here</Link>
+				Already registered?{' '}
+				<Link to={PUBLIC_URL.auth()}>Please login here</Link>
 			</h3>
 		</>
 	)

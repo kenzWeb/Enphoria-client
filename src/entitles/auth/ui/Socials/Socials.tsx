@@ -1,5 +1,6 @@
 import {SERVER_URL} from '@/shared/config/private.config'
 
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {
 	Tooltip,
 	TooltipContent,
@@ -38,7 +39,11 @@ export const Socials = () => {
 				<Tooltip>
 					<TooltipTrigger
 						className={styles.button}
-						onClick={() => handleExternalRedirect(`${SERVER_URL}/auth/yandex`)}
+						onClick={() =>
+							handleExternalRedirect(
+								`${SERVER_URL}${PUBLIC_URL.auth('yandex')}`,
+							)
+						}
 					>
 						<img
 							className={styles.img}

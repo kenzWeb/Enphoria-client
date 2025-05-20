@@ -12,6 +12,7 @@ import {motion} from 'framer-motion'
 import {useState} from 'react'
 import {UseFormReturn} from 'react-hook-form'
 
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {AnimatedEyeIcon} from '@/shared/ui/Animation/AnimatedEyeIconProps'
 import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
@@ -124,7 +125,7 @@ export function AuthFields({form, isPending, isReg = false}: AuthFieldsProps) {
 						<div className='flex items-center justify-between'>
 							<FormMessage className={styles.message} />
 							{!isReg && (
-								<Link to='/auth/repair' className='cursor-pointer'>
+								<Link to={PUBLIC_URL.auth('repair')} className='cursor-pointer'>
 									<h2 className='text-[#3C4242] text-[16px] font-normal underline hover:text-[#656969] transition-color'>
 										Forget your password
 									</h2>
