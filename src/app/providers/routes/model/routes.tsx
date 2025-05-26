@@ -1,4 +1,4 @@
-import {MainLayout} from '@/app/providers/layouts'
+import {AccountLayout, MainLayout} from '@/app/providers/layouts'
 import {AuthRoute} from '@/app/providers/routes'
 import {
 	AuthPage,
@@ -41,6 +41,13 @@ export const router = createBrowserRouter([
 			{
 				path: PUBLIC_URL.thanks(),
 				element: <ThanksPage />,
+			},
+			{
+				path: PUBLIC_URL.account(),
+				element: <AccountLayout />,
+				children: [
+					
+				],
 			},
 		],
 	},

@@ -1,3 +1,4 @@
-import { MainLayout } from './ui/MainLayout';
+import {AccountLayout} from './ui/AccountLayout'
+import {MainLayout} from './ui/MainLayout'
 
-export { MainLayout };
+export {AccountLayout, MainLayout}
