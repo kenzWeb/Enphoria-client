@@ -1,4 +1,4 @@
-import {IUser} from '@/shared/types/user.interface'
+import {IUser, IUserUpdate} from '@/shared/types/user.interface'
 import {axiosWithAuth} from '../api/api.interceptors'
 import {API_URL} from '../config/api.config'
 
@@ -16,6 +16,14 @@ class UserService {
 		return axiosWithAuth<IUser>({
 			url: API_URL.users(`profile/favorites/${productId}`),
 			method: 'PATCH',
+		})
+	}
+
+	async updateProfile(data: Partial<IUserUpdate>) {
+		return axiosWithAuth<IUser>({
+			url: API_URL.users('profile'),
+			method: 'PATCH',
+			data,
 		})
 	}
 }

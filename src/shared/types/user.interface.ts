@@ -14,3 +14,7 @@ export interface IUser {
 	orders: IOrder[]
 	shippingAddress: IShippingAddress[]
 }
+
+export interface IUserUpdate extends Pick<IUser, 'name' | 'email'> {
+	picture?: string
+}

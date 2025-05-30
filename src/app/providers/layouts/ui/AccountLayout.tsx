@@ -10,9 +10,13 @@ const AccountLayoutContent = () => {
 	return (
 		<div className='container !my-[2.5rem]'>
 			<Breadcrumbs items={items} endPage={endPage} />
-			<div className='flex items-baseline gap-[50px] mt-[30px]'>
-				<Menu />
-				<Outlet />
+			<div className='flex gap-[50px] mt-[30px]'>
+				<div className='w-[25%]'>
+					<Menu />
+				</div>
+				<div className='w-[75%]'>
+					<Outlet />
+				</div>
 			</div>
 		</div>
 	)
