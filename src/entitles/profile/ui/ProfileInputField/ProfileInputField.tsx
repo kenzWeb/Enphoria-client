@@ -1,54 +1,41 @@
 import {useUpdateProfile} from '@/shared/hooks/api/useUpdateProfile'
-import {IUserUpdate} from '@/shared/types/user.interface'
 import {useEffect, useRef, useState} from 'react'
+import {createProfileFieldHandlers, syncFieldValue} from '../../model'
+import {IProfileInputFieldProps} from '../../types'
 import styles from './ProfileInputField.module.scss'
-
-type ProfileInputFieldProps = {
-	value?: string
-	title?: string
-	fieldName: 'name' | 'email'
-}
 
 export const ProfileInputField = ({
 	value,
 	title,
 	fieldName,
-}: ProfileInputFieldProps) => {
+}: IProfileInputFieldProps) => {
 	const [isDisabled, setIsDisabled] = useState<boolean>(true)
-	const ref = useRef<HTMLInputElement>(null)
+	const inputRef = useRef<HTMLInputElement>(null)
 
 	const {onSubmit, form, isPending} = useUpdateProfile()
 
 	const fieldValue = form.watch(fieldName)
 
 	useEffect(() => {
-		if (value && !fieldValue) {
-			form.setValue(fieldName, value)
-		}
+		syncFieldValue({
+			value,
+			fieldName,
+			form,
+			fieldValue,
+		})
 	}, [value, fieldName, form, fieldValue])
 
-	const handleChange = () => {
-		setIsDisabled(false)
-
-		if (isDisabled && ref.current) {
-			setTimeout(() => {
-				ref.current?.focus()
-			}, 0)
-		}
-	}
-
-	const handleCancel = () => {
-		setIsDisabled(true)
-		form.setValue(fieldName, value || '')
-	}
-
-	const handleSubmit = () => {
-		const data = {
-			[fieldName]: form.getValues(fieldName),
-		} as Partial<IUserUpdate>
-		onSubmit(data)
-		setIsDisabled(true)
-	}
+	const {handleChange, handleCancel, handleSubmit} = createProfileFieldHandlers(
+		{
+			fieldName,
+			value,
+			form,
+			onSubmit,
+			isPending,
+			setIsDisabled,
+			inputRef,
+		},
+	)
 
 	return (
 		<div className={styles.container}>
@@ -58,7 +45,7 @@ export const ProfileInputField = ({
 					className={styles.input}
 					placeholder={value}
 					value={fieldValue || ''}
-					ref={ref}
+					ref={inputRef}
 					disabled={isDisabled || isPending}
 					onChange={(e) => form.setValue(fieldName, e.target.value)}
 				/>

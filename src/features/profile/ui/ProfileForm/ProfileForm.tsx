@@ -1,4 +1,4 @@
-import {ProfileInputField} from '@/entitles/profile'
+import {PasswordChangeField, ProfileInputField} from '@/entitles/profile'
 import {useProfile} from '@/shared/hooks/api/useProfile'
 import styles from './ProfileForm.module.scss'
 
@@ -17,6 +17,7 @@ export const ProfileForm = () => {
 				title='Email Address'
 				fieldName='email'
 			/>
+			<PasswordChangeField />
 		</div>
 	)
 }
