@@ -17,11 +17,6 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 	const ref = useRef(null)
 	const isInView = useInView(ref, {once: true})
 
-	const handleFavoriteClick = (e: React.MouseEvent) => {
-		e.stopPropagation()
-		e.preventDefault()
-	}
-
 	const handleRightElementClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
 		e.preventDefault()
@@ -62,13 +57,9 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 					/>
 
 					{!category && (
-						<button
-							className={styles.favoriteBtn}
-							onClick={handleFavoriteClick}
-							aria-label='Add to favorites'
-						>
+						<div className={styles.favoriteBtn}>
 							<FavoriteButton product={product} />
-						</button>
+						</div>
 					)}
 
 					<div
