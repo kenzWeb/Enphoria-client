@@ -14,4 +14,5 @@ export const API_URL = {
 	orders: (url = '') => API_URL.root(`/orders/${url}`),
 	codes: (url = '') => API_URL.root(`/codes/${url}`),
 	billing: (url = '') => API_URL.root(`/billing/${url}`),
+	shipping: (url = '') => API_URL.root(`/shipping-addresses/${url}`),
 }

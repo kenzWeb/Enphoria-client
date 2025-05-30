@@ -1,5 +1,5 @@
 import {useBreadcrumbsAccount} from '@/shared/hooks/useBreadcrumbsAccount'
-import {ProfileInfo} from '@/widgets/profile'
+import {ProfileAddress, ProfileInfo} from '@/widgets/profile'
 
 export const ProfilePage = () => {
 	useBreadcrumbsAccount()
@@ -7,6 +7,7 @@ export const ProfilePage = () => {
 	return (
 		<div className=''>
 			<ProfileInfo />
+			<ProfileAddress />
 		</div>
 	)
 }

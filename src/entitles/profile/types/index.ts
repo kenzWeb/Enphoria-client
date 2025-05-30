@@ -1,3 +1,4 @@
+import {IShippingAddress} from '@/shared/types/shipping-address.interface'
 import {IUserUpdate} from '@/shared/types/user.interface'
 import {UseFormReturn} from 'react-hook-form'
 
@@ -42,4 +43,8 @@ export interface IPasswordFieldState {
 export interface IPasswordFieldHandlers {
 	handleChange: () => void
 	handleCancel: () => void
+}
+
+export interface IProfileAddressCard {
+	address: IShippingAddress
 }

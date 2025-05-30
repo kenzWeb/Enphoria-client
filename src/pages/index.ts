@@ -1,3 +1,4 @@
+import {AddAddressPage} from './ui/AddAddressPage'
 import {AuthPage} from './ui/Auth/AuthPage'
 import {CartPage} from './ui/CartPage'
 import {CheckoutPage} from './ui/CheckoutPage'
@@ -10,6 +11,7 @@ import {ThanksPage} from './ui/ThanksPage'
 import {WishlistPage} from './ui/WishlistPage'
 
 export {
+	AddAddressPage,
 	AuthPage,
 	CartPage,
 	CheckoutPage,

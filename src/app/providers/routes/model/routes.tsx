@@ -1,6 +1,7 @@
 import {AccountLayout, MainLayout} from '@/app/providers/layouts'
 import {AuthRoute} from '@/app/providers/routes'
 import {
+	AddAddressPage,
 	AuthPage,
 	CartPage,
 	CheckoutPage,
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
 					{
 						path: PUBLIC_URL.account('wishlist'),
 						element: <WishlistPage />,
+					},
+					{
+						path: PUBLIC_URL.account('add-address'),
+						element: <AddAddressPage />,
 					},
 				],
 			},

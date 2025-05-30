@@ -1,14 +1,16 @@
-import {IUser} from './user.interface'
-
 export interface IShippingAddress {
-	id?: number
-	streetAddress?: string
-	apartment?: string
-	city?: string
+	id: string
+	firstName: string
+	lastName: string
+	region: string
+	company?: string
+	streetAddress: string
+	suite?: string
+	city: string
 	state?: string
-	postalCode?: string
-	createdAt?: Date
-	updatedAt?: Date
-	userId?: number
-	user?: IUser
+	phone: string
+	postalCode: string
+	instruction?: string
+	createdAt: Date
+	updatedAt: Date
 }

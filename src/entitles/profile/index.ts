@@ -1,7 +1,8 @@
+import {AddressForm} from './ui/AddressForm/AddressForm'
 import {PasswordChangeField} from './ui/PasswordChangeField'
+import {ProfileAddressCard} from './ui/ProfileAddressCard/ProfileAddressCard'
 import {ProfileInputField} from './ui/ProfileInputField'
 
-// Экспорт типов и интерфейсов
 export type {
 	IPasswordChangeFieldProps,
 	IPasswordFieldHandlers,
@@ -14,7 +15,6 @@ export type {
 	ProfileFieldName,
 } from './types'
 
-// Экспорт функций модели
 export {
 	createPasswordFieldHandlers,
 	createProfileFieldHandlers,
@@ -22,5 +22,4 @@ export {
 	syncFieldValue,
 } from './model'
 
-// Экспорт компонентов
-export {PasswordChangeField, ProfileInputField}
+export {AddressForm, PasswordChangeField, ProfileAddressCard, ProfileInputField}

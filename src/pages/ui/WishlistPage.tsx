@@ -1,7 +1,6 @@
 import {useBreadcrumbsAccount} from '@/shared/hooks/useBreadcrumbsAccount'
 
 export const WishlistPage = () => {
-	// Хук автоматически определит название страницы на основе пути
 	useBreadcrumbsAccount()
 
 	return (

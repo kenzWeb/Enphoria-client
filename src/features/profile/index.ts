@@ -2,6 +2,8 @@ import {PasswordChangeForm} from './ui/PasswordChangeForm'
 import {ProfileForm} from './ui/ProfileForm/ProfileForm'
 import {ProfileHeading} from './ui/ProfileHeading/ProfileHeading'
 
+export {useAddAddressForm} from './hooks/useAddAddressForm'
+
 export type {
 	IPasswordChangeFormProps,
 	IPasswordFormHandlers,

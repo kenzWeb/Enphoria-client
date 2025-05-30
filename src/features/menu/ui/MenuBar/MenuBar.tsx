@@ -1,5 +1,4 @@
 import {FC} from 'react'
-
 import {MenuBarItem} from '@/entitles/menu'
 import {MenuBarProps} from '../../types'
 import styles from './MenuBar.module.scss'
