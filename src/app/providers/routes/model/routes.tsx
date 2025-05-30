@@ -1,5 +1,5 @@
 import {AccountLayout, MainLayout} from '@/app/providers/layouts'
-import {AuthRoute} from '@/app/providers/routes'
+import {AuthRoute, PrivateRoute} from '@/app/providers/routes'
 import {
 	AddAddressPage,
 	AuthPage,
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				path: PUBLIC_URL.favorites(),
+				path: PUBLIC_URL.cart(),
 				element: <CartPage />,
 			},
 			{
@@ -46,25 +46,31 @@ export const router = createBrowserRouter([
 				path: PUBLIC_URL.thanks(),
 				element: <ThanksPage />,
 			},
+
 			{
-				path: PUBLIC_URL.account(),
-				element: <AccountLayout />,
+				element: <PrivateRoute />,
 				children: [
 					{
-						path: PUBLIC_URL.account('profile'),
-						element: <ProfilePage />,
-					},
-					{
-						path: PUBLIC_URL.account('orders'),
-						element: <OrdersPage />,
-					},
-					{
-						path: PUBLIC_URL.account('wishlist'),
-						element: <WishlistPage />,
-					},
-					{
-						path: PUBLIC_URL.account('add-address'),
-						element: <AddAddressPage />,
+						path: PUBLIC_URL.account(),
+						element: <AccountLayout />,
+						children: [
+							{
+								path: PUBLIC_URL.account('profile'),
+								element: <ProfilePage />,
+							},
+							{
+								path: PUBLIC_URL.account('orders'),
+								element: <OrdersPage />,
+							},
+							{
+								path: PUBLIC_URL.account('wishlist'),
+								element: <WishlistPage />,
+							},
+							{
+								path: PUBLIC_URL.account('add-address'),
+								element: <AddAddressPage />,
+							},
+						],
 					},
 				],
 			},

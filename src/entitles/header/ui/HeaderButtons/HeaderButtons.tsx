@@ -1,10 +1,11 @@
 import {HeaderBurger} from '@/features/header'
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {CustomButtonLink} from '@/shared/ui/Buttons'
+import {LucideUser2} from 'lucide-react'
 import {IoMdHeartEmpty} from 'react-icons/io'
 import {LuShoppingCart} from 'react-icons/lu'
 import {HeaderForm} from '../HeaderForm/HeaderForm'
 import styles from './styles.module.scss'
-import { LucideUser2 } from 'lucide-react'
 
 type Props = {
 	isOpen: boolean
@@ -19,13 +20,13 @@ export const HeaderButtons = ({isOpen, setIsOpen}: Props) => {
 			</div>
 
 			<div className={styles.link}>
-				<CustomButtonLink to='/favorites'>
+				<CustomButtonLink to={PUBLIC_URL.account('wishlist')}>
 					<IoMdHeartEmpty size={20} />
 				</CustomButtonLink>
-				<CustomButtonLink to='/like'>
+				<CustomButtonLink to={PUBLIC_URL.account('profile')}>
 					<LucideUser2 size={20} />
 				</CustomButtonLink>
-				<CustomButtonLink to='/like'>
+				<CustomButtonLink to={PUBLIC_URL.cart()}>
 					<LuShoppingCart size={20} />
 				</CustomButtonLink>
 			</div>
