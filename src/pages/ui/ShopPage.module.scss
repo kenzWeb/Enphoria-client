@@ -58,7 +58,6 @@
 	}
 }
 
-// Мобильная версия с выдвижной боковой панелью
 @media (max-width: 767px) {
 	.shopLayoutMobile {
 		display: flex;
@@ -112,14 +111,37 @@
 		border-top: none;
 
 		&.open {
-			max-height: 1000px;
+			max-height: calc(100vh - 200px);
 			padding: 2rem 1rem;
+			overflow-y: auto;
+			overscroll-behavior: contain;
 		}
 
 		&.closed {
 			max-height: 0;
 			padding: 0 1rem;
 		}
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 3px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #c1c1c1;
+			border-radius: 3px;
+
+			&:hover {
+				background: #a1a1a1;
+			}
+		}
+
+		scrollbar-width: thin;
+		scrollbar-color: #c1c1c1 #f1f1f1;
 	}
 }
 

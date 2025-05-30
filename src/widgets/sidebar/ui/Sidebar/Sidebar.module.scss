@@ -5,6 +5,7 @@
 	border: 1px solid rgba(190, 188, 189, 0.2);
 	border-radius: 12px;
 	background: white;
+	overflow: hidden;
 
 	@media (max-width: 1199px) {
 		padding: 2rem 2rem;
@@ -12,6 +13,7 @@
 
 	@media (max-width: 991px) {
 		padding: 1.5rem;
+		border-radius: 8px;
 	}
 
 	@media (max-width: 767px) {
@@ -19,6 +21,7 @@
 		border-radius: 0;
 		padding: 0;
 		background: transparent;
+		overflow: visible;
 	}
 
 	@media (max-width: 480px) {

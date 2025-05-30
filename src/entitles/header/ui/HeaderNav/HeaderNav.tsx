@@ -1,57 +1,58 @@
 import {HeaderForm} from '@/entitles/header/ui/HeaderForm/HeaderForm'
-import {CustomLink} from '@/shared/ui/Buttons'
-import {useEffect, useState} from 'react'
+import {useMobileMenu} from '@/shared/hooks/useMobileMenu'
+import {getNavigationItems, getQuickActions} from '../../model/navigation'
+import {Logo} from '../Logo/Logo'
+import {MobileFooter} from '../MobileFooter/MobileFooter'
+import {MobileHeader} from '../MobileHeader/MobileHeader'
+import {MobileOverlay} from '../MobileOverlay/MobileOverlay'
+import {NavigationMenu} from '../NavigationMenu/NavigationMenu'
+import {QuickActions} from '../QuickActions/QuickActions'
 import styles from './styles.module.scss'
-import Logo from '/img/Logo.svg'
 
 type Props = {
 	isOpen: boolean
+	onClose: () => void
 }
 
-export const HeaderNav = ({isOpen}: Props) => {
-	const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 920)
+export const HeaderNav = ({isOpen, onClose}: Props) => {
+	const {isMobile, handleLinkClick} = useMobileMenu({isOpen, onClose})
 
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 920)
-		}
-
-		window.addEventListener('resize', handleResize)
-
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-	}, [])
+	const navigationItems = getNavigationItems()
+	const quickActions = getQuickActions()
 
 	return (
 		<>
-			<div className={styles.logo}>
-				<img src={Logo} alt='' />
-			</div>
+			{!isMobile && <Logo />}
+
+			{isMobile && isOpen && (
+				<MobileOverlay isVisible={true} onClick={onClose} />
+			)}
 
 			<nav className={`${styles.nav} ${isOpen ? styles.active : ''}`}>
-				{isMobile ? (
-					<div>
-						<HeaderForm />
-					</div>
-				) : null}
-				<ul className={styles.list}>
-					<CustomLink to='/'>
-						<h2 className={styles.link}>Shop</h2>
-					</CustomLink>
-					<CustomLink to='/shop/?page=1&gender=male'>
-						<h2 className={styles.link}>Men</h2>
-					</CustomLink>
-					<CustomLink to='/shop/?page=1&gender=female'>
-						<h2 className={styles.link}>Women</h2>
-					</CustomLink>
-					<CustomLink to='/shop/?page=1&category=Tops'>
-						<h2 className={styles.link}>Tops</h2>
-					</CustomLink>
-					<CustomLink to='/shop/?page=1&category=Boxers'>
-						<h2 className={styles.link}>Boxers</h2>
-					</CustomLink>
-				</ul>
+				{isMobile && (
+					<>
+						<MobileHeader onClose={onClose} />
+
+						<div className={styles.searchSection}>
+							<HeaderForm />
+						</div>
+
+						<QuickActions
+							actions={quickActions}
+							onActionClick={handleLinkClick}
+						/>
+
+						<div className={styles.divider} />
+					</>
+				)}
+
+				<NavigationMenu
+					items={navigationItems}
+					isMobile={isMobile}
+					onItemClick={handleLinkClick}
+				/>
+
+				{isMobile && <MobileFooter />}
 			</nav>
 		</>
 	)

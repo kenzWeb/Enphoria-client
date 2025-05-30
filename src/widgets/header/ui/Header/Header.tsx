@@ -7,6 +7,10 @@ export const Header = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const location = useLocation()
 
+	const handleClose = () => {
+		setIsOpen(false)
+	}
+
 	return (
 		<div className='headerWrapper'>
 			<div className='container'>
@@ -15,7 +19,7 @@ export const Header = () => {
 						location.pathname === '/' ? styles.header : styles.headerUnderline
 					}
 				>
-					<HeaderNav isOpen={isOpen} />
+					<HeaderNav isOpen={isOpen} onClose={handleClose} />
 					<HeaderButtons isOpen={isOpen} setIsOpen={setIsOpen} />
 				</header>
 			</div>

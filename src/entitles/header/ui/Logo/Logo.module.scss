@@ -1,0 +1,51 @@
+.logo {
+	display: flex;
+	align-items: center;
+
+	img {
+		width: auto;
+	}
+
+	&.small img {
+		height: 1.5rem;
+	}
+
+	&.medium img {
+		height: 2rem;
+
+		@media (min-width: 1100px) {
+			height: 2.4rem;
+		}
+
+		@media (min-width: 1400px) {
+			height: 2.8rem;
+		}
+
+		@media (min-width: 1600px) {
+			height: 3.2rem;
+		}
+	}
+
+	&.large img {
+		height: 2.4rem;
+
+		@media (min-width: 1100px) {
+			height: 3rem;
+		}
+
+		@media (min-width: 1400px) {
+			height: 3.5rem;
+		}
+
+		@media (min-width: 1600px) {
+			height: 4rem;
+		}
+	}
+
+	@media (max-width: 920px) {
+		&.large,
+		&.medium {
+			display: none;
+		}
+	}
+}

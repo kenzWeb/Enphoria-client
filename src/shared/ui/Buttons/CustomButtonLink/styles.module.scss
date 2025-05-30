@@ -7,6 +7,16 @@
 	display: flex;
 	transition: all 0.2s ease;
 
+	@media (min-width: 1400px) {
+		padding: 1.4rem;
+		border-radius: 12px;
+	}
+
+	@media (min-width: 1600px) {
+		padding: 1.6rem;
+		border-radius: 14px;
+	}
+
 	&:hover {
 		background-color: #6620c1;
 		color: white;
@@ -20,4 +30,14 @@
 	border-radius: 10px;
 	align-items: center;
 	display: flex;
+
+	@media (min-width: 1400px) {
+		padding: 1.4rem;
+		border-radius: 12px;
+	}
+
+	@media (min-width: 1600px) {
+		padding: 1.6rem;
+		border-radius: 14px;
+	}
 }
