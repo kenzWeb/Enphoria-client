@@ -1,5 +1,5 @@
 import {ReactNode, useState} from 'react'
-import {BreadcrumbsContext} from './breadcrumbsTypes'
+import {BreadcrumbsContext} from '../types/breadcrumbs.context.interface'
 
 interface BreadcrumbItem {
 	name: string

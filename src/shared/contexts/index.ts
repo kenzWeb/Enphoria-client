@@ -1,3 +1,3 @@
+export {BreadcrumbsContext} from '../types/breadcrumbs.context.interface.ts'
 export {BreadcrumbsProvider} from './BreadcrumbsContext.tsx'
-export {BreadcrumbsContext} from './breadcrumbsTypes'
 export {useBreadcrumbsContext} from './useBreadcrumbsContext'
