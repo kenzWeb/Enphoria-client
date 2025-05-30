@@ -1,22 +1,21 @@
 import {ShoppingCartCard} from '@/entitles/shoppingCart'
-import {useProfile} from '@/shared/hooks/api/useProfile'
+import {useAuth} from '@/shared/hooks/api/useAuth'
 import {useCartStore} from '@/shared/store/cart.store'
 import {Loader2} from 'lucide-react'
 import {Link} from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const ShoppingCartContent = () => {
-	const {isLoading, isFetching, isPending, user} = useProfile()
-
+	const {isAuth, isCheckingAuth} = useAuth()
 	const items = useCartStore((state) => state.cart)
 
-	if (!user) {
+	if (!isAuth) {
 		return (
 			<h2 className={styles.empty}>Please login to see your shopping cart</h2>
 		)
 	}
 
-	if (isLoading || isPending || isFetching) {
+	if (isCheckingAuth) {
 		return (
 			<div className='w-full h-full flex items-center justify-center'>
 				<Loader2 className='animate-spin' />

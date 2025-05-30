@@ -1,4 +1,5 @@
 import {PUBLIC_URL} from '@/shared/config/url.config'
+import {useAuth} from '@/shared/hooks/api/useAuth'
 import {useFavorite} from '@/shared/hooks/api/useFavorite'
 import {useProfile} from '@/shared/hooks/api/useProfile'
 import {Button} from '@/shared/shad-cn/ui/Button'
@@ -14,12 +15,13 @@ interface FavoriteButtonProps {
 }
 
 export const FavoriteButton = ({product}: FavoriteButtonProps) => {
+	const {isAuth} = useAuth()
 	const {user} = useProfile()
 	const navigate = useNavigate()
 	const {mutate, isPending} = useFavorite(product)
 
 	const handleFavoriteClick = () => {
-		if (!user) navigate(PUBLIC_URL.auth())
+		if (!isAuth) navigate(PUBLIC_URL.auth())
 
 		mutate()
 	}

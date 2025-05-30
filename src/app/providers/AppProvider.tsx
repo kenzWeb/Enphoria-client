@@ -3,6 +3,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import React, {useState} from 'react'
 import {Toaster} from 'react-hot-toast'
 import {RouterProvider} from 'react-router-dom'
+import {AuthInitializer} from './auth'
 import {router} from './routes/model/routes'
 
 export const AppProvider: React.FC = () => {
@@ -19,8 +20,10 @@ export const AppProvider: React.FC = () => {
 	return (
 		<React.StrictMode>
 			<QueryClientProvider client={client}>
-				<Toaster />
-				<RouterProvider router={router} fallbackElement={<Loader />} />
+				<AuthInitializer>
+					<Toaster />
+					<RouterProvider router={router} fallbackElement={<Loader />} />
+				</AuthInitializer>
 			</QueryClientProvider>
 		</React.StrictMode>
 	)

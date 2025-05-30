@@ -1,7 +1,10 @@
 import {userService} from '@/shared/services/user.service'
 import {useQuery} from '@tanstack/react-query'
+import {useAuth} from './useAuth'
 
 export function useProfile() {
+	const {isAuth} = useAuth()
+
 	const {
 		data: user,
 		isLoading,
@@ -11,7 +14,7 @@ export function useProfile() {
 		queryKey: ['profile'],
 		queryFn: () => userService.getProfile(),
 		staleTime: 10 * 60 * 1000,
-		enabled: true,
+		enabled: isAuth,
 	})
 
 	return {user, isLoading, isFetching, isPending}

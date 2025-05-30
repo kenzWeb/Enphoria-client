@@ -1,14 +1,13 @@
-import {useMutation} from '@tanstack/react-query'
 import {SubmitHandler, useForm} from 'react-hook-form'
-import toast from 'react-hot-toast'
+import {useNavigate} from 'react-router-dom'
 
 import {PUBLIC_URL} from '@/shared/config/url.config'
-import {authService} from '@/shared/services/auth/auth.service'
 import {IAuthForm} from '@/shared/types/auth.interface'
-import {useNavigate} from 'react-router-dom'
+import {useAuth} from './useAuth'
 
 export function useAuthForm(isReg: boolean) {
 	const navigate = useNavigate()
+	const {login, register, isLoading} = useAuth()
 
 	const form = useForm<IAuthForm>({
 		mode: 'onChange',
@@ -19,27 +18,21 @@ export function useAuthForm(isReg: boolean) {
 		},
 	})
 
-	const {mutate, isPending} = useMutation({
-		mutationKey: ['auth user'],
-		mutationFn: (data: IAuthForm) =>
-			authService.main(isReg ? 'register' : 'login', data),
-		onSuccess() {
-			toast.success('Successfully logged in')
+	const onSubmit: SubmitHandler<IAuthForm> = async (data) => {
+		try {
+			if (isReg) {
+				await register(data)
+			} else {
+				await login(data)
+			}
+
 			form.reset()
 			navigate(PUBLIC_URL.home())
-		},
-		onError(error) {
-			if (error instanceof Error) {
-				toast.error(error.message)
-			} else {
-				toast.error('Something went wrong')
-			}
-		},
-	})
-
-	const onSubmit: SubmitHandler<IAuthForm> = (data) => {
-		mutate(data)
+		} catch (error) {
+			// Ошибки обрабатываются в хуке useAuth
+			console.error('Auth error:', error)
+		}
 	}
 
-	return {onSubmit, form, isPending}
+	return {onSubmit, form, isPending: isLoading}
 }

@@ -1,13 +1,13 @@
-import {useProfile} from '@/shared/hooks/api/useProfile'
+import {useAuth} from '@/shared/hooks/api/useAuth'
 import {Loader} from '@/shared/ui/Other'
 import {Navigate, Outlet} from 'react-router-dom'
 
 export const AuthRoute = () => {
-	const {user} = useProfile()
+	const {isAuth, isCheckingAuth} = useAuth()
 
-	if (user === null) {
+	if (isCheckingAuth) {
 		return <Loader />
 	}
 
-	return user ? <Navigate to={'/'} replace /> : <Outlet />
+	return isAuth ? <Navigate to={'/'} replace /> : <Outlet />
 }
