@@ -1,27 +1,148 @@
 .catalog {
-	@apply flex w-full justify-center;
+	display: flex;
+	width: 100%;
+	justify-content: center;
 
 	> .products_base {
-		@apply grid sm:grid-cols-2 gap-[5rem] md:grid-cols-3 lg:grid-cols-4 max-w-[1200px] p-4 w-full;
+		display: grid;
+		gap: 5rem;
+		max-width: 1200px;
+		padding: 4px;
+		width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+
+		@media (max-width: 1199px) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 4rem;
+		}
+
+		@media (max-width: 991px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 3rem;
+		}
+
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+			padding: 2px;
+		}
+
+		@media (max-width: 480px) {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 0;
+		}
 	}
 
 	> .products_shop {
-		@apply grid sm:grid-cols-2 gap-[2.4rem] md:grid-cols-3 lg:grid-cols-3 max-w-[1200px] p-4 w-full;
+		display: grid;
+		gap: 2.4rem;
+		max-width: 1200px;
+		padding: 4px;
+		width: 100%;
+		grid-template-columns: repeat(3, 1fr);
+
+		@media (max-width: 1199px) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+		}
+
+		@media (max-width: 991px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.8rem;
+		}
+
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+			padding: 2px;
+		}
+
+		@media (max-width: 480px) {
+			grid-template-columns: 1fr;
+			gap: 1.2rem;
+			padding: 0;
+		}
 	}
 
 	> .products_similar {
-		@apply flex gap-4 justify-start items-start w-full;
+		display: flex;
+		gap: 16px;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		overflow-x: auto;
+		padding-bottom: 10px;
+
+		@media (max-width: 767px) {
+			gap: 12px;
+		}
+
+		@media (max-width: 480px) {
+			gap: 8px;
+		}
 	}
 }
 
 .skeleton_wrapper {
-	@apply w-full bg-white;
+	width: 100%;
+	background: white;
+	min-height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: 767px) {
+		min-height: 200px;
+	}
+
+	@media (max-width: 480px) {
+		min-height: 150px;
+	}
 }
 
 .title {
-	@apply absolute top-[50%] left-[45%] font-semibold text-[50px];
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	font-weight: 600;
+	font-size: 50px;
+	color: #3c4242;
+	transform: translate(-50%, -50%);
+
+	@media (max-width: 991px) {
+		font-size: 40px;
+		left: 50%;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 32px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 24px;
+	}
 }
 
 .error {
-	@apply w-full font-semibold text-[50px];
+	width: 100%;
+	font-weight: 600;
+	font-size: 50px;
+	color: #e74c3c;
+	text-align: center;
+	padding: 2rem;
+
+	@media (max-width: 991px) {
+		font-size: 40px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 32px;
+		padding: 1.5rem;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 24px;
+		padding: 1rem;
+	}
 }

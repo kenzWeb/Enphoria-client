@@ -1,6 +1,6 @@
-import {Button} from '@/shared/shad-cn/ui/Button'
 import {IProduct} from '@/shared/types/product.interface'
 import {type FC} from 'react'
+import styles from './Pagination.module.scss'
 
 interface IPagination {
 	numberPages: number
@@ -19,28 +19,33 @@ export const Pagination: FC<IPagination> = ({
 		return null
 	}
 
-	return (
-		<div className='text-center mt-16'>
-			{Array.from({
-				length: numberPages > 1 ? Math.ceil(numberPages) : 1,
-			}).map((_, index) => {
-				const pageNumber = (index + 1).toString()
+	const totalPages = Math.ceil(numberPages)
+	const currentPageNum = parseInt(currentPage.toString())
 
-				return (
-					<Button
-						key={pageNumber}
-						size='sm'
-						variant={
-							currentPage === pageNumber ? 'paginationSelect' : 'pagination'
-						}
-						onClick={() => changePage(pageNumber)}
-						className='mx-2.5'
-						disabled={currentPage === pageNumber}
-					>
-						{pageNumber}
-					</Button>
-				)
-			})}
+	return (
+		<div className={styles.container}>
+			<div className={styles.navigation}>
+				{Array.from({length: totalPages}).map((_, index) => {
+					const pageNumber = (index + 1).toString()
+					const isSelected = currentPage === pageNumber
+
+					return (
+						<button
+							key={pageNumber}
+							className={`${styles.pageButton} ${
+								isSelected ? styles.pageButtonSelected : ''
+							}`}
+							onClick={() => changePage(pageNumber)}
+							disabled={isSelected}
+						>
+							{pageNumber}
+						</button>
+					)
+				})}
+			</div>
+			<div className={styles.pageInfo}>
+				Page {currentPageNum} of {totalPages}
+			</div>
 		</div>
 	)
 }

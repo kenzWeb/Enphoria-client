@@ -1,32 +1,132 @@
 .wrapper {
-	@apply grid grid-cols-4 py-[4rem] gap-2;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 8px;
+	padding: 4rem 0;
+
+	@media (max-width: 991px) {
+		padding: 3rem 0;
+		gap: 6px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 2.5rem 0;
+		gap: 5px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (max-width: 480px) {
+		padding: 2rem 0;
+		gap: 4px;
+		grid-template-columns: repeat(3, 1fr);
+	}
 
 	.item {
-		@apply flex flex-col items-center cursor-pointer select-none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		cursor: pointer;
+		user-select: none;
+		transition: transform 0.2s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+		}
+
+		@media (max-width: 767px) {
+			&:hover {
+				transform: none;
+			}
+		}
 
 		> span {
-			@apply text-[#8A8989] text-[14px] mb-[18px];
+			color: #8a8989;
+			font-size: 14px;
+			margin-bottom: 18px;
+			text-align: center;
+
+			@media (max-width: 767px) {
+				font-size: 12px;
+				margin-bottom: 12px;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 11px;
+				margin-bottom: 8px;
+			}
 		}
 	}
 }
 
 .colorWrapper {
-	@apply relative mb-[18px] flex items-center justify-center;
+	position: relative;
+	margin-bottom: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 36px;
 	height: 36px;
+
+	@media (max-width: 767px) {
+		width: 32px;
+		height: 32px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: 480px) {
+		width: 28px;
+		height: 28px;
+		margin-bottom: 8px;
+	}
 }
 
 .color {
-	@apply w-[36px] h-[36px] rounded-[12px] absolute;
+	width: 36px;
+	height: 36px;
+	border-radius: 12px;
+	position: absolute;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	@media (max-width: 767px) {
+		width: 32px;
+		height: 32px;
+		border-radius: 10px;
+
+		&:hover {
+			transform: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		width: 28px;
+		height: 28px;
+		border-radius: 8px;
+	}
 }
 
 .checkmark {
-	@apply absolute inset-0
-		text-white
-		flex items-center justify-center
-		rounded-[12px]
-		bg-black/20 backdrop-blur-[1px];
+	position: absolute;
+	inset: 0;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	background: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(1px);
+
+	@media (max-width: 767px) {
+		border-radius: 10px;
+	}
+
+	@media (max-width: 480px) {
+		border-radius: 8px;
+	}
 }
 
 .check {

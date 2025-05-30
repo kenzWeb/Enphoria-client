@@ -1,0 +1,22 @@
+.wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (min-width: 992px) {
+		min-height: 600px;
+	}
+
+	@media (max-width: 991px) and (min-width: 768px) {
+		min-height: 400px;
+	}
+
+	@media (max-width: 767px) {
+		min-height: 300px;
+	}
+
+	@media (max-width: 480px) {
+		min-height: 250px;
+	}
+}

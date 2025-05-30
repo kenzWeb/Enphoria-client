@@ -1,28 +1,118 @@
 .wrapper {
-	@apply bg-white p-4 rounded-lg text-[18px];
+	background-color: white;
+	padding: 1.6rem;
+	border-radius: 8px;
+	font-size: 1.8rem;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		padding: 0.8rem;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0.4rem;
+	}
 
 	:global {
 		.select-trigger {
-			@apply bg-[#F6F6F6] text-[#3C4242] border border-[#BEBCBD] transition-colors duration-200 text-base py-3 px-4;
+			background-color: #f6f6f6;
+			color: #3c4242;
+			border: 1px solid #bebcbd;
+			transition: all 0.2s ease;
+			font-size: 1.6rem;
+			padding: 1.2rem 1.6rem;
+			width: 220px;
 
 			&:hover {
-				@apply bg-[#EDEEF2];
+				background-color: #edeef2;
+			}
+
+			@media (max-width: 991px) {
+				width: 200px;
+			}
+
+			@media (max-width: 767px) {
+				width: 100%;
+				padding: 1.2rem 1.5rem;
+				font-size: 1.6rem;
+			}
+
+			@media (max-width: 480px) {
+				padding: 1rem 1.2rem;
+				font-size: 1.4rem;
+				min-height: 4.4rem;
 			}
 		}
 
 		.select-content {
-			@apply bg-white border-[#807D7E] rounded-md shadow-md min-w-[220px];
+			background-color: white;
+			border: 1px solid #807d7e;
+			border-radius: 6px;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			min-width: 220px;
+			max-height: 200px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			z-index: 1000;
+			position: absolute;
+
+			/* Custom scrollbar styling */
+			&::-webkit-scrollbar {
+				width: 6px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: #f1f1f1;
+				border-radius: 3px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: #c1c1c1;
+				border-radius: 3px;
+
+				&:hover {
+					background: #a1a1a1;
+				}
+			}
+
+			/* Firefox scrollbar */
+			scrollbar-width: thin;
+			scrollbar-color: #c1c1c1 #f1f1f1;
+
+			@media (max-width: 767px) {
+				width: 100%;
+				min-width: 100%;
+				max-height: 180px;
+			}
+
+			@media (max-width: 480px) {
+				max-height: 160px;
+			}
 		}
 
 		.select-item {
-			@apply text-[#3C4242] cursor-pointer px-4 py-3 text-base;
+			color: #3c4242;
+			cursor: pointer;
+			padding: 1.2rem 1.6rem;
+			font-size: 1.6rem;
 
 			&[data-highlighted] {
-				@apply bg-[#8A33FD] text-white;
+				background-color: #8a33fd;
+				color: white;
 			}
 
 			&:hover {
-				@apply bg-[#F6F6F6];
+				background-color: #f6f6f6;
+			}
+
+			@media (max-width: 767px) {
+				padding: 1rem 1.2rem;
+				font-size: 1.4rem;
+			}
+
+			@media (max-width: 480px) {
+				padding: 0.8rem 1rem;
+				font-size: 1.3rem;
 			}
 		}
 	}

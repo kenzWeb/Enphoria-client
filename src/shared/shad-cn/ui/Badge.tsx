@@ -17,7 +17,7 @@ const badgeVariants = cva(
 				outline:
 					'text-foreground text-[10px] md:text-[11px] lg:text-[12px] xl:text-[14px] px-2 py-0.5 md:px-2.5 md:py-1 lg:px-3 lg:py-1.5 xl:px-4 xl:py-2',
 				price:
-					'bg-[#F6F6F6] w-[6rem] md:w-[7rem] lg:w-[8rem] xl:w-[9rem] h-[2.4rem] md:h-[2.8rem] lg:h-[3.2rem] xl:h-[3.6rem] rounded-[6px] md:rounded-[7px] lg:rounded-[8px] xl:rounded-[9px] text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] text-[#3C4242] items-center justify-center',
+					'bg-[#F6F6F6] min-w-[4.5rem] max-w-[8rem] w-fit h-[2.4rem] md:h-[2.8rem] lg:h-[3.2rem] xl:h-[3.6rem] rounded-[6px] md:rounded-[7px] lg:rounded-[8px] xl:rounded-[9px] text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem] text-[#3C4242] items-center justify-center px-[0.8rem] md:px-[1rem] lg:px-[1.2rem] xl:px-[1.4rem] whitespace-nowrap',
 				priceOutline:
 					'w-[6rem] md:w-[7rem] lg:w-[8rem] xl:w-[9rem] h-[2.4rem] md:h-[2.8rem] lg:h-[3.2rem] xl:h-[3.6rem] rounded-[6px] md:rounded-[7px] lg:rounded-[8px] xl:rounded-[9px] text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] border-solid border-[#BEBCBD] text-[#3C4242] items-center justify-center',
 				priceOutlineBlack:

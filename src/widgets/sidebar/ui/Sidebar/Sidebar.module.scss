@@ -1,3 +1,27 @@
 .wrapper {
-	@apply h-full w-[21vw] border-solid border-[#BEBCBD]/20 pt-[20px] px-[30px];
+	width: 100%;
+	height: fit-content;
+	padding: 2rem 3rem;
+	border: 1px solid rgba(190, 188, 189, 0.2);
+	border-radius: 12px;
+	background: white;
+
+	@media (max-width: 1199px) {
+		padding: 2rem 2rem;
+	}
+
+	@media (max-width: 991px) {
+		padding: 1.5rem;
+	}
+
+	@media (max-width: 767px) {
+		border: none;
+		border-radius: 0;
+		padding: 0;
+		background: transparent;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0;
+	}
 }

@@ -1,35 +1,291 @@
-.card {
-	@apply flex flex-col items-start;
+.productCard {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+	background: white;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	border: 1px solid transparent;
 
-	.top {
-		@apply mb-5 relative;
-
-		> .img_base {
-			@apply sm:w-[22rem] md:w-[25rem] lg:w-[27rem] rounded-2xl xl:h-[39rem];
-		}
-
-		> .img_shop {
-			@apply sm:w-[22rem] md:w-[25rem] lg:w-[27rem] h-[300px] rounded-2xl lg:h-[35rem] xl:h-[37rem];
-		}
-
-		> .favorite {
-			@apply absolute top-5 right-5;
-		}
+	&:hover {
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+		border-color: #f0f0f0;
+		transform: translateY(-2px);
 	}
 
-	> .buttom {
-		@apply flex justify-between w-full;
+	@media (max-width: 480px) {
+		border-radius: 8px;
+	}
+}
 
-		> .info {
-			@apply flex flex-col gap-1;
+.cardLink {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
+}
 
-			> h3 {
-				@apply text-[18px] font-bold;
-			}
+.imageWrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 12px;
+	margin-bottom: 12px;
+	background: #f8f9fa;
 
-			> p {
-				@apply text-[14px] text-[#7F7F7F];
-			}
+	@media (max-width: 480px) {
+		border-radius: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+.productImage {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+	border-radius: 12px;
+
+	@media (min-width: 640px) {
+		height: 300px;
+	}
+
+	@media (min-width: 768px) {
+		height: 320px;
+	}
+
+	@media (min-width: 1024px) {
+		height: 350px;
+	}
+
+	@media (min-width: 1280px) {
+		height: 370px;
+	}
+
+	@media (min-width: 1536px) {
+		height: 400px;
+	}
+
+	@media (max-width: 480px) {
+		height: 200px;
+		border-radius: 8px;
+	}
+
+	@media (max-width: 360px) {
+		height: 180px;
+	}
+
+	&[data-variant='home'] {
+		@media (min-width: 1280px) {
+			height: 390px;
 		}
+		@media (min-width: 1536px) {
+			height: 420px;
+		}
+	}
+}
+
+.favoriteBtn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	z-index: 10;
+	background: rgba(255, 255, 255, 0.95);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	backdrop-filter: blur(8px);
+	transition: all 0.2s ease;
+	padding: 0;
+
+	&:hover {
+		background: rgba(255, 255, 255, 1);
+		transform: scale(1.1);
+	}
+
+	@media (max-width: 768px) {
+		width: 28px;
+		height: 28px;
+		top: 6px;
+		right: 6px;
+	}
+
+	@media (max-width: 480px) {
+		width: 24px;
+		height: 24px;
+		top: 4px;
+		right: 4px;
+	}
+}
+
+// Overlay для цены/стрелки - абсолютное позиционирование относительно imageWrapper
+.priceOverlay {
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+	z-index: 9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		bottom: 6px;
+		right: 6px;
+	}
+
+	@media (max-width: 480px) {
+		bottom: 4px;
+		right: 4px;
+	}
+}
+
+// Тег цены
+.priceTag {
+	background: rgba(255, 255, 255, 0.95);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 6px;
+	padding: 6px 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #333;
+	backdrop-filter: blur(8px);
+	white-space: nowrap;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 1);
+		transform: scale(1.05);
+	}
+
+	@media (max-width: 768px) {
+		font-size: 11px;
+		padding: 5px 8px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 10px;
+		padding: 4px 6px;
+	}
+}
+
+// Иконка стрелки
+.arrowIcon {
+	background: rgba(255, 255, 255, 0.95);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(8px);
+	transition: all 0.2s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 1);
+		transform: scale(1.1);
+	}
+
+	@media (max-width: 768px) {
+		width: 28px;
+		height: 28px;
+	}
+
+	@media (max-width: 480px) {
+		width: 24px;
+		height: 24px;
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+
+		@media (max-width: 768px) {
+			width: 18px;
+			height: 18px;
+		}
+
+		@media (max-width: 480px) {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+// Информация о товаре
+.productInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 0 4px;
+	width: 100%;
+}
+
+.productTitle {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	line-height: 1.3;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	@media (min-width: 768px) {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	@media (min-width: 1536px) {
+		font-size: 20px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 14px;
+		white-space: normal;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	@media (max-width: 360px) {
+		font-size: 13px;
+	}
+}
+
+.productSubtitle {
+	font-size: 13px;
+	color: #7f7f7f;
+	margin: 0;
+	line-height: 1.2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 1536px) {
+		font-size: 15px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 12px;
+	}
+
+	@media (max-width: 360px) {
+		font-size: 11px;
 	}
 }
