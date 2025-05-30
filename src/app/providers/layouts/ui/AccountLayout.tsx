@@ -1,24 +1,30 @@
-import {useBreadcrumbs} from '@/shared/hooks/useBreadcrumbs'
+import {BreadcrumbsProvider, useBreadcrumbsContext} from '@/shared/contexts'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {Menu} from '@/widgets/menu'
 
 import {Outlet} from 'react-router-dom'
 
-export const AccountLayout = () => {
-	const breadcrumbs = useBreadcrumbs({
-		items: [
-			{
-				name: 'Home',
-				href: '/',
-			},
-		],
-		endPage: 'My Account',
-	})
+const AccountLayoutContent = () => {
+	const {endPage, items} = useBreadcrumbsContext()
+
 	return (
 		<div className='container !my-[2.5rem]'>
-			<Breadcrumbs {...breadcrumbs} />
-			<Menu />
-			<Outlet />
+			<Breadcrumbs items={items} endPage={endPage} />
+			<div className='flex items-baseline gap-[50px] mt-[30px]'>
+				<Menu />
+				<Outlet />
+			</div>
 		</div>
+	)
+}
+
+export const AccountLayout = () => {
+	return (
+		<BreadcrumbsProvider
+			defaultItems={[{name: 'Home', href: '/'}]}
+			defaultEndPage='My Account'
+		>
+			<AccountLayoutContent />
+		</BreadcrumbsProvider>
 	)
 }

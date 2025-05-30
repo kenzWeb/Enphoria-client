@@ -1,9 +1,12 @@
 .heading {
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 }
 
 .title {
 	font-family: 'Causten', Georgia;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .subtitle {

@@ -2,16 +2,22 @@ import {AuthPage} from './ui/Auth/AuthPage'
 import {CartPage} from './ui/CartPage'
 import {CheckoutPage} from './ui/CheckoutPage'
 import {HomePage} from './ui/HomePage'
+import {OrdersPage} from './ui/OrdersPage'
 import {ProductPage} from './ui/ProductPage'
+import {ProfilePage} from './ui/ProfilePage'
 import {ShopPage} from './ui/ShopPage'
 import {ThanksPage} from './ui/ThanksPage'
+import {WishlistPage} from './ui/WishlistPage'
 
 export {
 	AuthPage,
 	CartPage,
 	CheckoutPage,
 	HomePage,
+	OrdersPage,
 	ProductPage,
+	ProfilePage,
 	ShopPage,
 	ThanksPage,
+	WishlistPage,
 }

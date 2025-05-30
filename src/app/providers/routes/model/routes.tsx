@@ -5,9 +5,12 @@ import {
 	CartPage,
 	CheckoutPage,
 	HomePage,
+	OrdersPage,
 	ProductPage,
+	ProfilePage,
 	ShopPage,
 	ThanksPage,
+	WishlistPage,
 } from '@/pages'
 import {PUBLIC_URL} from '@/shared/config/url.config'
 
@@ -46,7 +49,18 @@ export const router = createBrowserRouter([
 				path: PUBLIC_URL.account(),
 				element: <AccountLayout />,
 				children: [
-					
+					{
+						path: PUBLIC_URL.account('profile'),
+						element: <ProfilePage />,
+					},
+					{
+						path: PUBLIC_URL.account('orders'),
+						element: <OrdersPage />,
+					},
+					{
+						path: PUBLIC_URL.account('wishlist'),
+						element: <WishlistPage />,
+					},
 				],
 			},
 		],

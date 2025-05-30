@@ -1,0 +1,38 @@
+.container {
+	transition: 0.2s linear;
+	padding: 1rem 0;
+	box-sizing: border-box;
+	border-radius: 0px 8px 8px 0px;
+}
+
+.container.active {
+	background-color: #f6f6f6;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 3px;
+		height: 100%;
+		background-color: #3c4242;
+		transition: 0.2s ease-in-out;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-left: 4rem;
+}
+
+.icon {
+	width: 2.2rem;
+	height: 2.2rem;
+}
+
+.label {
+	font-size: 1.8rem;
+	color: #807d7e;
+}
