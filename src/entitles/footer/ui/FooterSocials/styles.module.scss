@@ -44,6 +44,18 @@
 	}
 }
 
+.item {
+	padding: 0.8rem;
+
+	@media (max-width: 768px) {
+		padding: 0.6rem;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0.5rem;
+	}
+}
+
 .title {
 	color: #f6f6f6;
 	margin-bottom: 2rem;
@@ -95,19 +107,6 @@
 }
 
 .img {
-	transition: transform 0.2s ease, opacity 0.2s ease;
-
-	&:hover {
-		transform: scale(1.05);
-		opacity: 0.8;
-	}
-
-	@media (max-width: 768px) {
-		&:hover {
-			transform: none;
-		}
-	}
-
 	@media (max-width: 480px) {
 		max-width: 90%;
 		height: auto;

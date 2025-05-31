@@ -1,17 +1,21 @@
 .container {
 	padding: 6rem 0px;
-	background-color: #2a2f2f;
+	background: #2a2f2f;
 
 	@media (max-width: 1200px) {
-		padding: 5rem 0px;
+		padding: 5rem 0;
+	}
+
+	@media (max-width: 992px) {
+		padding: 4rem 0;
 	}
 
 	@media (max-width: 768px) {
-		padding: 4rem 0px;
+		padding: 3rem 0;
 	}
 
 	@media (max-width: 480px) {
-		padding: 3rem 0px;
+		padding: 2.5rem 0;
 	}
 }
 
