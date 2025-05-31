@@ -57,7 +57,10 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 					/>
 
 					{!category && (
-						<div className={styles.favoriteBtn}>
+						<div
+							className={styles.favoriteBtn}
+							onClick={handleRightElementClick}
+						>
 							<FavoriteButton product={product} />
 						</div>
 					)}

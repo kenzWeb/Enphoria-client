@@ -1,4 +1,3 @@
-// Типы для навигации Header
 export interface NavigationItem {
 	to: string
 	label: string

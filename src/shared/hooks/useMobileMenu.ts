@@ -36,19 +36,27 @@ export const useMobileMenu = ({
 	// Блокируем прокрутку страницы при открытом меню
 	useEffect(() => {
 		if (isOpen && isMobile) {
+			const scrollY = window.scrollY
 			document.body.style.overflow = 'hidden'
 			document.body.style.position = 'fixed'
+			document.body.style.top = `-${scrollY}px`
 			document.body.style.width = '100%'
 		} else {
-			document.body.style.overflow = 'unset'
-			document.body.style.position = 'unset'
-			document.body.style.width = 'unset'
+			const scrollY = document.body.style.top
+			document.body.style.overflow = ''
+			document.body.style.position = ''
+			document.body.style.top = ''
+			document.body.style.width = ''
+			if (scrollY) {
+				window.scrollTo(0, parseInt(scrollY || '0') * -1)
+			}
 		}
 
 		return () => {
-			document.body.style.overflow = 'unset'
-			document.body.style.position = 'unset'
-			document.body.style.width = 'unset'
+			document.body.style.overflow = ''
+			document.body.style.position = ''
+			document.body.style.top = ''
+			document.body.style.width = ''
 		}
 	}, [isOpen, isMobile])
 

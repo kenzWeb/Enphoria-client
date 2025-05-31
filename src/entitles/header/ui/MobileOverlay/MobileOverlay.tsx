@@ -2,12 +2,9 @@ import {FC} from 'react'
 import styles from './MobileOverlay.module.scss'
 
 interface MobileOverlayProps {
-	isVisible: boolean
-	onClick: () => void
+	onClose: () => void
 }
 
-export const MobileOverlay: FC<MobileOverlayProps> = ({isVisible, onClick}) => {
-	if (!isVisible) return null
-
-	return <div className={styles.overlay} onClick={onClick} />
+export const MobileOverlay: FC<MobileOverlayProps> = ({onClose}) => {
+	return <div className={styles.overlay} onClick={onClose} />
 }

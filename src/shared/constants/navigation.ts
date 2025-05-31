@@ -1,3 +1,5 @@
+import {PUBLIC_URL} from '../config/url.config'
+
 export const NAVIGATION_ITEMS = [
 	{to: '/', label: 'Shop', icon: '🛍️'},
 	{to: '/shop/?page=1&gender=male', label: 'Men', icon: '👨'},
@@ -7,9 +9,9 @@ export const NAVIGATION_ITEMS = [
 ] as const
 
 export const QUICK_ACTIONS = [
-	{icon: 'FiUser', label: 'Profile', to: '/profile'},
-	{icon: 'FiHeart', label: 'Wishlist', to: '/favorites'},
-	{icon: 'FiShoppingBag', label: 'Cart', to: '/cart'},
+	{icon: 'FiUser', label: 'Profile', to: PUBLIC_URL.account('profile')},
+	{icon: 'FiHeart', label: 'Wishlist', to: PUBLIC_URL.account('favorites')},
+	{icon: 'FiShoppingBag', label: 'Cart', to: PUBLIC_URL.cart()},
 ] as const
 
 export const MOBILE_BREAKPOINT = 920

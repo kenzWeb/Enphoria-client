@@ -1,13 +1,7 @@
-import {NavigationItem} from '@/shared/types/navigation.interface'
 import {FC} from 'react'
 import {Link} from 'react-router-dom'
+import {NavigationMenuProps} from '../../types'
 import styles from './NavigationMenu.module.scss'
-
-interface NavigationMenuProps {
-	items: NavigationItem[]
-	isMobile: boolean
-	onItemClick?: () => void
-}
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({
 	items,

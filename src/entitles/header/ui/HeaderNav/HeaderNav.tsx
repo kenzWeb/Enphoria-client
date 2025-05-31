@@ -1,5 +1,6 @@
 import {HeaderForm} from '@/entitles/header/ui/HeaderForm/HeaderForm'
 import {useMobileMenu} from '@/shared/hooks/useMobileMenu'
+import {HeaderNavProps} from '@/shared/types'
 import {getNavigationItems, getQuickActions} from '../../model/navigation'
 import {Logo} from '../Logo/Logo'
 import {MobileFooter} from '../MobileFooter/MobileFooter'
@@ -9,12 +10,7 @@ import {NavigationMenu} from '../NavigationMenu/NavigationMenu'
 import {QuickActions} from '../QuickActions/QuickActions'
 import styles from './styles.module.scss'
 
-type Props = {
-	isOpen: boolean
-	onClose: () => void
-}
-
-export const HeaderNav = ({isOpen, onClose}: Props) => {
+export const HeaderNav = ({isOpen, onClose}: HeaderNavProps) => {
 	const {isMobile, handleLinkClick} = useMobileMenu({isOpen, onClose})
 
 	const navigationItems = getNavigationItems()
@@ -24,9 +20,7 @@ export const HeaderNav = ({isOpen, onClose}: Props) => {
 		<>
 			{!isMobile && <Logo />}
 
-			{isMobile && isOpen && (
-				<MobileOverlay isVisible={true} onClick={onClose} />
-			)}
+			{isMobile && isOpen && <MobileOverlay onClose={onClose} />}
 
 			<nav className={`${styles.nav} ${isOpen ? styles.active : ''}`}>
 				{isMobile && (
