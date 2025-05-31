@@ -2,6 +2,19 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+
+	@media (max-width: 992px) {
+		gap: 1.5rem;
+	}
+
+	@media (max-width: 768px) {
+		text-align: center;
+		gap: 1.8rem;
+	}
+
+	@media (max-width: 480px) {
+		gap: 1.5rem;
+	}
 }
 
 .title {
@@ -10,12 +23,42 @@
 	font-weight: bold;
 	line-height: 215%;
 	font-size: 2.8rem;
+
+	@media (max-width: 1200px) {
+		font-size: 2.4rem;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 2.2rem;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 2rem;
+		line-height: 1.4;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 1.8rem;
+	}
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+
+	@media (max-width: 992px) {
+		gap: 1.2rem;
+	}
+
+	@media (max-width: 768px) {
+		gap: 1rem;
+		align-items: center;
+	}
+
+	@media (max-width: 480px) {
+		gap: 0.8rem;
+	}
 }
 
 .item {
@@ -24,4 +67,27 @@
 	font-size: 1.6rem;
 	color: #f6f6f6;
 	line-height: 215%;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: #cccccc;
+	}
+
+	@media (max-width: 1200px) {
+		font-size: 1.5rem;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 1.4rem;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 1.3rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 1.2rem;
+	}
 }

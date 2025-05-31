@@ -1,6 +1,18 @@
 .container {
 	padding: 6rem 0px;
 	background-color: #2a2f2f;
+
+	@media (max-width: 1200px) {
+		padding: 5rem 0px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 4rem 0px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 3rem 0px;
+	}
 }
 
 .footer {
@@ -9,4 +21,17 @@
 	max-width: 1235px;
 	margin: 0 auto;
 	padding: 0 20px;
+
+	@media (max-width: 1280px) {
+		max-width: 100%;
+		padding: 0 2rem;
+	}
+
+	@media (max-width: 768px) {
+		padding: 0 1.5rem;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0 1rem;
+	}
 }

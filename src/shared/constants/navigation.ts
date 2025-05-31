@@ -10,7 +10,7 @@ export const NAVIGATION_ITEMS = [
 
 export const QUICK_ACTIONS = [
 	{icon: 'FiUser', label: 'Profile', to: PUBLIC_URL.account('profile')},
-	{icon: 'FiHeart', label: 'Wishlist', to: PUBLIC_URL.account('favorites')},
+	{icon: 'FiHeart', label: 'Wishlist', to: PUBLIC_URL.account('wishlist')},
 	{icon: 'FiShoppingBag', label: 'Cart', to: PUBLIC_URL.cart()},
 ] as const
 
