@@ -12,7 +12,6 @@ interface UseBreadcrumbsAccountProps {
 	items?: BreadcrumbItem[]
 }
 
-// Маппинг путей к названиям страниц
 const PAGE_TITLES: Record<string, string> = {
 	'/account/profile': 'My Info',
 	'/account/orders': 'My Orders',
@@ -27,10 +26,8 @@ export const useBreadcrumbsAccount = ({
 	const location = useLocation()
 
 	useEffect(() => {
-		// Автоматически определяем название страницы на основе пути
 		const pageTitle = endPage || PAGE_TITLES[location.pathname] || 'My Account'
 
-		// Устанавливаем базовые элементы breadcrumbs, если не переданы кастомные
 		const defaultItems = items || [
 			{name: 'Home', href: '/'},
 			{name: 'My Account', href: '/account'},

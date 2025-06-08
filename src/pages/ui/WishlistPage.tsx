@@ -1,12 +1,12 @@
 import {useBreadcrumbsAccount} from '@/shared/hooks/useBreadcrumbsAccount'
+import {Wishlist} from '@/widgets/wishilist'
 
 export const WishlistPage = () => {
 	useBreadcrumbsAccount()
 
 	return (
-		<div>
-			<h1>Wishlist</h1>
-			<p>Your favorite items...</p>
-		</div>
+		<>
+			<Wishlist />
+		</>
 	)
 }
