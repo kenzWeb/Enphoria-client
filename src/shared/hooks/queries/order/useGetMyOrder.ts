@@ -3,16 +3,16 @@ import {useQuery} from '@tanstack/react-query'
 import {useMemo} from 'react'
 
 export const useGetMyOrder = () => {
-	const {data: orders, isLoading} = useQuery({
+	const {data: response, isLoading} = useQuery({
 		queryKey: ['get my orders'],
 		queryFn: () => orderService.getMyOrders(),
 	})
 
 	return useMemo(
 		() => ({
-			orders: orders || [],
+			orders: response?.data || [],
 			isLoading,
 		}),
-		[orders, isLoading],
+		[response, isLoading],
 	)
 }

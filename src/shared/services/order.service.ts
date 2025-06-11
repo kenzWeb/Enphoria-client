@@ -1,4 +1,8 @@
-import {IPaymentResponse, TypePaymentData} from '@/shared/types/order.interface'
+import {
+	IOrder,
+	IPaymentResponse,
+	TypePaymentData,
+} from '@/shared/types/order.interface'
 import {axiosWithAuth} from '../api/api.interceptors'
 import {API_URL} from '../config/api.config'
 
@@ -12,7 +16,7 @@ class OrderService {
 	}
 
 	async getMyOrders() {
-		return axiosWithAuth<IPaymentResponse[]>({
+		return axiosWithAuth<IOrder[]>({
 			url: API_URL.orders('my-orders'),
 			method: 'GET',
 		})

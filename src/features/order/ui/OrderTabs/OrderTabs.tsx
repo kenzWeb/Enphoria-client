@@ -1,15 +1,21 @@
+import {useGetMyOrder} from '@/shared/hooks/queries/order/useGetMyOrder'
 import {
 	Tabs,
 	TabsContent,
 	TabsList,
 	TabsTrigger,
 } from '@/shared/shad-cn/ui/Tabs'
+import {EnumOrderStatus, IOrder} from '@/shared/types/order.interface'
 import {orderModels} from '../../models'
 import styles from './OrderTabs.module.scss'
+import { Button } from '@/shared/shad-cn/ui/Button'
 
 export const OrderTabs = () => {
+	const {orders} = useGetMyOrder()
+	console.log('Orders:', orders)
+
 	return (
-		<Tabs defaultValue='active' className={styles.container}>
+		<Tabs defaultValue={EnumOrderStatus.PENDING} className={styles.container}>
 			<TabsList className={styles.tabsList}>
 				{orderModels.map((model) => (
 					<TabsTrigger
@@ -21,10 +27,30 @@ export const OrderTabs = () => {
 					</TabsTrigger>
 				))}
 			</TabsList>
-			<TabsContent value='active'>
-				Make changes to your account here.
-			</TabsContent>
-			<TabsContent value='cancelled'>Change your password here.</TabsContent>
+			{orderModels.map((model) => (
+				<TabsContent
+					key={model.name}
+					value={model.status}
+					className={styles.tabsContent}
+				>
+					{orders
+						.filter((order: IOrder) => order.status === model.status)
+						.map((order: IOrder) => (
+							<div key={order.id} className={styles.orderItem}>
+								<div className={styles.orderDetails}>
+									<h2 className={styles.orderTitle}>Order no: #{order.id}</h2>
+									<h3 className={styles.orderStatus}>
+										Order Date:
+										<span>
+											{new Date(order.createdAt).toLocaleDateString()}
+										</span>
+									</h3>
+								</div>
+								<Button size={'md'} variant={'violet'} className={styles.orderActions}>View Detail</Button>
+							</div>
+						))}
+				</TabsContent>
+			))}
 		</Tabs>
 	)
 }

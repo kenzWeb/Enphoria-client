@@ -34,9 +34,9 @@ export interface IPaymentResponse {
 }
 
 export enum EnumOrderStatus {
-	PENDING = 'Pending',
-	PAYED = 'Payed',
-	CANCELLED = 'Cancelled',
+	PENDING = 'PENDING',
+	PAYED = 'PAYED',
+	CANCELLED = 'CANCELLED',
 }
 
 export interface IOrder {
