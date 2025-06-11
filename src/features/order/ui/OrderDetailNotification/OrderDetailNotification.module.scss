@@ -1,0 +1,40 @@
+.orderItem {
+	padding: 28px 48px;
+	background-color: #f6f6f6;
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.orderDetails {
+	display: flex;
+	flex-direction: column;
+}
+
+.orderTitle {
+	font-size: 20px;
+	font-weight: 600;
+	color: #3c4242;
+	margin-bottom: 16px;
+}
+
+.orderStatus {
+	display: flex;
+	font-weight: 500;
+	font-size: 14px;
+	color: #807d7e;
+	gap: 1px;
+}
+
+.total {
+	font-size: 22px;
+	font-weight: 600;
+	color: #807d7e;
+	margin-top: 16px;
+
+	span {
+		color: #3c4242;
+		font-size: 22px;
+	}
+}

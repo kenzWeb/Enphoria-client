@@ -1,4 +1,5 @@
+import {OrderDetailPageHeading} from './ui/OrderDetailPageHeading/OrderDetailPageHeading'
+import {OrderHeading} from './ui/OrderHeading/OrderHeading'
 import {OrderSummaryItem} from './ui/OrderSummaryItem'
-import { OrderHeading } from './ui/OrderHeading/OrderHeading'
 
-export {OrderSummaryItem, OrderHeading}
+export {OrderDetailPageHeading, OrderHeading, OrderSummaryItem}

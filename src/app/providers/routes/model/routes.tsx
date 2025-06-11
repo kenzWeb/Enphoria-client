@@ -13,6 +13,7 @@ import {
 	ThanksPage,
 	WishlistPage,
 } from '@/pages'
+import {OrderDetailPage} from '@/pages/ui/OrderDetailPage'
 import {PUBLIC_URL} from '@/shared/config/url.config'
 
 import {createBrowserRouter} from 'react-router-dom'
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
 							{
 								path: PUBLIC_URL.account('add-address'),
 								element: <AddAddressPage />,
+							},
+							{
+								path: PUBLIC_URL.account('order-detail/:id'),
+								element: <OrderDetailPage />,
 							},
 						],
 					},

@@ -1,4 +1,6 @@
+import {PUBLIC_URL} from '@/shared/config/url.config'
 import {useGetMyOrder} from '@/shared/hooks/queries/order/useGetMyOrder'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {
 	Tabs,
 	TabsContent,
@@ -6,13 +8,14 @@ import {
 	TabsTrigger,
 } from '@/shared/shad-cn/ui/Tabs'
 import {EnumOrderStatus, IOrder} from '@/shared/types/order.interface'
+import {useNavigate} from 'react-router-dom'
 import {orderModels} from '../../models'
 import styles from './OrderTabs.module.scss'
-import { Button } from '@/shared/shad-cn/ui/Button'
 
 export const OrderTabs = () => {
 	const {orders} = useGetMyOrder()
-	console.log('Orders:', orders)
+
+	const navigate = useNavigate()
 
 	return (
 		<Tabs defaultValue={EnumOrderStatus.PENDING} className={styles.container}>
@@ -46,7 +49,16 @@ export const OrderTabs = () => {
 										</span>
 									</h3>
 								</div>
-								<Button size={'md'} variant={'violet'} className={styles.orderActions}>View Detail</Button>
+								<Button
+									onClick={() =>
+										navigate(PUBLIC_URL.account(`order-detail/${order.id}`))
+									}
+									size={'md'}
+									variant={'violet'}
+									className={styles.orderActions}
+								>
+									View Detail
+								</Button>
 							</div>
 						))}
 				</TabsContent>

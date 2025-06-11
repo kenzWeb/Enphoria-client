@@ -1,7 +1,11 @@
+import {OrderDetailPageHeading} from '@/entitles/order'
+import {OrderDetailInfo} from '@/widgets/order'
+
 export const OrderDetailPage = () => {
 	return (
-		<div>
-			<h1>Order Detail</h1>
-		</div>
+		<>
+			<OrderDetailPageHeading />
+			<OrderDetailInfo />
+		</>
 	)
 }
