@@ -10,6 +10,13 @@ class OrderService {
 			data,
 		})
 	}
+
+	async getMyOrders() {
+		return axiosWithAuth<IPaymentResponse[]>({
+			url: API_URL.orders('my-orders'),
+			method: 'GET',
+		})
+	}
 }
 
 export const orderService = new OrderService()
