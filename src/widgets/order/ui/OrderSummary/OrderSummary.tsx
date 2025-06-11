@@ -1,5 +1,5 @@
-import {OrderSummaryItems} from '@/features/order'
-import {OrderSummaryShip} from '@/features/order/ui/OrderSummaryShip/OrderSummaryShip'
+import {OrderSummaryItems, OrderSummaryShip} from '@/features/order'
+
 import {Title} from '@/shared/ui/Text'
 import styles from './OrderSummary.module.scss'
 
