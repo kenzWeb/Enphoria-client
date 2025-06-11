@@ -11,11 +11,16 @@ export const getAccessToken = () => {
 }
 
 export const saveTokenStorage = (accessToken: string) => {
-	Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-		domain: process.env.APP_DOMAIN,
+	const cookieOptions: Cookies.CookieAttributes = {
 		sameSite: 'strict',
 		expires: 1,
-	})
+	}
+
+	if (process.env.NODE_ENV === 'production' && process.env.APP_DOMAIN) {
+		cookieOptions.domain = process.env.APP_DOMAIN
+	}
+
+	Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, cookieOptions)
 }
 
 export const removeFromStorage = () => {

@@ -1,9 +1,9 @@
+import {saveTokenStorage} from '@/shared/services/auth/auth-token.service'
+import {useAuthStore} from '@/shared/store/auth.store'
 import {useEffect} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
-import {saveTokenStorage} from '../services/auth/auth-token.service'
-import {useAuthStore} from '../store/auth.store'
 
-export const useToken = () => {
+export const TokenHandler = () => {
 	const location = useLocation()
 	const navigate = useNavigate()
 	const {setAuth} = useAuthStore()
@@ -24,4 +24,6 @@ export const useToken = () => {
 			navigate(newUrl, {replace: true})
 		}
 	}, [location, navigate, setAuth])
+
+	return null 
 }

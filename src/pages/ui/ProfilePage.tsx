@@ -5,7 +5,7 @@ export const ProfilePage = () => {
 	useBreadcrumbsAccount()
 
 	return (
-		<div className=''>
+		<div>
 			<ProfileInfo />
 			<ProfileAddress />
 		</div>

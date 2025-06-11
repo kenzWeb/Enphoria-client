@@ -7,7 +7,6 @@ export const Wishlist = () => {
 	return (
 		<div>
 			{user?.favorites?.length ? <WishlistHeading /> : null}
-
 			<WishlistList />
 		</div>
 	)

@@ -1,3 +1,4 @@
+import {TokenHandler} from '@/app/providers/auth'
 import {Loader} from '@/shared/ui/Other'
 import {Footer} from '@/widgets/footer'
 import {Header} from '@/widgets/header'
@@ -14,6 +15,7 @@ export const MainLayout = () => {
 
 	return (
 		<>
+			<TokenHandler />
 			<Header />
 			{navigation.state === 'loading' && <Loader />}
 			<Outlet />
