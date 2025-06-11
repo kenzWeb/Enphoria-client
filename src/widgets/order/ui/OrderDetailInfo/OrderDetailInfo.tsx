@@ -1,5 +1,10 @@
-import {OrderDetailNotification} from '@/features/order'
+import {OrderDetailNotification, OrderItems} from '@/features/order'
 
 export const OrderDetailInfo = () => {
-	return <OrderDetailNotification />
+	return (
+		<>
+			<OrderDetailNotification />
+			<OrderItems />
+		</>
+	)
 }
