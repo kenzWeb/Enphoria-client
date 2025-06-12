@@ -1,9 +1,5 @@
+import {OrderUpdateNotificationProps} from '../../types'
 import styles from './OrderUpdateNotification.module.scss'
-
-interface OrderUpdateNotificationProps {
-	date: string
-	message: string
-}
 
 export const OrderUpdateNotification = ({
 	date,

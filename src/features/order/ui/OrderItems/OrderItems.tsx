@@ -8,7 +8,6 @@ export const OrderItems = () => {
 	const {id} = useParams<{id: string}>()
 	const {orders} = useGetMyOrder()
 
-	// Найти конкретный заказ по ID
 	const order = orders.find((order: IOrder) => order.id === id)
 
 	if (!order) {

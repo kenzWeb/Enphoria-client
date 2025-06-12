@@ -8,6 +8,10 @@ import {OrderSummaryShip} from './ui/OrderSummaryShip/OrderSummaryShip'
 import {OrderTabs} from './ui/OrderTabs/OrderTabs'
 import {OrderUpdateNotification} from './ui/OrderUpdateNotification/OrderUpdateNotification'
 
+export type * from './types'
+
+export * from './models'
+
 export {
 	BackButton,
 	OrderDetailNotification,

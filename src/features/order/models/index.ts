@@ -1,4 +1,5 @@
 import {EnumOrderStatus} from '@/shared/types/order.interface'
+export * from './orderProgress'
 
 export const orderModels = [
 	{

@@ -5,6 +5,7 @@ import {
 	OrderProgress,
 	OrderUpdateNotification,
 } from '@/features/order'
+import {mapOrderStatus} from '@/features/order/models'
 import {useGetMyOrder} from '@/shared/hooks/queries/order/useGetMyOrder'
 import {IOrder} from '@/shared/types/order.interface'
 import {useParams} from 'react-router-dom'
@@ -25,26 +26,7 @@ export const OrderDetailInfo = () => {
 		)
 	}
 
-	const getOrderStatus = (
-		status: string,
-	): 'pending' | 'inprogress' | 'shipped' | 'delivered' => {
-		switch (status.toLowerCase()) {
-			case 'pending':
-				return 'pending'
-			case 'processing':
-			case 'confirmed':
-				return 'inprogress'
-			case 'shipped':
-				return 'shipped'
-			case 'delivered':
-			case 'completed':
-				return 'delivered'
-			default:
-				return 'pending'
-		}
-	}
-
-	const currentStatus = getOrderStatus(order.status)
+	const currentStatus = mapOrderStatus(order.status)
 
 	return (
 		<div className={styles.container}>

@@ -1,4 +1,3 @@
-import {ICartItem} from './cart.interface'
 import {IUser} from './user.interface'
 
 interface IAmount {
@@ -39,10 +38,35 @@ export enum EnumOrderStatus {
 	CANCELLED = 'CANCELLED',
 }
 
+export interface IOrderItem {
+	id: string
+	quantity: number
+	price: number
+	createdAt: string
+	updatedAt: string
+	productId: string
+	orderId: string
+	product: {
+		id: string
+		name: string
+		brand: string
+		price: number
+		description: string
+		images: string[]
+		gender: string
+		type: string
+		createdAt: string
+		updatedAt: string
+		categoryId: string
+		styleId: string
+		userId: string | null
+	}
+}
+
 export interface IOrder {
 	id: string
 	createdAt: string
-	items: ICartItem[]
+	items: IOrderItem[]
 	status: EnumOrderStatus
 	user: IUser
 	total: number
