@@ -1,13 +1,54 @@
 .container {
-	@apply flex items-center justify-between sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[70px] mt-[40px] pb-[40px];
-
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 40px;
+	padding-bottom: 40px;
 	border-bottom: 1px solid #bebcbd;
 }
 
 .title {
-	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-bold text-[#3C4242];
+	font-size: 28px;
+	font-weight: 700;
+	color: #3c4242;
 }
 
 .element {
-	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-bold text-[#3C4242];
+	font-size: 28px;
+	font-weight: 700;
+	color: #3c4242;
+}
+
+@media (max-width: 1200px) {
+	.title,
+	.element {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		gap: 12px;
+		margin-top: 32px;
+		padding-bottom: 32px;
+	}
+
+	.title,
+	.element {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		gap: 8px;
+		margin-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	.title,
+	.element {
+		font-size: 16px;
+	}
 }

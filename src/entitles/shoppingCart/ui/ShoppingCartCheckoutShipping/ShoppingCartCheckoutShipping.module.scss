@@ -1,11 +1,47 @@
 .container {
-	@apply flex items-center justify-between sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[70px];
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
 }
 
 .title {
-	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-medium text-[#3C4242];
+	font-size: 28px;
+	font-weight: 500;
+	color: #3c4242;
 }
 
 .element {
-	@apply md:text-[18px] sm:text-[16px] text-[14px] xl:text-[22px] 2xl:text-[28px] font-medium text-[#3C4242];
+	font-size: 28px;
+	font-weight: 500;
+	color: #3c4242;
+}
+
+@media (max-width: 1200px) {
+	.title,
+	.element {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		gap: 12px;
+	}
+
+	.title,
+	.element {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		gap: 8px;
+	}
+
+	.title,
+	.element {
+		font-size: 16px;
+	}
 }

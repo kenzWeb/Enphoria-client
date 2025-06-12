@@ -1,3 +1,55 @@
 .container {
-	@apply bg-[#F3F3F3] pt-[39px] pb-[50px] px-[90px] flex flex-col items-center;
+	background-color: #f3f3f3;
+	padding: 39px 90px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 300px;
+}
+
+.buttonContainer {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.checkoutButton {
+	text-align: center;
+	width: auto;
+	min-width: 200px;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 24px 20px 32px;
+		min-height: 250px;
+	}
+
+	.buttonContainer {
+		margin-top: 32px;
+	}
+
+	.checkoutButton {
+		width: 100%;
+		max-width: 300px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 20px 16px 28px;
+		min-height: 200px;
+	}
+
+	.buttonContainer {
+		margin-top: 24px;
+	}
+
+	.checkoutButton {
+		width: 100%;
+		font-size: 13px;
+		padding: 12px 16px;
+	}
 }

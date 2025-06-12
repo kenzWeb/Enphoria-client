@@ -20,10 +20,10 @@ export const ShoppingCartCheckout = () => {
 				<ShoppingCartCheckoutShipping />
 				<ShoppingCartCheckoutGrand />
 			</div>
-			<div>
+			<div className={styles.buttonContainer}>
 				<Button
 					onClick={() => navigate('/account/checkout', {replace: true})}
-					className='mt-[50px] text-center'
+					className={styles.checkoutButton}
 					variant='violet'
 					size='md'
 				>

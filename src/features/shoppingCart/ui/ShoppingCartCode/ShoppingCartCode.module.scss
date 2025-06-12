@@ -1,11 +1,50 @@
 .container {
-	@apply flex flex-col gap-[40px] pt-[30px];
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .title {
-	@apply text-[#3C4242] text-[24px] font-semibold;
+	color: #3c4242;
+	font-size: 24px;
+	font-weight: 600;
 }
 
 .subtitle {
-	@apply text-[#807D7E] text-[16px] font-normal;
+	color: #807d7e;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+@media (max-width: 768px) {
+	.container {
+		gap: 24px;
+		padding: 20px 16px 0;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.subtitle {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		gap: 20px;
+		padding: 16px 12px 0;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+
+	.subtitle {
+		font-size: 13px;
+	}
 }

@@ -1,7 +1,32 @@
 .wrapper {
-	@apply bg-[#F6F6F6] mt-[60px];
+	background-color: #f6f6f6;
+	margin-top: 60px;
 }
 
 .container {
-	@apply flex justify-between;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		margin-top: 32px;
+		padding: 20px 0;
+	}
+
+	.container {
+		flex-direction: column;
+		gap: 32px;
+	}
+}
+
+@media (max-width: 480px) {
+	.wrapper {
+		margin-top: 24px;
+		padding: 16px 0;
+	}
+
+	.container {
+		gap: 24px;
+	}
 }

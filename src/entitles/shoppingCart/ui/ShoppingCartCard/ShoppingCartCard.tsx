@@ -47,24 +47,41 @@ export const ShoppingCartCard = ({data}: Props) => {
 					</div>
 				</div>
 			</div>
-			<h2 className={styles.price}>${data.price}.00</h2>
-			<div className={styles.quantity}>
-				<button
-					onClick={() => minus(getVariantKey(data))}
-					className={styles.minus}
-				>
-					<BiMinus size={15} />
-				</button>
-				<span className={styles.count}>{data.quantity}</span>
-				<button
-					onClick={() => plus(getVariantKey(data))}
-					className={styles.plus}
-				>
-					<BsPlus size={15} />
-				</button>
+
+			<div className={styles.mobileRow}>
+				<span className={styles.mobileLabel}>Price:</span>
+				<h2 className={styles.price}>${data.price}.00</h2>
 			</div>
-			<h2 className={styles.shipping}>free</h2>
-			<h2 className={styles.total}>${data.price * data.quantity}.00</h2>
+
+			<div className={styles.mobileRow}>
+				<span className={styles.mobileLabel}>Quantity:</span>
+				<div className={styles.quantity}>
+					<button
+						onClick={() => minus(getVariantKey(data))}
+						className={styles.minus}
+					>
+						<BiMinus size={15} />
+					</button>
+					<span className={styles.count}>{data.quantity}</span>
+					<button
+						onClick={() => plus(getVariantKey(data))}
+						className={styles.plus}
+					>
+						<BsPlus size={15} />
+					</button>
+				</div>
+			</div>
+
+			<div className={styles.mobileRow}>
+				<span className={styles.mobileLabel}>Shipping:</span>
+				<h2 className={styles.shipping}>free</h2>
+			</div>
+
+			<div className={styles.mobileRow}>
+				<span className={styles.mobileLabel}>Subtotal:</span>
+				<h2 className={styles.total}>${data.price * data.quantity}.00</h2>
+			</div>
+
 			<button className={styles.delete} onClick={handleDelete}>
 				<HiOutlineTrash color='#8A33FD' size={18} />
 			</button>

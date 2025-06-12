@@ -114,3 +114,86 @@
 	font-size: 1.2rem;
 	color: #3c4242;
 }
+
+@media (max-width: 768px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		border-radius: 12px;
+		padding: 2rem;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		border-bottom: none;
+	}
+
+	.base {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1.5rem;
+	}
+
+	.img {
+		width: 12rem;
+		height: 14rem;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.info {
+		align-items: center;
+	}
+
+	.details {
+		align-items: center;
+	}
+
+	.colors,
+	.sizes {
+		justify-content: center;
+	}
+
+	.mobileRow {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 1rem 0;
+		border-top: 1px solid #f0f0f0;
+	}
+
+	.mobileLabel {
+		font-family: 'Causten';
+		font-size: 1.4rem;
+		font-weight: 500;
+		color: #807d7e;
+	}
+
+	.price,
+	.total,
+	.shipping {
+		font-size: 1.6rem;
+	}
+
+	.quantity {
+		width: auto;
+		padding: 0.8rem 1.6rem;
+	}
+
+	.delete {
+		align-self: center;
+		padding: 0.8rem;
+		border-radius: 8px;
+		background: #f6f6f6;
+		border: none;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background: #ebebeb;
+		}
+	}
+}

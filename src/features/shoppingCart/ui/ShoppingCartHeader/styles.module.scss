@@ -21,3 +21,9 @@
 		color: white;
 	}
 }
+
+@media (max-width: 768px) {
+	.wrapper {
+		display: none;
+	}
+}
