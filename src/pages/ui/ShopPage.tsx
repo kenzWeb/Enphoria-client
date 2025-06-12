@@ -1,4 +1,5 @@
 import {productService} from '@/shared/services/products.service'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {useFilterStore} from '@/shared/store/filter.store'
 import {IPaginationProducts} from '@/shared/types/filter.interface'
 import {Shop} from '@/widgets/shop'
@@ -48,7 +49,9 @@ export const ShopPage = () => {
 			{isMobile ? (
 				<div className={styles.shopLayoutMobile}>
 					<div className={styles.mobileFilters}>
-						<button
+						<Button
+							variant='secondary'
+							size='default'
 							className={`${styles.filtersToggle} ${
 								isFiltersOpen ? styles.active : ''
 							}`}
@@ -56,7 +59,7 @@ export const ShopPage = () => {
 						>
 							Filters
 							<ChevronDown size={20} />
-						</button>
+						</Button>
 						<div
 							className={`${styles.collapsibleFilters} ${
 								isFiltersOpen ? styles.open : styles.closed

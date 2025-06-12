@@ -1,4 +1,5 @@
 import {PasswordChangeForm} from '@/features/profile'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {useState} from 'react'
 import {createPasswordFieldHandlers} from '../../model'
 import {IPasswordChangeFieldProps} from '../../types'
@@ -40,13 +41,15 @@ export const PasswordChangeField = ({
 					</h2>
 				) : (
 					<div className={styles.buttonsContainer}>
-						<button
+						<Button
+							variant='outline'
+							size='sm'
 							type='button'
 							onClick={handleCancel}
 							className={styles.button}
 						>
 							Cancel
-						</button>
+						</Button>
 					</div>
 				)}
 			</div>

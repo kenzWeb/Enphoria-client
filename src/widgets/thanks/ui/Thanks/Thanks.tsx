@@ -15,7 +15,7 @@ export const Thanks = () => {
 				<div className={styles.text}>
 					<h2>Your Order is Confirmed</h2>
 					<Link to='/shop'>
-						<Button size='md' variant='violet'>
+						<Button size='lg' variant='primary'>
 							Continue Shopping
 						</Button>
 					</Link>

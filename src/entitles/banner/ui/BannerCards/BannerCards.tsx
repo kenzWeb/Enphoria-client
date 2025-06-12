@@ -1,3 +1,4 @@
+import {Button} from '@/shared/shad-cn/ui/Button'
 import styles from './styles.module.scss'
 
 export const BannerCards = () => {
@@ -12,7 +13,9 @@ export const BannerCards = () => {
 						In our journey to improve everyday fashion, euphoria presents
 						EVERYDAY wear range - Comfortable & Affordable fashion 24/7
 					</h3>
-					<button className={styles.button}>Shop now</button>
+					<Button variant='primary' size='lg' className={styles.button}>
+						Shop now
+					</Button>
 				</div>
 			</div>
 

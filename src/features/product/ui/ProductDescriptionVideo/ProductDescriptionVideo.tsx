@@ -2,6 +2,7 @@ import {useRef} from 'react'
 import {BsPlayCircleFill} from 'react-icons/bs'
 
 import {useVideoPlayer} from '@/shared/hooks/useVideoPlayer'
+import {Button} from '@/shared/shad-cn/ui/Button'
 
 import {VideoControls} from '../VideoControls/VideoControls'
 import styles from './ProductDescriptionVideo.module.scss'
@@ -22,14 +23,16 @@ export const ProductDescriptionVideo = () => {
 					onClick={actions.togglePlay}
 				/>
 
-				<button
+				<Button
+					variant='text'
+					size='iconLg'
 					className={`${styles.centerPlayButton} ${
 						state.isPlaying ? styles.playing : ''
 					}`}
 					onClick={actions.togglePlay}
 				>
 					<BsPlayCircleFill />
-				</button>
+				</Button>
 
 				<VideoControls state={state} actions={actions} />
 			</div>

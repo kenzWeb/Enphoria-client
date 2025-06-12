@@ -14,13 +14,15 @@ export const WishlistItem = ({favorite}: WishlistItemProps) => {
 
 	return (
 		<div className={styles.wrapper}>
-			<button
+			<Button
+				variant='close'
+				size='icon'
 				disabled={isPending}
 				onClick={() => mutate()}
 				className={styles.closeButton}
 			>
 				<img src='/img/icons/closeCross.svg' alt='' />
-			</button>
+			</Button>
 			<img
 				className={styles.image}
 				src={`${SERVER_URL}${favorite.images[0]}`}

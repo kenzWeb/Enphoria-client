@@ -1,4 +1,5 @@
 import {SERVER_URL} from '@/shared/config/private.config'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {motion} from 'framer-motion'
 import {ChevronDown, ChevronLeft, ChevronRight, ChevronUp} from 'lucide-react'
 import {useEffect, useRef, useState} from 'react'
@@ -30,7 +31,6 @@ export const ProductSlider = ({images}: SliderProps) => {
 		checkMobile()
 		window.addEventListener('resize', checkMobile)
 
-		// Симулируем загрузку изображений
 		const timer = setTimeout(() => setIsLoading(false), 500)
 
 		return () => {
@@ -65,7 +65,6 @@ export const ProductSlider = ({images}: SliderProps) => {
 
 	return (
 		<div className={styles.sliderContainer}>
-			{/* Main Slider */}
 			<div className={styles.mainSliderWrapper}>
 				<Swiper
 					onSwiper={(swiper: SwiperType) => {
@@ -117,29 +116,33 @@ export const ProductSlider = ({images}: SliderProps) => {
 				{/* Mobile Navigation */}
 				{isMobile && images.length > 1 && (
 					<>
-						<motion.button
+						<Button
+							variant='elevated'
+							size='icon'
 							className={`${styles.navButton} ${styles.navPrev} swiper-button-prev-custom`}
-							whileHover={{scale: 1.1}}
-							whileTap={{scale: 0.9}}
+							asChild
 						>
-							<ChevronLeft size={24} />
-						</motion.button>
-						<motion.button
+							<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+								<ChevronLeft size={24} />
+							</motion.div>
+						</Button>
+						<Button
+							variant='elevated'
+							size='icon'
 							className={`${styles.navButton} ${styles.navNext} swiper-button-next-custom`}
-							whileHover={{scale: 1.1}}
-							whileTap={{scale: 0.9}}
+							asChild
 						>
-							<ChevronRight size={24} />
-						</motion.button>
+							<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+								<ChevronRight size={24} />
+							</motion.div>
+						</Button>
 					</>
 				)}
 			</div>
 
-			{/* Thumbnails */}
 			{images.length > 1 && (
 				<div className={styles.thumbsContainer}>
 					{isMobile ? (
-						// Mobile horizontal thumbnails
 						<motion.div
 							className={styles.thumbsGrid}
 							initial={{opacity: 0, y: 20}}
@@ -183,7 +186,6 @@ export const ProductSlider = ({images}: SliderProps) => {
 							)}
 						</motion.div>
 					) : (
-						// Desktop vertical thumbnails
 						<motion.div
 							initial={{opacity: 0, x: -20}}
 							animate={{opacity: 1, x: 0}}
@@ -225,7 +227,6 @@ export const ProductSlider = ({images}: SliderProps) => {
 								))}
 							</Swiper>
 
-							{/* Desktop Navigation */}
 							{images.length > 4 && (
 								<motion.div
 									className={styles.navigation}
@@ -233,22 +234,34 @@ export const ProductSlider = ({images}: SliderProps) => {
 									animate={{opacity: 1}}
 									transition={{duration: 0.3, delay: 0.5}}
 								>
-									<motion.button
+									<Button
+										variant='elevated'
+										size='iconSm'
 										className={styles.desktopNavButton}
 										onClick={() => thumbsSwiper?.slidePrev()}
-										whileHover={{scale: 1.15, y: -2}}
-										whileTap={{scale: 0.9}}
+										asChild
 									>
-										<ChevronUp size={18} />
-									</motion.button>
-									<motion.button
+										<motion.div
+											whileHover={{scale: 1.15, y: -2}}
+											whileTap={{scale: 0.9}}
+										>
+											<ChevronUp size={18} />
+										</motion.div>
+									</Button>
+									<Button
+										variant='elevated'
+										size='iconSm'
 										className={styles.desktopNavButton}
 										onClick={() => thumbsSwiper?.slideNext()}
-										whileHover={{scale: 1.15, y: 2}}
-										whileTap={{scale: 0.9}}
+										asChild
 									>
-										<ChevronDown size={18} />
-									</motion.button>
+										<motion.div
+											whileHover={{scale: 1.15, y: 2}}
+											whileTap={{scale: 0.9}}
+										>
+											<ChevronDown size={18} />
+										</motion.div>
+									</Button>
 								</motion.div>
 							)}
 						</motion.div>

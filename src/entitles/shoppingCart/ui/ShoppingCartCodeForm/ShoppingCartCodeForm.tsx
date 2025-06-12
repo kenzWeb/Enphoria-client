@@ -6,6 +6,7 @@ import {
 	FormMessage,
 } from '@/shared/shad-cn/ui/Form'
 
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {Input} from '@/shared/shad-cn/ui/Input'
 import {IShoppingCartCodeForm} from '../../types'
 import styles from './ShoppingCartCodeForm.module.scss'
@@ -34,13 +35,15 @@ export const ShoppingCartCodeForm = ({
 										disabled={isPending}
 									/>
 								</FormControl>
-								<button
+								<Button
+									variant='primary'
+									size='default'
 									className={styles.button}
 									type='submit'
 									disabled={isPending}
 								>
 									Apply Coupon
-								</button>
+								</Button>
 							</div>
 							<FormMessage className={styles.message} />
 						</FormItem>

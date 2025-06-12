@@ -1,9 +1,10 @@
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {BiFullscreen} from 'react-icons/bi'
 import {BsPauseFill, BsPlayFill} from 'react-icons/bs'
 import {IoMdVolumeHigh, IoMdVolumeOff} from 'react-icons/io'
 
+import {IVideoControlsProps, VideoProgressProps} from '../../types'
 import styles from './VideoControls.module.scss'
-import { IVideoControlsProps, VideoProgressProps } from '../../types'
 
 export const VideoControls: React.FC<IVideoControlsProps> = ({
 	state,
@@ -15,9 +16,14 @@ export const VideoControls: React.FC<IVideoControlsProps> = ({
 	return (
 		<div className={styles.controls}>
 			<div className={styles.topControls}>
-				<button className={styles.playButton} onClick={togglePlay}>
+				<Button
+					variant='text'
+					size='iconSm'
+					className={styles.playButton}
+					onClick={togglePlay}
+				>
 					{isPlaying ? <BsPauseFill /> : <BsPlayFill />}
-				</button>
+				</Button>
 
 				<div className={styles.timeDisplay}>
 					<span>{formatTime(currentTime)}</span>
@@ -32,19 +38,27 @@ export const VideoControls: React.FC<IVideoControlsProps> = ({
 			/>
 
 			<div className={styles.bottomControls}>
-				<button className={styles.muteButton} onClick={toggleMute}>
+				<Button
+					variant='text'
+					size='iconSm'
+					className={styles.muteButton}
+					onClick={toggleMute}
+				>
 					{isMuted ? <IoMdVolumeOff /> : <IoMdVolumeHigh />}
-				</button>
+				</Button>
 
-				<button className={styles.fullscreenButton} onClick={toggleFullscreen}>
+				<Button
+					variant='text'
+					size='iconSm'
+					className={styles.fullscreenButton}
+					onClick={toggleFullscreen}
+				>
 					<BiFullscreen />
-				</button>
+				</Button>
 			</div>
 		</div>
 	)
 }
-
-
 
 export const VideoProgress: React.FC<VideoProgressProps> = ({
 	progress,

@@ -5,7 +5,7 @@ import styles from './ShoppingCartCodeContinue.module.scss'
 export const ShoppingCartCodeContinue = () => {
 	return (
 		<Link to={'/shop'} replace className={styles.navigate}>
-			<Button className={styles.button} variant='outline' size='md'>
+			<Button className={styles.button} variant='secondary' size='default'>
 				Continue shopping
 			</Button>
 		</Link>

@@ -25,63 +25,23 @@
 
 .pageButton {
 	margin: 0 6px;
-	padding: 8px 12px;
-	border: 2px solid #e0e0e0;
-	border-radius: 6px;
-	background: white;
-	color: #3c4242;
-	font-size: 14px;
-	font-weight: 500;
-	cursor: pointer;
 	transition: all 0.2s ease;
-	min-width: 36px;
-
-	&:hover:not(:disabled) {
-		border-color: #8a33fd;
-		background: #f8f9fa;
-		transform: translateY(-1px);
-	}
-
-	&:disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
 
 	@media (max-width: 991px) {
 		margin: 0 5px;
-		padding: 7px 10px;
-		font-size: 13px;
-		min-width: 32px;
 	}
 
 	@media (max-width: 767px) {
 		margin: 0 4px;
-		padding: 6px 8px;
-		font-size: 12px;
-		min-width: 28px;
-
-		&:hover:not(:disabled) {
-			transform: none;
-		}
 	}
 
 	@media (max-width: 480px) {
 		margin: 0 2px;
-		padding: 5px 6px;
-		font-size: 11px;
-		min-width: 24px;
 	}
 }
 
 .pageButtonSelected {
-	background: #8a33fd;
-	border-color: #8a33fd;
-	color: white;
-
-	&:hover {
-		background: #7329d4;
-		border-color: #7329d4;
-	}
+	/* стили применяются через variant */
 }
 
 .navigation {

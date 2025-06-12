@@ -24,8 +24,8 @@ export const ShoppingCartCheckout = () => {
 				<Button
 					onClick={() => navigate('/account/checkout', {replace: true})}
 					className={styles.checkoutButton}
-					variant='violet'
-					size='md'
+					variant='primary'
+					size='lg'
 				>
 					Proceed To Checkout
 				</Button>

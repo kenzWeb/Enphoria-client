@@ -1,3 +1,4 @@
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {IProduct} from '@/shared/types/product.interface'
 import {type FC} from 'react'
 import styles from './Pagination.module.scss'
@@ -30,8 +31,10 @@ export const Pagination: FC<IPagination> = ({
 					const isSelected = currentPage === pageNumber
 
 					return (
-						<button
+						<Button
 							key={pageNumber}
+							variant={isSelected ? 'paginationSelect' : 'pagination'}
+							size='nav'
 							className={`${styles.pageButton} ${
 								isSelected ? styles.pageButtonSelected : ''
 							}`}
@@ -39,7 +42,7 @@ export const Pagination: FC<IPagination> = ({
 							disabled={isSelected}
 						>
 							{pageNumber}
-						</button>
+						</Button>
 					)
 				})}
 			</div>

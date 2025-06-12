@@ -1,4 +1,5 @@
 import {useChangePassword} from '@/shared/hooks/api/useChangePassword'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {createPasswordFormHandlers, createPasswordValidation} from '../../model'
 import {IPasswordChangeFormProps} from '../../types'
 import styles from './PasswordChangeForm.module.scss'
@@ -77,22 +78,26 @@ export const PasswordChangeForm = ({onSuccess}: IPasswordChangeFormProps) => {
 			</div>
 
 			<div className={styles.buttonGroup}>
-				<button
+				<Button
+					variant='secondary'
+					size='default'
 					className={styles.cancelButton}
 					onClick={handleCancel}
 					type='button'
 					disabled={isPending}
 				>
 					Cancel
-				</button>
-				<button
+				</Button>
+				<Button
+					variant='primary'
+					size='default'
 					className={styles.saveButton}
 					onClick={handleSubmit}
 					type='button'
 					disabled={isPending || !isFormValid}
 				>
 					{isPending ? 'Saving...' : 'Save'}
-				</button>
+				</Button>
 			</div>
 		</div>
 	)

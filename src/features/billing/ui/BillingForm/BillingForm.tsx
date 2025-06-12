@@ -45,7 +45,8 @@ export const BillingForm = () => {
 				<Button
 					type='submit'
 					disabled={isPending || isPaymentPending}
-					variant='sign'
+					variant='primary'
+					size='lg'
 					className={styles.submitButton}
 				>
 					Continue to delivery

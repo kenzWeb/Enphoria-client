@@ -18,8 +18,8 @@ export const WishListEmpty = () => {
 			<Button
 				onClick={() => router('/shop')}
 				className={styles.button}
-				size={'md'}
-				variant={'violet'}
+				size={'lg'}
+				variant={'primary'}
 			>
 				Continue Shopping
 			</Button>

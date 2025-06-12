@@ -1,4 +1,5 @@
 import {useAddAddressForm} from '@/features/profile/hooks/useAddAddressForm'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import styles from './AddressForm.module.scss'
 
 export const AddressForm = () => {
@@ -141,21 +142,25 @@ export const AddressForm = () => {
 			</div>
 
 			<div className={styles.actions}>
-				<button
+				<Button
+					variant='outline'
+					size='md'
 					type='button'
 					onClick={handleCancel}
 					className={styles.cancelButton}
 					disabled={isCreating}
 				>
 					Cancel
-				</button>
-				<button
+				</Button>
+				<Button
+					variant='violet'
+					size='md'
 					type='submit'
 					className={styles.submitButton}
 					disabled={isCreating}
 				>
 					{isCreating ? 'Saving...' : 'Save Address'}
-				</button>
+				</Button>
 			</div>
 		</form>
 	)

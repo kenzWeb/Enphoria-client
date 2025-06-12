@@ -1,3 +1,4 @@
+import {Button} from '@/shared/shad-cn/ui/Button'
 import React from 'react'
 import styles from './styles.module.scss'
 
@@ -59,7 +60,8 @@ export const TransparentButtonLink: React.FC<ButtonProps> = ({
 	}
 
 	return (
-		<button
+		<Button
+			variant='outline'
 			className={styles.customButton}
 			style={buttonStyle}
 			onClick={onClick}
@@ -71,6 +73,6 @@ export const TransparentButtonLink: React.FC<ButtonProps> = ({
 			>
 				{children}
 			</span>
-		</button>
+		</Button>
 	)
 }

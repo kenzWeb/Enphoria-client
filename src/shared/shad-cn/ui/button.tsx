@@ -5,42 +5,69 @@ import * as React from 'react'
 import {cn} from '@/shared//lib/utils'
 
 const buttonVariants = cva(
-	'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50',
+	'inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-lg font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0',
 	{
 		variants: {
 			variant: {
-				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+				primary:
+					'bg-[#8A33FD] text-white border-0 hover:bg-[#6620C1] hover:shadow-lg focus:bg-[#6620C1] focus:ring-2 focus:ring-[#8A33FD] focus:ring-offset-2 disabled:bg-[#EAEAEA] disabled:text-[#807D7E]',
+				secondary:
+					'bg-transparent text-[#8A33FD] border border-[#3C4242] hover:bg-[rgba(138,51,253,0.05)] hover:border-[#8A33FD] focus:bg-[rgba(138,51,253,0.03)] focus:border-[#8A33FD] disabled:bg-[#EAEAEA] disabled:text-[#807D7E] disabled:border-[#EAEAEA]',
+				text: 'bg-transparent text-[#8A33FD] border-0 hover:bg-[rgba(102,32,193,0.03)] hover:shadow-md focus:bg-[rgba(102,32,193,0.03)] disabled:text-[#807D7E]',
+				elevated:
+					'bg-white text-[#8A33FD] border-0 shadow-md hover:bg-[rgba(102,32,193,0.03)] hover:shadow-lg focus:bg-[rgba(102,32,193,0.03)] focus:shadow-lg disabled:bg-[#EAEAEA] disabled:text-[#807D7E] disabled:shadow-none',
+
+				default:
+					'bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm',
 				destructive:
-					'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+					'bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm',
 				outline:
-					'border-solid border-[#BEBCBD] bg-background hover:bg-accent hover:text-accent-foreground',
-				violet: 'bg-[#8A33FD] text-white hover:bg-primary/90',
-				secondary: 'bg-black text-secondary-foreground hover:bg-secondary/80',
+					'border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm',
 				ghost: 'hover:bg-accent hover:text-accent-foreground',
 				link: 'text-primary underline-offset-4 hover:underline',
-				sign: 'bg-[#8A33FD] !py-[12px] md:!py-[14px] lg:!py-[16px] xl:!py-[18px] text-primary-foreground hover:bg-primary/90 !rounded-[6px] md:!rounded-[7px] lg:!rounded-[8px] xl:!rounded-[9px]',
+
+				violet: 'bg-[#8A33FD] text-white hover:bg-[#6620C1] shadow-lg',
+				sign: 'bg-[#8A33FD] text-white hover:bg-[#6620C1] shadow-lg font-semibold',
 				favorite:
-					'border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full',
-				pagination:
-					'bg-[#807D7E] text-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[40px] lg:h-[40px] hover:bg-[#807D7E] rounded-[8px] md:rounded-[10px] lg:rounded-[12px] hover:bg-[#3d008e]',
-				paginationSelect:
-					'bg-[#3d008e] text-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[40px] lg:h-[40px] rounded-[8px] md:rounded-[10px] lg:rounded-[12px]',
+					'border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full shadow-sm',
+				pagination: 'bg-[#807d7e] text-white hover:bg-[#3c4242] shadow-sm',
+				paginationSelect: 'bg-[#8A33FD] text-white shadow-md',
+				checkout:
+					'bg-[#8A33FD] text-white hover:bg-[#6620C1] shadow-lg font-semibold w-full',
+				nav: 'bg-white/90 backdrop-blur-sm text-[#3c4242] hover:bg-white shadow-md rounded-full border border-white/20',
+				menu: 'bg-transparent text-[#3c4242] hover:bg-[#f8f9fa]',
+				close:
+					'bg-white/90 backdrop-blur-sm text-[#3c4242] hover:bg-white hover:text-[#8A33FD] shadow-sm rounded-full',
+				quantity:
+					'bg-[#f6f6f6] text-[#3c4242] hover:bg-[#e9ecef] border border-[#e5e5e5]',
+				filter:
+					'bg-white border border-[#8A33FD] text-[#8A33FD] hover:bg-[#8A33FD] hover:text-white shadow-sm',
+				card: 'bg-[#f6f6f6] text-[#3c4242] hover:bg-[#e9ecef] shadow-sm',
 			},
 			size: {
-				default:
-					'h-6 px-2 text-xs md:h-8 md:px-3 md:text-xs lg:h-10 lg:px-4 lg:text-sm xl:h-12 xl:px-6 xl:text-base',
-				sm: 'h-4 px-[4rem] text-[1.4rem] rounded-[16px] md:h-6 md:px-[1rem] md:text-[1.2rem] lg:h-[6.4rem] lg:px-[1.2rem] lg:text-[1.2rem] xl:h-[4rem] xl:px-[1.6rem] xl:text-[1.4rem]',
-				lg: 'h-8 px-4 text-xs md:h-10 md:px-6 md:text-sm lg:h-12 lg:px-8 lg:text-base xl:h-14 xl:px-10 xl:text-lg',
-				md: 'py-1 px-[2rem] text-[1.2rem] rounded-[0.8rem] md:py-2 md:px-[3rem] md:text-[1.4rem] lg:py-3 lg:px-[4rem] lg:text-[1.6rem] xl:py-4 xl:px-[5rem] xl:text-[1.8rem]',
-				favorite:
-					'h-[25px] w-[25px] md:h-[30px] md:w-[30px] lg:h-[35px] lg:w-[35px] xl:h-[40px] xl:w-[40px]',
-				icon: 'h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12',
-				coupon:
-					'h-4 px-[4rem] text-[1.4rem] rounded-r-[16px] rounded-s-[0] md:h-6 md:px-[1rem] md:text-[1.2rem] lg:h-[6.4rem] lg:px-[1.2rem] lg:text-[1.2rem] xl:h-[4rem] xl:px-[1.6rem] xl:text-[1.4rem]',
+				default: 'px-5 py-4 text-lg font-medium',
+				sm: 'px-3 py-3 text-base font-medium',
+				lg: 'px-6 py-4 text-xl font-medium',
+
+				icon: 'h-11 w-11 p-3',
+				iconSm: 'h-9 w-9 p-2',
+				iconLg: 'h-12 w-12 p-3',
+
+				xs: 'px-2 py-2 text-sm',
+				md: 'px-4 py-3 text-base',
+				xl: 'px-8 py-5 text-xl',
+
+				favorite: 'h-8 w-8 md:h-9 md:w-9 lg:h-10 lg:w-10',
+				nav: 'h-10 w-10 md:h-11 md:w-11',
+				quantity: 'h-8 w-8 p-0',
+				checkout: 'px-8 py-4 text-lg font-semibold',
+				mobile: 'px-4 py-3 text-sm',
+				tablet: 'px-6 py-3 text-base',
+				desktop: 'px-8 py-4 text-lg',
 			},
 		},
 		defaultVariants: {
-			variant: 'default',
+			variant: 'primary',
 			size: 'default',
 		},
 	},

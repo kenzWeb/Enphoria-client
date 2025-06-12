@@ -1,4 +1,5 @@
 import {SERVER_URL} from '@/shared/config/private.config'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {useCartStore} from '@/shared/store/cart.store'
 import {ICartItem} from '@/shared/types/cart.interface'
 import {BiMinus} from 'react-icons/bi'
@@ -56,19 +57,23 @@ export const ShoppingCartCard = ({data}: Props) => {
 			<div className={styles.mobileRow}>
 				<span className={styles.mobileLabel}>Quantity:</span>
 				<div className={styles.quantity}>
-					<button
+					<Button
+						variant='quantity'
+						size='quantity'
 						onClick={() => minus(getVariantKey(data))}
 						className={styles.minus}
 					>
 						<BiMinus size={15} />
-					</button>
+					</Button>
 					<span className={styles.count}>{data.quantity}</span>
-					<button
+					<Button
+						variant='quantity'
+						size='quantity'
 						onClick={() => plus(getVariantKey(data))}
 						className={styles.plus}
 					>
 						<BsPlus size={15} />
-					</button>
+					</Button>
 				</div>
 			</div>
 
@@ -82,9 +87,14 @@ export const ShoppingCartCard = ({data}: Props) => {
 				<h2 className={styles.total}>${data.price * data.quantity}.00</h2>
 			</div>
 
-			<button className={styles.delete} onClick={handleDelete}>
+			<Button
+				variant='ghost'
+				size='icon'
+				className={styles.delete}
+				onClick={handleDelete}
+			>
 				<HiOutlineTrash color='#8A33FD' size={18} />
-			</button>
+			</Button>
 		</div>
 	)
 }
