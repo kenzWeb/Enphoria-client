@@ -1,0 +1,74 @@
+.container {
+	padding: 0 20px;
+	margin: 2.5rem auto;
+	max-width: 1235px;
+}
+
+.content {
+	display: flex;
+	width: 100%;
+	gap: 38px;
+	margin-top: 20px;
+}
+
+.billingSection {
+	width: 70%;
+}
+
+.orderSection {
+	width: 30%;
+}
+
+@media (max-width: 992px) {
+	.content {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.billingSection,
+	.orderSection {
+		width: 100%;
+	}
+
+	.orderSection {
+		order: 1;
+	}
+
+	.billingSection {
+		order: 2;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		margin: 1.5rem auto;
+		padding: 0 16px;
+	}
+
+	.content {
+		gap: 1.5rem;
+		margin-top: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		margin: 1rem auto;
+		padding: 0 12px;
+	}
+
+	.content {
+		gap: 1rem;
+		margin-top: 12px;
+	}
+}
+
+@media (max-width: 360px) {
+	.container {
+		padding: 0 8px;
+	}
+
+	.content {
+		gap: 0.8rem;
+	}
+}

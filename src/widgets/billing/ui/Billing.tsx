@@ -4,8 +4,8 @@ import styles from './Billing.module.scss'
 
 export const Billing = () => {
 	return (
-		<section className={styles.section}>
-			<Subtitle>Billing Details</Subtitle>
+		<section>
+			<Subtitle className={styles.text}>Billing Details</Subtitle>
 			<BillingForm />
 		</section>
 	)
