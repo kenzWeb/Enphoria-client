@@ -1,0 +1,25 @@
+.container {
+	background-color: #f6f6f6;
+	border-radius: 8px;
+	padding: 43px 50px;
+	margin: 24px 0;
+}
+
+.itemsList {
+	display: flex;
+	flex-direction: column;
+}
+
+.noOrder {
+	text-align: center;
+	padding: 40px;
+	font-family: 'Causten', sans-serif;
+	font-size: 18px;
+	color: #807d7e;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 24px 20px;
+	}
+}

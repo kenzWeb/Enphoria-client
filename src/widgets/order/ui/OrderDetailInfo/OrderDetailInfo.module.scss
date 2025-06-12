@@ -1,0 +1,24 @@
+.container {
+	max-width: 895px;
+	margin: 0 auto;
+}
+
+.notFound {
+	text-align: center;
+	padding: 60px 20px;
+	font-family: 'Causten', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: #807d7e;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 16px;
+	}
+
+	.notFound {
+		font-size: 20px;
+		padding: 40px 20px;
+	}
+}
