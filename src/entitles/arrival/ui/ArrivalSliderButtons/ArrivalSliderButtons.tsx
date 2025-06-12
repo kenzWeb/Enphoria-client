@@ -1,3 +1,5 @@
+import './ArrivalSliderButtons.module.scss'
+
 export const ArrivalSliderButtons = () => {
 	return (
 		<>

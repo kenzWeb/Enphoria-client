@@ -3,9 +3,9 @@ import styles from './styles.module.scss'
 
 export const ArrivalSlide = ({title, img}: IArrival) => {
 	return (
-		<>
-			<img className={styles.img} src={img} alt='' />
+		<div className={styles.container}>
+			<img className={styles.img} src={img} alt={title} loading='lazy' />
 			<h2 className={styles.title}>{title}</h2>
-		</>
+		</div>
 	)
 }

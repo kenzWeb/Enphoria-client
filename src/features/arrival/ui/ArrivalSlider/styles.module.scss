@@ -2,21 +2,128 @@
 	display: flex;
 	text-align: center;
 	padding: 20px 0;
-  
-  :global(.swiper-slide) {
-    transition: transform 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-10px);
-    }
-  }
+	margin: 0 -20px;
+
+	:global(.swiper) {
+		width: 100%;
+		height: auto;
+		padding: 0 20px;
+	}
+
+	:global(.swiper-slide) {
+		transition: transform 0.3s ease;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+
+	:global(.swiper-wrapper) {
+		align-items: stretch;
+	}
 }
 
 .slide {
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  
-  &:hover {
-    opacity: 1;
-  }
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.skeletonContainer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+	padding: 20px 0;
+}
+
+.skeletonItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.skeletonImage {
+	width: 100% !important;
+	max-width: 26rem !important;
+	height: 25rem !important;
+	border-radius: 12px !important;
+	margin-bottom: 2rem !important;
+}
+
+.skeletonText {
+	width: 80% !important;
+	height: 2rem !important;
+}
+
+@media (max-width: 1200px) {
+	.skeletonContainer {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+
+	.skeletonImage {
+		max-width: 22rem !important;
+		height: 22rem !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.slider {
+		padding: 16px 0;
+		margin: 0 -16px;
+
+		:global(.swiper) {
+			padding: 0 16px;
+		}
+
+		:global(.swiper-slide) {
+			&:hover {
+				transform: none;
+			}
+		}
+	}
+
+	.skeletonContainer {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+		padding: 16px 0;
+	}
+
+	.skeletonImage {
+		max-width: 20rem !important;
+		height: 20rem !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.slider {
+		padding: 12px 0;
+		margin: 0 -12px;
+
+		:global(.swiper) {
+			padding: 0 12px;
+		}
+	}
+
+	.skeletonContainer {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		padding: 12px 0;
+	}
+
+	.skeletonImage {
+		max-width: 16rem !important;
+		height: 16rem !important;
+	}
 }

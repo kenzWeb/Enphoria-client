@@ -1,4 +1,19 @@
 .section {
 	position: relative;
 	margin-bottom: 10rem;
+	padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+	.section {
+		margin-bottom: 6rem;
+		padding: 0 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.section {
+		margin-bottom: 4rem;
+		padding: 0 12px;
+	}
 }
