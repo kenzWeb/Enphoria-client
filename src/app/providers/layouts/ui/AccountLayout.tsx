@@ -1,23 +1,46 @@
 import {BreadcrumbsProvider, useBreadcrumbsContext} from '@/shared/contexts'
 import {Breadcrumbs} from '@/shared/ui/Other'
 import {Menu} from '@/widgets/menu'
-
+import {useState} from 'react'
 import {Outlet} from 'react-router-dom'
+import styles from './AccountLayout.module.scss'
+import MenuIcon from '/img/icons/menu.svg'
 
 const AccountLayoutContent = () => {
 	const {endPage, items} = useBreadcrumbsContext()
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
 	return (
-		<div className='container !my-[2.5rem]'>
+		<div className={styles.container}>
 			<Breadcrumbs items={items} endPage={endPage} />
-			<div className='flex gap-[50px] mt-[30px]'>
-				<div className='w-[25%]'>
-					<Menu />
+
+			<button
+				className={styles.mobileMenuToggle}
+				onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+			>
+				<img src={MenuIcon} alt='Menu' width='24' height='24' />
+				Menu
+			</button>
+
+			<div className={styles.content}>
+				<div
+					className={`${styles.sidebar} ${
+						isMobileMenuOpen ? styles.sidebarOpen : ''
+					}`}
+				>
+					<Menu onItemClick={() => setIsMobileMenuOpen(false)} />
 				</div>
-				<div className='w-[75%]'>
+				<div className={styles.main}>
 					<Outlet />
 				</div>
 			</div>
+
+			{isMobileMenuOpen && (
+				<div
+					className={styles.overlay}
+					onClick={() => setIsMobileMenuOpen(false)}
+				/>
+			)}
 		</div>
 	)
 }

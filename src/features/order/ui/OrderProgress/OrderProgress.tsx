@@ -1,6 +1,7 @@
 import {getOrderStatusIndex, orderProgressSteps} from '../../models'
 import {OrderProgressProps} from '../../types'
 import styles from './OrderProgress.module.scss'
+import CheckIcon from '/img/icons/check.svg'
 
 export const OrderProgress = ({currentStatus}: OrderProgressProps) => {
 	const currentIndex = getOrderStatusIndex(currentStatus)
@@ -29,15 +30,7 @@ export const OrderProgress = ({currentStatus}: OrderProgressProps) => {
 							>
 								{isCompleted && (
 									<div className={styles.checkmark}>
-										<svg width='10' height='8' viewBox='0 0 10 8' fill='none'>
-											<path
-												d='M1 4L3.5 6.5L9 1'
-												stroke='white'
-												strokeWidth='1.5'
-												strokeLinecap='round'
-												strokeLinejoin='round'
-											/>
-										</svg>
+										<img src={CheckIcon} alt='Check' width='10' height='8' />
 									</div>
 								)}
 							</div>

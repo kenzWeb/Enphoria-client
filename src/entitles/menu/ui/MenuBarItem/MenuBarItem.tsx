@@ -5,7 +5,7 @@ import {Link, useLocation} from 'react-router-dom'
 import {MenuBarItemProps} from '../../types'
 import styles from './MenuBarItem.module.scss'
 
-export const MenuBarItem: FC<MenuBarItemProps> = ({item}) => {
+export const MenuBarItem: FC<MenuBarItemProps> = ({item, onItemClick}) => {
 	const location = useLocation()
 
 	const isActive = () => {
@@ -18,15 +18,20 @@ export const MenuBarItem: FC<MenuBarItemProps> = ({item}) => {
 		return location.pathname === item.route
 	}
 
+	const handleClick = () => {
+		if (onItemClick) {
+			onItemClick()
+		}
+	}
+
 	return (
 		<div
 			className={cn(styles.container, {
 				[styles.active]: isActive(),
 			})}
 		>
-			<Link to={item.route} className={styles.wrapper}>
+			<Link to={item.route} className={styles.wrapper} onClick={handleClick}>
 				<img className={styles.icon} src={item.icon ?? ''} alt={item.label} />
-
 				<h2 className={styles.label}>{item.label}</h2>
 			</Link>
 		</div>

@@ -1,5 +1,6 @@
 .heading {
 	margin-bottom: 2rem;
+	padding: 0 4rem;
 }
 
 .title {
@@ -14,4 +15,37 @@
 	font-weight: 400;
 	font-size: 1.4rem;
 	color: #807d7e;
+}
+
+@media (max-width: 768px) {
+	.heading {
+		padding: 0 2rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid #e6e6e6;
+		padding-bottom: 1.5rem;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.subtitle {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.heading {
+		padding: 0 1.5rem;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.subtitle {
+		font-size: 1.1rem;
+	}
 }

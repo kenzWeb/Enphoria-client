@@ -1,17 +1,17 @@
-.wrapper {
+.container {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
 }
 
 @media (max-width: 768px) {
-	.wrapper {
-		gap: 16px;
+	.container {
+		gap: 20px;
 	}
 }
 
 @media (max-width: 480px) {
-	.wrapper {
-		gap: 12px;
+	.container {
+		gap: 16px;
 	}
 }

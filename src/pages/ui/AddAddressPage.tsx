@@ -1,5 +1,10 @@
 import {AddAddressForm} from '@/widgets/profile'
+import styles from './AddAddressPage.module.scss'
 
 export const AddAddressPage = () => {
-	return <AddAddressForm />
+	return (
+		<div className={styles.container}>
+			<AddAddressForm />
+		</div>
+	)
 }

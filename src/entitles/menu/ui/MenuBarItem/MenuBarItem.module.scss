@@ -36,3 +36,47 @@
 	font-size: 1.8rem;
 	color: #807d7e;
 }
+
+@media (max-width: 768px) {
+	.container {
+		padding: 1.2rem 0;
+		border-radius: 0;
+		margin: 0 20px;
+	}
+
+	.container.active {
+		background-color: #f6f6f6;
+		border-radius: 8px;
+		&::after {
+			display: none;
+		}
+	}
+
+	.wrapper {
+		margin-left: 2rem;
+		gap: 1rem;
+	}
+
+	.icon {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	.label {
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		margin: 0 16px;
+	}
+
+	.wrapper {
+		margin-left: 1.5rem;
+	}
+
+	.label {
+		font-size: 1.5rem;
+	}
+}

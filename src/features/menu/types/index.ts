@@ -9,4 +9,5 @@ export interface MenuItem {
 
 export interface MenuBarProps {
 	menuItems: MenuItem[]
+	onItemClick?: () => void
 }

@@ -3,6 +3,10 @@
 	flex-direction: column;
 	margin-bottom: 100px;
 	width: 100%;
+	background: white;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -13,6 +17,11 @@
 	font-size: 1.8rem;
 	color: #3c4242;
 	cursor: pointer;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: #8a33fd;
+	}
 }
 
 .header {
@@ -31,5 +40,48 @@
 
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 20px;
+		margin-bottom: 50px;
+		border-radius: 6px;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.addNew {
+		font-size: 1.6rem;
+	}
+
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 16px;
+		margin-bottom: 30px;
+		border-radius: 4px;
+	}
+
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.addNew {
+		font-size: 1.4rem;
+	}
+
+	.addressList {
+		gap: 1rem;
 	}
 }

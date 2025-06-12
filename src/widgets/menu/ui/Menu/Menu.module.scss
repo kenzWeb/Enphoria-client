@@ -1,3 +1,14 @@
 .menu {
-	min-width: 25%
+	min-width: 25%;
+	background: white;
+	border-radius: 8px;
+	padding: 0;
+}
+
+@media (max-width: 768px) {
+	.menu {
+		min-width: 100%;
+		padding: 20px 0;
+		border-radius: 0;
+	}
 }

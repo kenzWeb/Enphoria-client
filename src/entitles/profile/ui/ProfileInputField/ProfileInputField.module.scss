@@ -69,3 +69,59 @@
 	gap: 1rem;
 	margin-top: 1rem;
 }
+
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+		gap: 12px;
+	}
+
+	.label {
+		font-size: 1.6rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.input {
+		font-size: 1.6rem;
+	}
+
+	.button {
+		font-size: 1.6rem;
+	}
+
+	.buttonsContainer {
+		gap: 0.8rem;
+		margin-top: 0.8rem;
+		width: 100%;
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		gap: 8px;
+	}
+
+	.label {
+		font-size: 1.4rem;
+	}
+
+	.input {
+		font-size: 1.4rem;
+	}
+
+	.button {
+		font-size: 1.4rem;
+	}
+
+	.buttonsContainer {
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+	}
+}
