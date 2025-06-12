@@ -33,11 +33,6 @@
 
 				form {
 					@apply space-y-5;
-
-					:global(button) {
-						@apply text-[18px] py-[36px] px-[50px] text-[#ffffff] !mt-[30px];
-						font-family: Causten;
-					}
 				}
 			}
 

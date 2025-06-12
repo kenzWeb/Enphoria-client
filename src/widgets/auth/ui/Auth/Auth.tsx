@@ -59,7 +59,7 @@ export function Auth() {
 
 								<Button
 									className={styles.button}
-									variant='primary'
+									variant='sign'
 									size='lg'
 									disabled={isPending}
 								>
