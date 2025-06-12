@@ -1,6 +1,22 @@
 .text {
-	@apply text-[16px] text-[807D7E] font-normal;
+	font-size: 16px;
+	color: #807d7e;
+	font-weight: 400;
 	width: 100%;
 	max-width: 100%;
 	line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+	.text {
+		font-size: 15px;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.text {
+		font-size: 14px;
+		line-height: 1.4;
+	}
 }

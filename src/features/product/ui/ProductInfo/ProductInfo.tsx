@@ -39,7 +39,7 @@ export const ProductInfo = () => {
 	})
 
 	return (
-		<div className='mt-6 flex flex-col gap-[1rem]'>
+		<div className={`mt-6 flex flex-col gap-[1rem] ${styles.container}`}>
 			<Breadcrumbs {...breadcrumbs} />
 			<h2 className={styles.title}>{product?.name}</h2>
 			<ProductToggle
@@ -72,7 +72,7 @@ export const ProductInfo = () => {
 						selectedColor,
 						product,
 						user,
-						addToCart
+						addToCart,
 					})
 				}
 			/>

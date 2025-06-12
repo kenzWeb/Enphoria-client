@@ -1,6 +1,6 @@
 .videoContainer {
 	width: 100%;
-	max-width: 100%; /* Изменено с 650px на 100% */
+	max-width: 100%;
 	border-radius: 12px;
 	overflow: hidden;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
 .videoWrapper {
 	position: relative;
 	width: 100%;
-	padding-bottom: 56.25%; /* 16:9 соотношение сторон */
+	padding-bottom: 56.25%;
 	background-color: #000;
 	border-radius: 8px;
 	overflow: hidden;
@@ -169,22 +169,41 @@
 /* Адаптивность для небольших экранов */
 @media (max-width: 768px) {
 	.videoContainer {
-		max-width: 100%;
+		border-radius: 8px;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 	}
 
 	.controls {
-		padding: 10px;
+		padding: 12px;
+		opacity: 1;
 	}
 
-	.timeDisplay {
-		font-size: 12px;
+	.playButton {
+		width: 36px;
+		height: 36px;
+
+		svg {
+			font-size: 20px;
+		}
 	}
 
-	.playButton,
-	.muteButton,
-	.fullscreenButton {
-		width: 30px;
-		height: 30px;
+	.centerPlayButton svg {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 480px) {
+	.videoContainer {
+		border-radius: 6px;
+	}
+
+	.controls {
+		padding: 8px;
+	}
+
+	.playButton {
+		width: 32px;
+		height: 32px;
 
 		svg {
 			font-size: 18px;
@@ -192,26 +211,6 @@
 	}
 
 	.centerPlayButton svg {
-		font-size: 60px;
-	}
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 480px) {
-	.bottomControls {
-		justify-content: flex-end;
-	}
-
-	.playButton {
-		width: 40px;
-		height: 40px;
-
-		svg {
-			font-size: 24px;
-		}
-	}
-
-	.centerPlayButton svg {
-		font-size: 50px;
+		font-size: 36px;
 	}
 }

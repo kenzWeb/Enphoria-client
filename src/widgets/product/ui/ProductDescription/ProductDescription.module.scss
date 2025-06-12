@@ -10,12 +10,54 @@
 		min-width: 0;
 	}
 
-	@media (max-width: 992px) {
+	@media (max-width: 992px) and (min-width: 770px) {
 		flex-direction: column;
+		gap: 2rem;
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		border-radius: 20px;
+		padding: 2rem;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
 		> div:first-child,
 		> div:last-child {
 			width: 100%;
+			background: white;
+			border-radius: 16px;
+			padding: 1.5rem;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+			transform: translateY(0);
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		> div:first-child:hover,
+		> div:last-child:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		}
+	}
+
+	@media (max-width: 769px) {
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-top: 1rem;
+
+		> div:first-child,
+		> div:last-child {
+			width: 100%;
+			background: #f8f9fa;
+			border-radius: 12px;
+			padding: 1.5rem;
+			border: 1px solid #e9ecef;
+		}
+	}
+
+	@media (max-width: 480px) {
+		gap: 1rem;
+
+		> div:first-child,
+		> div:last-child {
+			padding: 1rem;
+			border-radius: 8px;
 		}
 	}
 }

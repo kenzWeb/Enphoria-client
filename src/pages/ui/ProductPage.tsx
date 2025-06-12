@@ -2,15 +2,20 @@ import {ProductInfo} from '@/features/product'
 import {ProductDescription, ProductSlideWrapper} from '@/widgets/product'
 import {SimilarProducts} from '@/widgets/similar'
 import {useParams} from 'react-router-dom'
+import styles from './ProductPage.module.scss'
 
 export const ProductPage = () => {
 	const {id} = useParams<{id: string}>()
 
 	return (
-		<div className='container flex flex-col'>
-			<div className='flex mb-[10rem]'>
-				<ProductSlideWrapper key={`slide-${id}`} />
-				<ProductInfo key={`info-${id}`} />
+		<div className={`container ${styles.container}`}>
+			<div className={styles.productMain}>
+				<div className={styles.productSlide}>
+					<ProductSlideWrapper key={`slide-${id}`} />
+				</div>
+				<div className={styles.productInfo}>
+					<ProductInfo key={`info-${id}`} />
+				</div>
 			</div>
 			<ProductDescription key={`desc-${id}`} />
 			<SimilarProducts key={`similar-${id}`} />

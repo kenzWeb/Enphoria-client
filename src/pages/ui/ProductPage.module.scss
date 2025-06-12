@@ -1,0 +1,149 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	padding: 0 20px;
+}
+
+.productMain {
+	display: flex;
+	gap: 4rem;
+	margin-bottom: 10rem;
+}
+
+.productSlide {
+	flex: 1;
+	max-width: 50%;
+}
+
+.productInfo {
+	flex: 1;
+	max-width: 50%;
+}
+
+@media (max-width: 1200px) {
+	.productMain {
+		gap: 3rem;
+		margin-bottom: 8rem;
+	}
+}
+
+@media (max-width: 992px) and (min-width: 770px) {
+	.productMain {
+		flex-direction: column;
+		gap: 2rem;
+		margin-bottom: 6rem;
+	}
+
+	.productSlide {
+		max-width: 100%;
+		align-self: center;
+		width: 80%;
+	}
+
+	.productInfo {
+		max-width: 100%;
+		width: 100%;
+		padding: 0 2rem;
+		background: #f8f9fa;
+		border-radius: 16px;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+	}
+}
+
+@media (max-width: 769px) {
+	.productMain {
+		flex-direction: column;
+		gap: 2rem;
+		margin-bottom: 6rem;
+	}
+
+	.productSlide,
+	.productInfo {
+		max-width: 100%;
+	}
+
+	.productInfo {
+		background: none;
+		padding: 0;
+		box-shadow: none;
+		border-radius: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		gap: 2rem;
+		padding: 0 16px;
+	}
+
+	.productMain {
+		flex-direction: column;
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.productSlide,
+	.productInfo {
+		max-width: 100%;
+	}
+
+	.productSlide {
+		order: 1;
+	}
+
+	.productInfo {
+		order: 2;
+		background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+		padding: 2rem 1.5rem;
+		border-radius: 20px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(90deg, #8a33fd, #3c4242);
+			border-radius: 20px 20px 0 0;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		gap: 1.5rem;
+		padding: 0 12px;
+	}
+
+	.productMain {
+		gap: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.productInfo {
+		padding: 1.5rem 1rem;
+		border-radius: 16px;
+
+		&::before {
+			border-radius: 16px 16px 0 0;
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.container {
+		padding: 0 8px;
+	}
+
+	.productInfo {
+		padding: 1.2rem 0.8rem;
+	}
+}

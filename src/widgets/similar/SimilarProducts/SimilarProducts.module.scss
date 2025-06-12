@@ -1,3 +1,15 @@
 .container {
-	@apply mb-[4.8rem];
+	margin-bottom: 4.8rem;
+}
+
+@media (max-width: 768px) {
+	.container {
+		margin-bottom: 3rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		margin-bottom: 2rem;
+	}
 }

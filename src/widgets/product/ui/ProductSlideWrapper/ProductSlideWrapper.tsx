@@ -1,6 +1,7 @@
 import {ProductSlider} from '@/entitles/product'
 import {useGetProductById} from '@/shared/hooks/queries/products/useGetProductById'
 import {useParams} from 'react-router-dom'
+import styles from './ProductSlideWrapper.module.scss'
 
 export const ProductSlideWrapper = () => {
 	const {id} = useParams<{id: string}>()
@@ -9,7 +10,7 @@ export const ProductSlideWrapper = () => {
 	if (!product) return null
 
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<ProductSlider images={product.images} />
 		</div>
 	)
