@@ -22,7 +22,7 @@ export const HomePresentsBlock = ({title, subtitle, text, img}: Props) => {
 					<h3 className={styles.subtitle}>{subtitle}</h3>
 					<h4 className={styles.text}>{text}</h4>
 
-					<Link to={'/items'}>
+					<Link to={'/account/wishlist'}>
 						<UnderLineButton>Explore Items</UnderLineButton>
 					</Link>
 				</div>
