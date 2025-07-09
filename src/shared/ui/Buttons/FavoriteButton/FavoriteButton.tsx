@@ -4,8 +4,9 @@ import {useFavorite} from '@/shared/hooks/api/useFavorite'
 import {useProfile} from '@/shared/hooks/api/useProfile'
 import {Button} from '@/shared/shad-cn/ui/Button'
 import {IProduct} from '@/shared/types/product.interface'
-import {AnimatePresence, motion} from 'framer-motion'
 import {Loader2} from 'lucide-react'
+import {AnimatePresence} from 'motion/react'
+import * as m from 'motion/react-m'
 import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai'
 import {useNavigate} from 'react-router-dom'
 import styles from './styles.module.scss'
@@ -31,7 +32,7 @@ export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 	)
 
 	return (
-		<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+		<m.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
 			<Button
 				variant='favorite'
 				size='favorite'
@@ -44,7 +45,7 @@ export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 				) : (
 					<AnimatePresence mode='wait'>
 						{isExists ? (
-							<motion.div
+							<m.div
 								key='filled'
 								initial={{scale: 0, rotate: -180}}
 								animate={{
@@ -63,9 +64,9 @@ export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 								}}
 							>
 								<AiFillHeart color='#F43F5E' className={styles.favorite} />
-							</motion.div>
+							</m.div>
 						) : (
-							<motion.div
+							<m.div
 								key='outline'
 								initial={{scale: 0}}
 								animate={{
@@ -79,11 +80,11 @@ export const FavoriteButton = ({product}: FavoriteButtonProps) => {
 								exit={{scale: 0}}
 							>
 								<AiOutlineHeart />
-							</motion.div>
+							</m.div>
 						)}
 					</AnimatePresence>
 				)}
 			</Button>
-		</motion.div>
+		</m.div>
 	)
 }

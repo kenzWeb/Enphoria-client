@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion'
+import * as m from 'motion/react-m'
 import React from 'react'
 
 interface AnimatedEyeIconProps {
@@ -12,7 +12,7 @@ export const AnimatedEyeIcon: React.FC<AnimatedEyeIconProps> = ({
 	onClick,
 	className = '',
 }) => (
-	<motion.svg
+	<m.svg
 		xmlns='http://www.w3.org/2000/svg'
 		width='24'
 		height='24'
@@ -53,5 +53,5 @@ export const AnimatedEyeIcon: React.FC<AnimatedEyeIconProps> = ({
 				<circle cx='12' cy='12' r='3' />
 			</>
 		)}
-	</motion.svg>
+	</m.svg>
 )

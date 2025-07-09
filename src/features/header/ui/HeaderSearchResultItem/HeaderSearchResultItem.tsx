@@ -1,7 +1,7 @@
 import {SERVER_URL} from '@/shared/config/private.config'
 import {PUBLIC_URL} from '@/shared/config/url.config'
 import {IProduct} from '@/shared/types/product.interface'
-import {motion} from 'framer-motion'
+import * as m from 'motion/react-m'
 import {useNavigate} from 'react-router-dom'
 import styles from './styles.module.scss'
 
@@ -22,7 +22,7 @@ export const HeaderSearchResultItem = ({
 	}
 
 	return (
-		<motion.div
+		<m.div
 			key={product?.id || Math.random()}
 			className={styles.searchResult}
 			whileHover={{scale: 1.01}}
@@ -40,6 +40,6 @@ export const HeaderSearchResultItem = ({
 				<span className={styles.category}>{product.category?.name}</span>
 				<span className={styles.productPrice}>${product.price}</span>
 			</div>
-		</motion.div>
+		</m.div>
 	)
 }

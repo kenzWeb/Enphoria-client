@@ -8,7 +8,7 @@ import {
 } from '@/shared/shad-cn/ui/Form'
 import {Input} from '@/shared/shad-cn/ui/Input'
 import {IAuthForm} from '@/shared/types/auth.interface'
-import {motion} from 'framer-motion'
+import * as m from 'motion/react-m'
 import {useState} from 'react'
 import {UseFormReturn} from 'react-hook-form'
 
@@ -92,23 +92,23 @@ export function AuthFields({form, isPending, isReg = false}: AuthFieldsProps) {
 					<FormItem>
 						<div className='flex items-center justify-between'>
 							<FormLabel className={styles.label}>Password</FormLabel>
-							<motion.div
+							<m.div
 								onClick={() => setHide(!hide)}
 								className='flex items-center gap-[10px] cursor-pointer'
 								whileTap={{scale: 0.95}}
 							>
 								<AnimatedEyeIcon hide={hide} onClick={() => setHide(!hide)} />
-								<motion.h2
+								<m.h2
 									className='text-[#807D7E] text-[18px] select-none'
 									animate={{opacity: hide ? 0.7 : 1}}
 									transition={{duration: 0.3}}
 								>
 									{hide ? 'Hide' : 'View'}
-								</motion.h2>
-							</motion.div>
+								</m.h2>
+							</m.div>
 						</div>
 						<FormControl>
-							<motion.div
+							<m.div
 								initial={{opacity: 0}}
 								animate={{opacity: 1}}
 								transition={{duration: 0.3}}
@@ -120,7 +120,7 @@ export function AuthFields({form, isPending, isReg = false}: AuthFieldsProps) {
 									disabled={isPending}
 									{...field}
 								/>
-							</motion.div>
+							</m.div>
 						</FormControl>
 						<div className='flex items-center justify-between'>
 							<FormMessage className={styles.message} />

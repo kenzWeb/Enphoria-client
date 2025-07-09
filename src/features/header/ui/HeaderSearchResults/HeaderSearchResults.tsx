@@ -1,5 +1,5 @@
 import {IProduct} from '@/shared/types/product.interface'
-import {motion} from 'framer-motion'
+import * as m from 'motion/react-m'
 import {HeaderSearchResultItem} from '../HeaderSearchResultItem/HeaderSearchResultItem'
 
 interface HeaderSearchResultsProps {
@@ -12,7 +12,7 @@ export const HeaderSearchResults = ({
 	onClose,
 }: HeaderSearchResultsProps) => {
 	return (
-		<motion.div
+		<m.div
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}
@@ -27,15 +27,15 @@ export const HeaderSearchResults = ({
 					/>
 				))
 			) : (
-				<motion.div
+				<m.div
 					initial={{opacity: 0}}
 					animate={{opacity: 1}}
 					exit={{opacity: 0}}
 					className='p-6 text-center text-gray-500'
 				>
 					No results found
-				</motion.div>
+				</m.div>
 			)}
-		</motion.div>
+		</m.div>
 	)
 }

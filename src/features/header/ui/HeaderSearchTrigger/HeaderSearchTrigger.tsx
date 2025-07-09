@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion'
+import * as m from 'motion/react-m'
 import {IoSearchOutline} from 'react-icons/io5'
 import styles from './styles.module.scss'
 
@@ -14,7 +14,7 @@ export const HeaderSearchTrigger = ({
 	onOpen,
 }: HeaderSearchTriggerProps) => {
 	return (
-		<motion.div
+		<m.div
 			className={styles.form}
 			onClick={onOpen}
 			initial={{opacity: 0}}
@@ -30,6 +30,6 @@ export const HeaderSearchTrigger = ({
 				value={search}
 				onChange={(e) => onSearchChange(e.target.value)}
 			/>
-		</motion.div>
+		</m.div>
 	)
 }

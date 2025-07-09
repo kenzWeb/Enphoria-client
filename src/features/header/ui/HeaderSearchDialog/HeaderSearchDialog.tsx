@@ -1,7 +1,7 @@
 import {CommandDialog, CommandList} from '@/shared/shad-cn/ui/Command'
 import {IProduct} from '@/shared/types/product.interface'
 import {DialogTitle} from '@radix-ui/react-dialog'
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence} from 'motion/react'
 import {HeaderSearchInput} from '../HeaderSearchInput/HeaderSearchInput'
 import {HeaderSearchLoading} from '../HeaderSearchLoading/HeaderSearchLoading'
 import {HeaderSearchResults} from '../HeaderSearchResults/HeaderSearchResults'

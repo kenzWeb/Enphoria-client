@@ -1,4 +1,5 @@
-import {AnimatePresence, motion} from 'framer-motion'
+import {AnimatePresence} from 'motion/react'
+import * as m from 'motion/react-m'
 import {ReactNode} from 'react'
 import styles from './Accordion.module.scss'
 
@@ -10,7 +11,7 @@ interface AccordionProps {
 export const Accordion = ({isOpen, children}: AccordionProps) => {
 	return (
 		<AnimatePresence initial={false}>
-			<motion.div
+			<m.div
 				className={styles.content}
 				initial='collapsed'
 				animate={isOpen ? 'expanded' : 'collapsed'}
@@ -22,7 +23,7 @@ export const Accordion = ({isOpen, children}: AccordionProps) => {
 				transition={{duration: 0.3, ease: [0.4, 0, 0.2, 1]}}
 			>
 				{children}
-			</motion.div>
+			</m.div>
 		</AnimatePresence>
 	)
 }

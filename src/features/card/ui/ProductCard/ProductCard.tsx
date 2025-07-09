@@ -1,7 +1,7 @@
 import {FavoriteButton} from '@/features/favorite'
 import {SERVER_URL} from '@/shared/config/private.config'
 import {IProduct} from '@/shared/types/product.interface'
-import {motion, useInView} from 'framer-motion'
+import * as m from 'motion/react-m'
 import {useRef} from 'react'
 import {IoIosArrowRoundForward} from 'react-icons/io'
 import {Link} from 'react-router-dom'
@@ -15,7 +15,6 @@ interface ProductCardProps {
 
 export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 	const ref = useRef(null)
-	const isInView = useInView(ref, {once: true})
 
 	const handleRightElementClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
@@ -23,18 +22,11 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 	}
 
 	return (
-		<motion.div
+		<m.div
 			ref={ref}
 			className={styles.productCard}
 			initial={{opacity: 0, y: 20}}
-			animate={
-				isInView
-					? {
-							opacity: 1,
-							y: 0,
-					}
-					: {}
-			}
+			animate={{opacity: 1, y: 0}}
 			transition={{duration: 0.4}}
 			whileHover={{y: -5}}
 		>
@@ -47,7 +39,7 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 				className={styles.cardLink}
 			>
 				<div className={styles.imageWrapper}>
-					<motion.img
+					<m.img
 						src={`${SERVER_URL}${product.images[0]}`}
 						alt={product.name}
 						className={styles.productImage}
@@ -70,13 +62,13 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 						onClick={handleRightElementClick}
 					>
 						{category ? (
-							<motion.div
+							<m.div
 								className={styles.arrowIcon}
 								whileHover={{x: 2}}
 								transition={{duration: 0.2}}
 							>
 								<IoIosArrowRoundForward size={20} color='#797979' />
-							</motion.div>
+							</m.div>
 						) : (
 							<span className={styles.priceTag}>${product.price}.00</span>
 						)}
@@ -92,6 +84,6 @@ export const ProductCard = ({product, category, variant}: ProductCardProps) => {
 					</p>
 				</div>
 			</Link>
-		</motion.div>
+		</m.div>
 	)
 }
