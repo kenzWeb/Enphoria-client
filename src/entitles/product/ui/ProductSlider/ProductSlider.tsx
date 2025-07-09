@@ -1,7 +1,7 @@
 import {SERVER_URL} from '@/shared/config/private.config'
 import {Button} from '@/shared/shad-cn/ui/Button'
-import * as m from 'motion/react-m'
 import {ChevronDown, ChevronLeft, ChevronRight, ChevronUp} from 'lucide-react'
+import * as m from 'motion/react-m'
 import {useEffect, useRef, useState} from 'react'
 import {Swiper as SwiperType} from 'swiper'
 import 'swiper/css'
@@ -82,7 +82,7 @@ export const ProductSlider = ({images}: SliderProps) => {
 							? {
 									nextEl: '.swiper-button-next-custom',
 									prevEl: '.swiper-button-prev-custom',
-							  }
+							}
 							: false
 					}
 					spaceBetween={0}
@@ -96,7 +96,7 @@ export const ProductSlider = ({images}: SliderProps) => {
 				>
 					{images.map((img, index) => (
 						<SwiperSlide key={index}>
-							<motion.div
+							<m.div
 								className={styles.imageWrapper}
 								initial={{opacity: 0, scale: 0.95}}
 								animate={{opacity: 1, scale: 1}}
@@ -108,12 +108,11 @@ export const ProductSlider = ({images}: SliderProps) => {
 									className={styles.mainImage}
 									loading={index === 0 ? 'eager' : 'lazy'}
 								/>
-							</motion.div>
+							</m.div>
 						</SwiperSlide>
 					))}
 				</Swiper>
 
-				{/* Mobile Navigation */}
 				{isMobile && images.length > 1 && (
 					<>
 						<Button
@@ -122,9 +121,9 @@ export const ProductSlider = ({images}: SliderProps) => {
 							className={`${styles.navButton} ${styles.navPrev} swiper-button-prev-custom`}
 							asChild
 						>
-							<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+							<m.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
 								<ChevronLeft size={24} />
-							</motion.div>
+							</m.div>
 						</Button>
 						<Button
 							variant='elevated'
@@ -132,9 +131,9 @@ export const ProductSlider = ({images}: SliderProps) => {
 							className={`${styles.navButton} ${styles.navNext} swiper-button-next-custom`}
 							asChild
 						>
-							<motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+							<m.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
 								<ChevronRight size={24} />
-							</motion.div>
+							</m.div>
 						</Button>
 					</>
 				)}
@@ -143,14 +142,14 @@ export const ProductSlider = ({images}: SliderProps) => {
 			{images.length > 1 && (
 				<div className={styles.thumbsContainer}>
 					{isMobile ? (
-						<motion.div
+						<m.div
 							className={styles.thumbsGrid}
 							initial={{opacity: 0, y: 20}}
 							animate={{opacity: 1, y: 0}}
 							transition={{duration: 0.5, delay: 0.2}}
 						>
 							{images.slice(0, 6).map((img, index) => (
-								<motion.div
+								<m.div
 									key={index}
 									className={`${styles.thumbWrapper} ${
 										activeIndex === index ? styles.active : ''
@@ -172,21 +171,21 @@ export const ProductSlider = ({images}: SliderProps) => {
 										alt={`Thumbnail ${index + 1}`}
 										className={styles.thumbImage}
 									/>
-								</motion.div>
+								</m.div>
 							))}
 							{images.length > 6 && (
-								<motion.div
+								<m.div
 									className={styles.moreIndicator}
 									initial={{opacity: 0, scale: 0.8}}
 									animate={{opacity: 1, scale: 1}}
 									transition={{duration: 0.3, delay: 0.6}}
 								>
 									+{images.length - 6}
-								</motion.div>
+								</m.div>
 							)}
-						</motion.div>
+						</m.div>
 					) : (
-						<motion.div
+						<m.div
 							initial={{opacity: 0, x: -20}}
 							animate={{opacity: 1, x: 0}}
 							transition={{duration: 0.5, delay: 0.3}}
@@ -203,7 +202,7 @@ export const ProductSlider = ({images}: SliderProps) => {
 							>
 								{images.map((img, index) => (
 									<SwiperSlide key={index}>
-										<motion.div
+										<m.div
 											className={`${styles.thumbWrapper} ${
 												activeIndex === index ? styles.active : ''
 											}`}
@@ -222,13 +221,13 @@ export const ProductSlider = ({images}: SliderProps) => {
 												alt={`Thumbnail ${index + 1}`}
 												className={styles.thumbImage}
 											/>
-										</motion.div>
+										</m.div>
 									</SwiperSlide>
 								))}
 							</Swiper>
 
 							{images.length > 4 && (
-								<motion.div
+								<m.div
 									className={styles.navigation}
 									initial={{opacity: 0}}
 									animate={{opacity: 1}}
@@ -241,12 +240,12 @@ export const ProductSlider = ({images}: SliderProps) => {
 										onClick={() => thumbsSwiper?.slidePrev()}
 										asChild
 									>
-										<motion.div
+										<m.div
 											whileHover={{scale: 1.15, y: -2}}
 											whileTap={{scale: 0.9}}
 										>
 											<ChevronUp size={18} />
-										</motion.div>
+										</m.div>
 									</Button>
 									<Button
 										variant='elevated'
@@ -255,16 +254,16 @@ export const ProductSlider = ({images}: SliderProps) => {
 										onClick={() => thumbsSwiper?.slideNext()}
 										asChild
 									>
-										<motion.div
+										<m.div
 											whileHover={{scale: 1.15, y: 2}}
 											whileTap={{scale: 0.9}}
 										>
 											<ChevronDown size={18} />
-										</motion.div>
+										</m.div>
 									</Button>
-								</motion.div>
+								</m.div>
 							)}
-						</motion.div>
+						</m.div>
 					)}
 				</div>
 			)}

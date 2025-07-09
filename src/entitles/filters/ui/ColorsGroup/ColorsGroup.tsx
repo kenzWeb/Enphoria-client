@@ -3,7 +3,8 @@ import {useGetColors} from '@/shared/hooks/queries/colors/useGetColors'
 import {useFilterToggle} from '@/shared/hooks/useFilterToggle'
 import {IColor} from '@/shared/types/color.interface'
 import {FilterItemProps} from '@/shared/types/filter.interface'
-import {AnimatePresence, motion} from 'framer-motion'
+import {AnimatePresence} from 'motion/react'
+import * as m from 'motion/react-m'
 import {memo} from 'react'
 import {SideSubTitle} from '../SideSubTitle/SideSubTitle'
 import styles from './ColorsGroup.module.scss'
@@ -12,13 +13,13 @@ import CheckIcon from '/img/icons/check-filter.svg'
 const ColorItem = memo(
 	({item: color, isSelected, onToggle}: FilterItemProps<IColor>) => {
 		return (
-			<motion.div
+			<m.div
 				className={styles.item}
 				onClick={() => onToggle(color.name)}
 				whileTap={{scale: 0.95}}
 			>
 				<div className={styles.colorWrapper}>
-					<motion.div
+					<m.div
 						style={{background: color.value}}
 						className={styles.color}
 						whileHover={{scale: 1.1}}
@@ -26,7 +27,7 @@ const ColorItem = memo(
 					/>
 					<AnimatePresence>
 						{isSelected && (
-							<motion.div
+							<m.div
 								initial={{scale: 0.5, opacity: 0}}
 								animate={{scale: 1, opacity: 1}}
 								exit={{scale: 0.5, opacity: 0}}
@@ -34,12 +35,12 @@ const ColorItem = memo(
 								className={styles.checkmark}
 							>
 								<img src={CheckIcon} alt='Selected' className={styles.check} />
-							</motion.div>
+							</m.div>
 						)}
 					</AnimatePresence>
 				</div>
 				<span>{color.name}</span>
-			</motion.div>
+			</m.div>
 		)
 	},
 )
