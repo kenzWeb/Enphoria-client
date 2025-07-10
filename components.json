@@ -14,7 +14,7 @@
 		"components": "@/shared/shad-cn",
 		"utils": "@/shared/lib/utils",
 		"ui": "@/shared/shad-cn/ui",
-		"lib": "@/shared//lib",
+		"lib": "@/shared/lib",
 		"hooks": "@/shared/hooks",
 		"config": "@/shared/config"
 	},
