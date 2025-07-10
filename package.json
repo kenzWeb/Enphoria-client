@@ -69,6 +69,7 @@
 		"scss": "^0.2.4",
 		"sort-by": "^1.2.0",
 		"styled-components": "^6.1.12",
+		"swiper": "^11.2.10",
 		"tailwind-merge": "^2.5.4",
 		"tailwindcss-animate": "^1.0.7",
 		"webpack": "^5.96.1",
