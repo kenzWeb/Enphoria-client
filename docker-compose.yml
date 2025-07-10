@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  euphoria-client:
+    build: .
+    ports:
+      - '3000:80'
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # Если нужно запустить с API
+  # euphoria-api:
+  #   image: your-api-image
+  #   ports:
+  #     - "5001:5001"
+  #   environment:
+  #     - NODE_ENV=production
+  #   restart: unless-stopped

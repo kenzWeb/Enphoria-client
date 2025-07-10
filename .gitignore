@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Environment files (кроме примера)
+.env
+.env.local
+.env.*.local
+# Но разрешаем файлы окружений для деплоя
+!.env.example
+!.env.production
+!.env.staging
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
