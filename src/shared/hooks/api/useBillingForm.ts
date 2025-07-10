@@ -1,4 +1,5 @@
 import {billingService} from '@/shared/services/billing.service'
+import { IApiError } from '@/shared/types/api.error'
 import {IBillingForm} from '@/shared/types/billing.interface'
 import {useMutation} from '@tanstack/react-query'
 import {SubmitHandler, useForm} from 'react-hook-form'
@@ -29,9 +30,9 @@ export function useBillingForm(isSave?: boolean) {
 			toast.success('Billing information is valid')
 			form.reset()
 		},
-		onError(error) {
-			if (error instanceof Error) {
-				toast.error(error.message)
+		onError(error: IApiError) {
+			if (error.response?.data?.message) {
+				toast.error(error.response.data.message)
 			} else {
 				toast.error('Something went wrong')
 			}

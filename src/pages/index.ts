@@ -8,6 +8,7 @@ import {OrdersPage} from './ui/OrdersPage'
 import {ProductPage} from './ui/ProductPage'
 import {ProfilePage} from './ui/ProfilePage'
 import {ShopPage} from './ui/ShopPage'
+import {SignOutPage} from './ui/SignOutPage'
 import {ThanksPage} from './ui/ThanksPage'
 import {WishlistPage} from './ui/WishlistPage'
 
@@ -22,6 +23,7 @@ export {
 	ProductPage,
 	ProfilePage,
 	ShopPage,
+	SignOutPage,
 	ThanksPage,
 	WishlistPage,
 }

@@ -1,6 +1,8 @@
 import {userService} from '@/shared/services/user.service'
+import {IApiError} from '@/shared/types/api.error'
 import {IProduct} from '@/shared/types/product.interface'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
+import toast from 'react-hot-toast'
 
 export const useFavorite = (product: IProduct) => {
 	const queryClient = useQueryClient()
@@ -16,6 +18,14 @@ export const useFavorite = (product: IProduct) => {
 			queryClient.invalidateQueries({
 				queryKey: ['profile'],
 			})
+			toast.success('Favorite updated successfully')
+		},
+		onError(error: IApiError) {
+			if (error.response?.data?.message) {
+				toast.error(error.response.data.message)
+			} else {
+				toast.error('Something went wrong')
+			}
 		},
 	})
 

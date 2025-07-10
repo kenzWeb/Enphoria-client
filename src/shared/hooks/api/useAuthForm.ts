@@ -29,7 +29,6 @@ export function useAuthForm(isReg: boolean) {
 			form.reset()
 			navigate(PUBLIC_URL.home())
 		} catch (error) {
-			// Ошибки обрабатываются в хуке useAuth
 			console.error('Auth error:', error)
 		}
 	}

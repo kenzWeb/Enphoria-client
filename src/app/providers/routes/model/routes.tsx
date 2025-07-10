@@ -10,6 +10,7 @@ import {
 	ProductPage,
 	ProfilePage,
 	ShopPage,
+	SignOutPage,
 	ThanksPage,
 	WishlistPage,
 } from '@/pages'
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
 							{
 								path: PUBLIC_URL.account('order-detail/:id'),
 								element: <OrderDetailPage />,
+							},
+							{
+								path: PUBLIC_URL.account('sign-out'),
+								element: <SignOutPage />,
 							},
 						],
 					},

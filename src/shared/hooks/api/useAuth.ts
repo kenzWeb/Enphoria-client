@@ -4,6 +4,7 @@ import {
 } from '@/shared/services/auth/auth-token.service'
 import {authService} from '@/shared/services/auth/auth.service'
 import {useAuthStore} from '@/shared/store/auth.store'
+import {IApiError} from '@/shared/types/api.error'
 import {IAuthForm} from '@/shared/types/auth.interface'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 import {useEffect} from 'react'
@@ -42,11 +43,11 @@ export function useAuth() {
 			queryClient.invalidateQueries({queryKey: ['profile']})
 			toast.success('Successfully logged in')
 		},
-		onError: (error) => {
-			if (error instanceof Error) {
-				toast.error(error.message)
+		onError(error: IApiError) {
+			if (error.response?.data?.message) {
+				toast.error(error.response.data.message)
 			} else {
-				toast.error('Login failed')
+				toast.error('Something went wrong')
 			}
 		},
 	})
@@ -58,11 +59,11 @@ export function useAuth() {
 			queryClient.invalidateQueries({queryKey: ['profile']})
 			toast.success('Successfully registered')
 		},
-		onError: (error) => {
-			if (error instanceof Error) {
-				toast.error(error.message)
+		onError(error: IApiError) {
+			if (error.response?.data?.message) {
+				toast.error(error.response.data.message)
 			} else {
-				toast.error('Registration failed')
+				toast.error('Something went wrong')
 			}
 		},
 	})
@@ -72,13 +73,11 @@ export function useAuth() {
 		onSuccess: () => {
 			setAuth(false)
 			queryClient.clear()
-			toast.success('Successfully logged out')
 		},
 		onError: () => {
 			setAuth(false)
 			removeFromStorage()
 			queryClient.clear()
-			toast.error('Logout failed, but session cleared')
 		},
 	})
 
@@ -101,10 +100,10 @@ export function useAuth() {
 	}
 
 	const logout = () => {
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve) => {
 			logoutMutation.mutate(undefined, {
 				onSuccess: resolve,
-				onError: reject,
+				onError: resolve, // Разрешаем даже при ошибке, так как локальная сессия всё равно очищается
 			})
 		})
 	}
