@@ -40,10 +40,6 @@ export const router = createBrowserRouter([
 				element: <ProductPage />,
 			},
 			{
-				path: PUBLIC_URL.account('checkout'),
-				element: <CheckoutPage />,
-			},
-			{
 				path: PUBLIC_URL.thanks(),
 				element: <ThanksPage />,
 			},
@@ -52,8 +48,13 @@ export const router = createBrowserRouter([
 				element: <PrivateRoute />,
 				children: [
 					{
+						path: PUBLIC_URL.account('checkout'),
+						element: <CheckoutPage />,
+					},
+					{
 						path: PUBLIC_URL.account(),
 						element: <AccountLayout />,
+
 						children: [
 							{
 								path: PUBLIC_URL.account('profile'),
