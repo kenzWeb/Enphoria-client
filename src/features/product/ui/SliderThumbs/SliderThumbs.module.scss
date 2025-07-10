@@ -1,0 +1,128 @@
+.thumbsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 120px;
+	flex-shrink: 0;
+}
+
+.thumbsSwiper {
+	height: 100%;
+
+	:global(.swiper-slide) {
+		height: auto !important;
+		cursor: pointer;
+	}
+}
+
+.thumbsGrid {
+	display: flex;
+	gap: 12px;
+	padding: 0 8px;
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: none;
+}
+
+.thumbWrapper {
+	width: 100px;
+	height: 100px;
+	border-radius: 16px;
+	overflow: hidden;
+	border: 3px solid transparent;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	background: #ffffff;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	flex-shrink: 0;
+
+	&:hover {
+		border-color: #e0e0e0;
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	}
+
+	&.active {
+		border-color: #3c4242;
+		transform: translateY(-4px);
+		box-shadow: 0 8px 32px rgba(60, 66, 66, 0.25);
+	}
+}
+
+.thumbImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.moreIndicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	background: #f8f9fa;
+	border-radius: 12px;
+	color: #666;
+	font-size: 0.9rem;
+	font-weight: 600;
+	flex-shrink: 0;
+	border: 2px solid #e0e0e0;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: center;
+	margin-top: 12px;
+}
+
+.desktopNavButton {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: white;
+	border: 2px solid #e0e0e0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	color: #666;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+	&:hover {
+		background: #f8f9fa;
+		border-color: #3c4242;
+		color: #3c4242;
+		box-shadow: 0 6px 20px rgba(60, 66, 66, 0.15);
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+@media (max-width: 768px) {
+	.thumbWrapper {
+		width: 80px;
+		height: 80px;
+		border-radius: 12px;
+		border-width: 2px;
+	}
+
+	.moreIndicator {
+		width: 80px;
+		height: 80px;
+		border-radius: 12px;
+	}
+
+	.navigation {
+		display: none;
+	}
+}
