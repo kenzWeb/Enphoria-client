@@ -10,8 +10,5 @@ export const resetPromoCode = () => {
 }
 
 export const subscribeToCodeChanges = (callback: (code: string) => void) => {
-	return useCodeStore.subscribe(
-		(state) => state.code,
-		(code) => callback(code),
-	)
+	return useCodeStore.subscribe((state) => callback(state.code))
 }
