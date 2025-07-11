@@ -1,7 +1,7 @@
-import {Socials} from '@/entitles/auth'
-import {AuthFields} from '@/features/auth'
-import {useAuthForm} from '@/shared/hooks/api/useAuthForm'
-import {Button} from '@/shared/shad-cn/ui/Button'
+import { Socials } from '@/entitles/auth'
+import { AuthFields } from '@/features/auth'
+import { useAuthForm } from '@/shared/hooks/api/useAuthForm'
+import { Button } from '@/shared/shad-cn/ui/Button'
 import {
 	Card,
 	CardContent,
@@ -10,9 +10,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/shared/shad-cn/ui/Card'
-import {Form} from '@/shared/shad-cn/ui/Form'
+import { Form } from '@/shared/shad-cn/ui/Form'
 
-import {useState} from 'react'
+import { useState } from 'react'
 import styles from './styles.module.scss'
 
 export function Auth() {

@@ -1,7 +1,7 @@
-import {Badge} from '@/shared/shad-cn/ui/Badge'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {IoCartOutline} from 'react-icons/io5'
-import {IProductActions} from '../../model/types'
+import { Badge } from '@/shared/shad-cn/ui/Badge'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { IoCartOutline } from 'react-icons/io5'
+import { IProductActions } from '../../model/types'
 import styles from './ProductActions.module.scss'
 
 export const ProductActions = ({price, onAddToCart}: IProductActions) => {

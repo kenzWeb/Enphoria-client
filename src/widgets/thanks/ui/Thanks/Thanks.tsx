@@ -1,5 +1,5 @@
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {Link} from 'react-router-dom'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { Link } from 'react-router-dom'
 import styles from './Thanks.module.scss'
 
 export const Thanks = () => {

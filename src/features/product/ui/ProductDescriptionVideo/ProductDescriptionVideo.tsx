@@ -1,10 +1,10 @@
-import {useRef} from 'react'
-import {BsPlayCircleFill} from 'react-icons/bs'
+import { useRef } from 'react'
+import { BsPlayCircleFill } from 'react-icons/bs'
 
-import {useVideoPlayer} from '@/shared/hooks/useVideoPlayer'
-import {Button} from '@/shared/shad-cn/ui/Button'
+import { useVideoPlayer } from '@/shared/hooks/useVideoPlayer'
+import { Button } from '@/shared/shad-cn/ui/Button'
 
-import {VideoControls} from '../VideoControls/VideoControls'
+import { VideoControls } from '../VideoControls/VideoControls'
 import styles from './ProductDescriptionVideo.module.scss'
 import Video from '/video/product.mp4'
 

@@ -1,7 +1,7 @@
-import {useChangePassword} from '@/shared/hooks/api/useChangePassword'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {createPasswordFormHandlers, createPasswordValidation} from '../../model'
-import {IPasswordChangeFormProps} from '../../types'
+import { useChangePassword } from '@/shared/hooks/api/useChangePassword'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { createPasswordFormHandlers, createPasswordValidation } from '../../model'
+import { IPasswordChangeFormProps } from '../../types'
 import styles from './PasswordChangeForm.module.scss'
 
 export const PasswordChangeForm = ({onSuccess}: IPasswordChangeFormProps) => {

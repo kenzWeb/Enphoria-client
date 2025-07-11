@@ -1,10 +1,10 @@
-import {SERVER_URL} from '@/shared/config/private.config'
-import {handleAddToCart} from '@/shared/handles/handleAddToCart'
-import {useFavorite} from '@/shared/hooks/api/useFavorite'
-import {useProfile} from '@/shared/hooks/api/useProfile'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {useCartStore} from '@/shared/store/cart.store'
-import {WishlistItemProps} from '../../types'
+import { SERVER_URL } from '@/shared/config/private.config'
+import { handleAddToCart } from '@/shared/handles/handleAddToCart'
+import { useFavorite } from '@/shared/hooks/api/useFavorite'
+import { useProfile } from '@/shared/hooks/api/useProfile'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { useCartStore } from '@/shared/store/cart.store'
+import { WishlistItemProps } from '../../types'
 import styles from './WishlistItem.module.scss'
 
 export const WishlistItem = ({favorite}: WishlistItemProps) => {

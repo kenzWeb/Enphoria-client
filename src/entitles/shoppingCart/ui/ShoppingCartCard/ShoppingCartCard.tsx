@@ -1,10 +1,10 @@
-import {SERVER_URL} from '@/shared/config/private.config'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {useCartStore} from '@/shared/store/cart.store'
-import {ICartItem} from '@/shared/types/cart.interface'
-import {BiMinus} from 'react-icons/bi'
-import {BsPlus} from 'react-icons/bs'
-import {HiOutlineTrash} from 'react-icons/hi2'
+import { SERVER_URL } from '@/shared/config/private.config'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { useCartStore } from '@/shared/store/cart.store'
+import { ICartItem } from '@/shared/types/cart.interface'
+import { BiMinus } from 'react-icons/bi'
+import { BsPlus } from 'react-icons/bs'
+import { HiOutlineTrash } from 'react-icons/hi2'
 import styles from './styles.module.scss'
 
 type Props = {

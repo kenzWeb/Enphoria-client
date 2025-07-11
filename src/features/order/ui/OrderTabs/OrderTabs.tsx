@@ -1,15 +1,15 @@
-import {PUBLIC_URL} from '@/shared/config/url.config'
-import {useGetMyOrder} from '@/shared/hooks/queries/order/useGetMyOrder'
-import {Button} from '@/shared/shad-cn/ui/Button'
+import { PUBLIC_URL } from '@/shared/config/url.config'
+import { useGetMyOrder } from '@/shared/hooks/queries/order/useGetMyOrder'
+import { Button } from '@/shared/shad-cn/ui/Button'
 import {
 	Tabs,
 	TabsContent,
 	TabsList,
 	TabsTrigger,
 } from '@/shared/shad-cn/ui/Tabs'
-import {EnumOrderStatus, IOrder} from '@/shared/types/order.interface'
-import {useNavigate} from 'react-router-dom'
-import {orderModels} from '../../models'
+import { EnumOrderStatus, IOrder } from '@/shared/types/order.interface'
+import { useNavigate } from 'react-router-dom'
+import { orderModels } from '../../models'
 import styles from './OrderTabs.module.scss'
 
 export const OrderTabs = () => {

@@ -1,4 +1,4 @@
-import {Button} from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/Button'
 
 export const ArrivalSliderButtons = () => {
 	return (

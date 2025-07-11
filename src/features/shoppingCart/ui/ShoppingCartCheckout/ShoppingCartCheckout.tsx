@@ -4,9 +4,9 @@ import {
 	ShoppingCartCheckoutTop,
 } from '@/entitles/shoppingCart'
 
-import {useOrderCalculation} from '@/shared/hooks/useOrderCalculation'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {useNavigate} from 'react-router-dom'
+import { useOrderCalculation } from '@/shared/hooks/useOrderCalculation'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { useNavigate } from 'react-router-dom'
 import styles from './ShoppingCartCheckout.module.scss'
 
 export const ShoppingCartCheckout = () => {

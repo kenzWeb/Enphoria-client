@@ -1,6 +1,6 @@
-import {PUBLIC_URL} from '@/shared/config/url.config'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {useNavigate} from 'react-router-dom'
+import { PUBLIC_URL } from '@/shared/config/url.config'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { useNavigate } from 'react-router-dom'
 import styles from './BackButton.module.scss'
 import ArrowLeftIcon from '/img/icons/arrow-left.svg'
 

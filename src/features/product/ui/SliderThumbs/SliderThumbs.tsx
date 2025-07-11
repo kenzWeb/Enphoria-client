@@ -1,12 +1,12 @@
-import {SERVER_URL} from '@/shared/config/private.config'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {ChevronDown, ChevronUp} from 'lucide-react'
+import { SERVER_URL } from '@/shared/config/private.config'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import * as m from 'motion/react-m'
-import {Swiper as SwiperType} from 'swiper'
+import { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/thumbs'
-import {Thumbs} from 'swiper/modules'
-import {Swiper, SwiperSlide} from 'swiper/react'
+import { Thumbs } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './SliderThumbs.module.scss'
 
 interface SliderThumbsProps {

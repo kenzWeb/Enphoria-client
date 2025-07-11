@@ -1,8 +1,8 @@
-import {PasswordChangeForm} from '@/features/profile'
-import {Button} from '@/shared/shad-cn/ui/Button'
-import {useState} from 'react'
-import {createPasswordFieldHandlers} from '../../model'
-import {IPasswordChangeFieldProps} from '../../types'
+import { PasswordChangeForm } from '@/features/profile'
+import { Button } from '@/shared/shad-cn/ui/Button'
+import { useState } from 'react'
+import { createPasswordFieldHandlers } from '../../model'
+import { IPasswordChangeFieldProps } from '../../types'
 import styles from './PasswordChangeField.module.scss'
 
 export const PasswordChangeField = ({
