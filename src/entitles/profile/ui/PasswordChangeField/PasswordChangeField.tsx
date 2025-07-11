@@ -1,5 +1,5 @@
 import { PasswordChangeForm } from '@/features/profile'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { useState } from 'react'
 import { createPasswordFieldHandlers } from '../../model'
 import { IPasswordChangeFieldProps } from '../../types'

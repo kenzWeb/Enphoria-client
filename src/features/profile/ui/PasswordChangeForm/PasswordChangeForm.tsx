@@ -1,5 +1,5 @@
 import { useChangePassword } from '@/shared/hooks/api/useChangePassword'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { createPasswordFormHandlers, createPasswordValidation } from '../../model'
 import { IPasswordChangeFormProps } from '../../types'
 import styles from './PasswordChangeForm.module.scss'

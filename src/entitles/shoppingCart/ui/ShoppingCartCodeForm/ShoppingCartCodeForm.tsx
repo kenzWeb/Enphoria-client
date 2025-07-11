@@ -6,7 +6,7 @@ import {
 	FormMessage,
 } from '@/shared/shad-cn/ui/Form'
 
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { Input } from '@/shared/shad-cn/ui/Input'
 import { IShoppingCartCodeForm } from '../../types'
 import styles from './ShoppingCartCodeForm.module.scss'

@@ -1,4 +1,4 @@
-import {Skeleton} from '@/shared/shad-cn/ui/Skeleton'
+import {Skeleton} from '@/shared/shad-cn/ui/index'
 import React from 'react'
 
 export const SkeletonCard: React.FC = () => {

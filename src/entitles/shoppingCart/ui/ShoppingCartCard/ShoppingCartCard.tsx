@@ -1,5 +1,5 @@
 import { SERVER_URL } from '@/shared/config/private.config'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { useCartStore } from '@/shared/store/cart.store'
 import { ICartItem } from '@/shared/types/cart.interface'
 import { BiMinus } from 'react-icons/bi'

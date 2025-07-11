@@ -1,6 +1,6 @@
 import { PUBLIC_URL } from '@/shared/config/url.config'
 import { useGetMyOrder } from '@/shared/hooks/queries/order/useGetMyOrder'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import {
 	Tabs,
 	TabsContent,

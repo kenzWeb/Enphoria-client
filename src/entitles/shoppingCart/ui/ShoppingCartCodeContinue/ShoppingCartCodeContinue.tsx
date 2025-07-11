@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { Link } from 'react-router-dom'
 import styles from './ShoppingCartCodeContinue.module.scss'
 

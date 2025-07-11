@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { useNavigate } from 'react-router-dom'
 import styles from './WishListEmpty.module.scss'
 

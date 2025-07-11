@@ -1,5 +1,5 @@
 import { Badge } from '@/shared/shad-cn/ui/Badge'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { IoCartOutline } from 'react-icons/io5'
 import { IProductActions } from '../../model/types'
 import styles from './ProductActions.module.scss'

@@ -1,5 +1,5 @@
 import { SERVER_URL } from '@/shared/config/private.config'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import * as m from 'motion/react-m'
 import { Swiper as SwiperType } from 'swiper'

@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import * as m from 'motion/react-m'
 import styles from './SliderNavigation.module.scss'

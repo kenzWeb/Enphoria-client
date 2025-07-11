@@ -5,7 +5,7 @@ import {
 } from '@/entitles/shoppingCart'
 
 import { useOrderCalculation } from '@/shared/hooks/useOrderCalculation'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { useNavigate } from 'react-router-dom'
 import styles from './ShoppingCartCheckout.module.scss'
 

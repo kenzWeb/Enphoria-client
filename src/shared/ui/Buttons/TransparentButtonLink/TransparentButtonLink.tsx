@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import React from 'react'
 import styles from './styles.module.scss'
 

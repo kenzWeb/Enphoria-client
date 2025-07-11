@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { IProduct } from '@/shared/types/product.interface'
 import { type FC } from 'react'
 import styles from './Pagination.module.scss'

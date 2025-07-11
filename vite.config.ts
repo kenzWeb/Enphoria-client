@@ -5,18 +5,7 @@ import {defineConfig, loadEnv} from 'vite'
 export default defineConfig(({mode}) => {
 	const env = loadEnv(mode, process.cwd(), '')
 
-	// Список переменных, которые будут доступны в клиенте
-	const cherryPickedKeys = [
-		'APP_ENV',
-		'APP_URL',
-		'APP_DOMAIN',
-		'SERVER_URL',
-		'GOOGLE_ANALYTICS_ID',
-		'YANDEX_METRICA_ID',
-		'SENTRY_DSN',
-		'ENABLE_PWA',
-		'ENABLE_SERVICE_WORKER',
-	]
+	const cherryPickedKeys = ['APP_ENV', 'APP_URL', 'APP_DOMAIN', 'SERVER_URL']
 
 	const processEnv: Record<string, string> = {}
 	cherryPickedKeys.forEach((key) => {
@@ -38,10 +27,8 @@ export default defineConfig(({mode}) => {
 			rollupOptions: {
 				output: {
 					manualChunks: {
-						// React ecosystem
 						'react-vendor': ['react', 'react-dom', 'react-router-dom'],
 
-						// UI libraries
 						'ui-vendor': [
 							'motion',
 							'@radix-ui/react-accordion',
@@ -57,20 +44,14 @@ export default defineConfig(({mode}) => {
 							'@radix-ui/react-toggle-group',
 							'@radix-ui/react-tooltip',
 						],
-
-						// Form libraries
 						'form-vendor': ['react-hook-form', '@hookform/resolvers'],
 
-						// Data fetching
 						'query-vendor': ['@tanstack/react-query'],
 
-						// State management
 						'state-vendor': ['zustand'],
 
-						// HTTP client
 						'http-vendor': ['axios'],
 
-						// Utilities
 						'utils-vendor': [
 							'clsx',
 							'class-variance-authority',

@@ -1,4 +1,4 @@
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { BiFullscreen } from 'react-icons/bi'
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
 import { IoMdVolumeHigh, IoMdVolumeOff } from 'react-icons/io'

@@ -1,5 +1,5 @@
 import { useAddAddressForm } from '@/features/profile/hooks/useAddAddressForm'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import styles from './AddressForm.module.scss'
 
 export const AddressForm = () => {

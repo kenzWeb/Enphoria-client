@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { BsPlayCircleFill } from 'react-icons/bs'
 
 import { useVideoPlayer } from '@/shared/hooks/useVideoPlayer'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 
 import { VideoControls } from '../VideoControls/VideoControls'
 import styles from './ProductDescriptionVideo.module.scss'

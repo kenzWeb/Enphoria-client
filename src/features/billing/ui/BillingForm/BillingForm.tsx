@@ -1,7 +1,7 @@
 import { BillingFields } from '@/entitles/billing'
 import { useBillingForm } from '@/shared/hooks/api/useBillingForm'
 import { useCreatePayment } from '@/shared/hooks/api/useCreatePayment'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import { Button } from '@/shared/shad-cn/ui/index'
 import { Checkbox } from '@/shared/shad-cn/ui/Checkbox'
 import { Form, FormControl, FormField, FormItem } from '@/shared/shad-cn/ui/Form'
 import { IBillingForm } from '@/shared/types/billing.interface'

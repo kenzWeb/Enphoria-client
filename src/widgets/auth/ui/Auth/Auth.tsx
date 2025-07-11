@@ -1,7 +1,7 @@
 import {Socials} from '@/entitles/auth'
 import {AuthFields} from '@/features/auth'
 import {useAuthForm} from '@/shared/hooks/api/useAuthForm'
-import {Button} from '@/shared/shad-cn/ui/Button'
+import {Button} from '@/shared/shad-cn/ui/index'
 import {
 	Card,
 	CardContent,
