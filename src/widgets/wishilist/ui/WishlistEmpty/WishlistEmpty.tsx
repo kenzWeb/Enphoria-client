@@ -1,8 +1,8 @@
-import { Button } from '@/shared/shad-cn/ui/index'
-import { useNavigate } from 'react-router-dom'
-import styles from './WishListEmpty.module.scss'
+import {Button} from '@/shared/shad-cn/ui/index'
+import {useNavigate} from 'react-router-dom'
+import styles from './WishlistEmpty.module.scss'
 
-export const WishListEmpty = () => {
+export const WishlistEmpty = () => {
 	const router = useNavigate()
 
 	return (

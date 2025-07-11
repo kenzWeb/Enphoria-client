@@ -1,6 +1,6 @@
 import {WishlistItem} from '@/entitles/wishlist'
 import {useProfile} from '@/shared/hooks/api/useProfile'
-import {WishListEmpty} from '@/widgets/wishilist'
+import {WishlistEmpty} from '@/widgets/wishilist'
 import styles from './WishlistList.module.scss'
 
 export const WishlistList = () => {
@@ -18,7 +18,7 @@ export const WishlistList = () => {
 					))}
 				</ul>
 			) : (
-				<WishListEmpty />
+				<WishlistEmpty />
 			)}
 		</div>
 	)
