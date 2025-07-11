@@ -1,15 +1,15 @@
 .label {
-	@apply text-[18px] text-[#3C4242] font-normal;
+	@apply text-[16px] sm:text-[18px] text-[#3C4242] font-normal;
 }
 
 .input {
-	@apply border-solid !text-[14px];
+	@apply border-solid !text-[14px] sm:!text-[16px] h-10 sm:h-12;
 }
 
 .message {
-	@apply text-[11px] !text-[14px];
+	@apply text-[11px] sm:text-[13px] !text-[12px] sm:!text-[14px];
 }
 
 .checkbox {
-	@apply font-medium !text-[#807D7E] !text-[16px];
+	@apply font-medium !text-[#807D7E] !text-[14px] sm:!text-[16px];
 }

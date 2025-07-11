@@ -1,29 +1,29 @@
 .wrapper {
-	@apply min-h-screen grid grid-cols-2;
+	@apply min-h-screen grid grid-cols-1 lg:grid-cols-2;
 
 	> .left {
-		@apply h-full w-full lg:flex items-center justify-center;
+		@apply h-full w-full hidden lg:flex items-center justify-center;
 		background-image: url('/img/images/auth/sign-in.jpg');
 		background-size: cover;
 		background-position: center;
 	}
 
 	> .right {
-		@apply h-full w-full flex flex-col items-center justify-center;
+		@apply h-full w-full flex flex-col items-center justify-center px-4 py-8;
 
 		> .card {
-			@apply border-none p-6 flex flex-col w-[520px];
+			@apply border-none p-4 sm:p-6 flex flex-col w-full max-w-[520px];
 
 			> .header {
 				@apply pb-5 w-full;
 
 				> .title {
-					@apply pb-1 text-[32px] font-bold text-[#333333];
+					@apply pb-1 text-[24px] sm:text-[32px] font-bold text-[#333333];
 					font-family: Core Sans;
 				}
 
 				> .description {
-					@apply text-[1.6rem] text-[#666666] opacity-80 font-medium mb-12;
+					@apply text-[1.4rem] sm:text-[1.6rem] text-[#666666] opacity-80 font-medium mb-8 sm:mb-12;
 					font-family: Causten;
 				}
 			}
@@ -37,10 +37,10 @@
 			}
 
 			> .footer {
-				@apply p-0 mt-4 text-[16px] text-muted-foreground text-[#3C4242] font-normal;
+				@apply p-0 mt-4 text-[14px] sm:text-[16px] text-muted-foreground text-[#3C4242] font-normal flex flex-col sm:flex-row items-center gap-1;
 
 				> h2 {
-					@apply text-[16px] mr-[5px];
+					@apply text-[14px] sm:text-[16px] mr-0 sm:mr-[5px];
 				}
 
 				:global(button) {
@@ -52,13 +52,17 @@
 }
 
 .label {
-	@apply text-[#3C4242] text-[1.4rem];
+	@apply text-[#3C4242] text-[1.2rem] sm:text-[1.4rem];
 }
 
 .input {
-	@apply border-solid border-[#fff] outline-none focus:outline-none focus:ring-0;
+	@apply border-solid border-[#fff] outline-none focus:outline-none focus:ring-0 text-[14px] sm:text-[16px];
 }
 
 .message {
-	@apply text-red-500 text-[31px];
+	@apply text-red-500 text-[12px] sm:text-[14px];
+}
+
+.button {
+	@apply w-full h-12 sm:h-14 text-[14px] sm:text-[16px] mt-6;
 }

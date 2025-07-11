@@ -1,7 +1,7 @@
-import { Socials } from '@/entitles/auth'
-import { AuthFields } from '@/features/auth'
-import { useAuthForm } from '@/shared/hooks/api/useAuthForm'
-import { Button } from '@/shared/shad-cn/ui/Button'
+import {Socials} from '@/entitles/auth'
+import {AuthFields} from '@/features/auth'
+import {useAuthForm} from '@/shared/hooks/api/useAuthForm'
+import {Button} from '@/shared/shad-cn/ui/Button'
 import {
 	Card,
 	CardContent,
@@ -10,9 +10,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/shared/shad-cn/ui/Card'
-import { Form } from '@/shared/shad-cn/ui/Form'
+import {Form} from '@/shared/shad-cn/ui/Form'
 
-import { useState } from 'react'
+import {useState} from 'react'
 import styles from './styles.module.scss'
 
 export function Auth() {
@@ -22,7 +22,7 @@ export function Auth() {
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.left}>asdasd</div>
+			<div className={styles.left}></div>
 			<div className={styles.right}>
 				<Card className={styles.card}>
 					<CardHeader className={styles.header}>
@@ -40,22 +40,6 @@ export function Auth() {
 						<Form {...form}>
 							<form onSubmit={form.handleSubmit(onSubmit)}>
 								<AuthFields form={form} isPending={isPending} isReg={isReg} />
-
-								{/* <CardDescription className='flex flex-col'>
-									<div className='flex gap-3 items-center'>
-										<Checkbox id='privacy' />
-										<Label htmlFor='privacy' className={styles.checkbox}>
-											Agree to our Terms of use and Privacy Policy
-										</Label>
-									</div>
-
-									<div className='flex gap-3'>
-										<Checkbox id='subscribe' />
-										<Label htmlFor='subscribe' className={styles.checkbox}>
-											Subscribe to our monthly newsletter
-										</Label>
-									</div>
-								</CardDescription> */}
 
 								<Button
 									className={styles.button}
